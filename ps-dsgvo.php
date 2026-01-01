@@ -2,11 +2,11 @@
 
 /*
  Plugin Name: PSOURCE DSGVO 
- Plugin URI:  https://cp-psource.github.io/ps-dsgvo/
+ Plugin URI:  https://power-source.github.io/ps-dsgvo/
  Description: Dieses Plugin unterstützt Website- und Webshop-Besitzer bei der Einhaltung der europäischen Datenschutzbestimmungen, die als DSGVO bekannt sind. 
  Version:     1.0.0
  Author:      DerN3rd
- Author URI:  https://github.com/cp-psource
+ Author URI:  https://github.com/Power-Source
  License:     GPL2
  License URI: https://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: psource-dsgvo
