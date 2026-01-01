@@ -18,7 +18,7 @@ This plugin assists website and webshop owners to comply with European privacy r
 - 'Right to access' through encrypted audit logs and double opt-in mail.
 - 'Right to be forgotten' by anonymising user data.
 
-WP GDPR Compliance supports Contact Form 7 (>= 4.6), Gravity Forms (>= 1.9), WooCommerce (>= 2.5.0) and WordPress Comments.
+PSOURCE DSGVO supports Contact Form 7 (>= 4.6), Gravity Forms (>= 1.9), WooCommerce (>= 2.5.0) and WordPress Comments.
 
 Documentation
 [https://cp-psource.github.io/ps-dsgvo/](https://cp-psource.github.io/ps-dsgvo/ "PS DSGVO Dokumentation")

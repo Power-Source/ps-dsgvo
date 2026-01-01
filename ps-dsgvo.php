@@ -432,7 +432,7 @@ class PSDSGVO {
      */
     public function addActionLinksToPluginPage($links = array()) {
         $actionLinks = array(
-            'settings' => '<a href="' . add_query_arg(array('page' => str_replace('-', '_', PS_DSGVO_C_SLUG)), admin_url('tools.php')) . '" aria-label="' . esc_attr__('View WP GDPR Compliance settings', PS_DSGVO_C_SLUG) . '">' . esc_html__('Settings', PS_DSGVO_C_SLUG) . '</a>',
+            'settings' => '<a href="' . add_query_arg(array('page' => str_replace('-', '_', PS_DSGVO_C_SLUG)), admin_url('tools.php')) . '" aria-label="' . esc_attr__('View PSOURCE DSGVO settings', PS_DSGVO_C_SLUG) . '">' . esc_html__('Settings', PS_DSGVO_C_SLUG) . '</a>',
         );
         return array_merge($actionLinks, $links);
     }
