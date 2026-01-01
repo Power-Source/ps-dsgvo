@@ -136,6 +136,11 @@ class ContentEmbeds {
             return $content;
         }
         
+        // PERFORMANCE: Early-return wenn keine iframes vorhanden
+        if (strpos($content, '<iframe') === false) {
+            return $content;
+        }
+        
         // Prüfe ob Consents existieren und aktiv sind
         if (!Consent::databaseTableExists() || !Consent::isActive()) {
             error_log('PSDSGVO: Consents not active. DB exists: ' . (Consent::databaseTableExists() ? 'yes' : 'no') . ', Is active: ' . (Consent::isActive() ? 'yes' : 'no'));

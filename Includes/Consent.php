@@ -155,7 +155,7 @@ class Consent {
         global $wpdb;
         $query = "SELECT COUNT(`ID`) FROM `" . self::getDatabaseTableName() . "` WHERE 1";
         $query .= Helper::getQueryByFilters($filters);
-        $query .= sprintf(" AND `site_id` = '%d'", get_current_blog_id());
+        $query .= $wpdb->prepare(" AND `site_id` = %d", get_current_blog_id());
         $result = $wpdb->get_var($query);
         if ($result !== null) {
             return absint($result);
@@ -174,10 +174,10 @@ class Consent {
         $output = array();
         $query = "SELECT * FROM `" . self::getDatabaseTableName() . "` WHERE 1";
         $query .= Helper::getQueryByFilters($filters);
-        $query .= sprintf(" AND `site_id` = '%d'", get_current_blog_id());
+        $query .= $wpdb->prepare(" AND `site_id` = %d", get_current_blog_id());
         $query .= " ORDER BY `date_modified` DESC";
         if (!empty($limit)) {
-            $query .= " LIMIT $offset, $limit";
+            $query .= " LIMIT " . intval($offset) . ", " . intval($limit);
         }
         $results = $wpdb->get_results($query);
         if ($results !== null) {
@@ -515,8 +515,9 @@ class Consent {
      */
     public static function databaseTableExists() {
         global $wpdb;
-        $result = $wpdb->query("SHOW TABLES LIKE '" . self::getDatabaseTableName() . "'");
-        return ($result === 1);
+        $tableName = self::getDatabaseTableName();
+        $result = $wpdb->get_var($wpdb->prepare("SHOW TABLES LIKE %s", $tableName));
+        return ($result === $tableName);
     }
 
     /**

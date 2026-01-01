@@ -15,7 +15,7 @@ class Shortcode {
      */
     private static function getAccessRequestData() {
         $output = '';
-        $token = (isset($_REQUEST['psdsgvo'])) ? esc_html(urldecode($_REQUEST['psdsgvo'])) : false;
+        $token = (isset($_REQUEST['psdsgvo'])) ? esc_html($_REQUEST['psdsgvo']) : false;  // WordPress dekodiert automatisch
         $request = ($token !== false) ? AccessRequest::getInstance()->getByToken($token) : false;
         if ($request !== false) {
             if (

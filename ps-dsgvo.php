@@ -468,7 +468,7 @@ class PSDSGVO {
             $data['blogId'] = get_current_blog_id();
         }
         if (!empty($_REQUEST['psdsgvo'])) {
-            $data['token'] = esc_html(urldecode($_REQUEST['psdsgvo']));
+            $data['token'] = esc_html($_REQUEST['psdsgvo']);  // WordPress dekodiert automatisch
         }
         wp_enqueue_script('psdsgvo.js', PS_DSGVO_C_URI_JS . '/front.min.js', $dependencies, filemtime(PS_DSGVO_C_DIR_JS . '/front.min.js'), true);
         wp_localize_script('psdsgvo.js', 'psdsgvoData', $data);
