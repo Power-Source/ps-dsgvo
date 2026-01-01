@@ -15,15 +15,15 @@ class WPRegistration {
     private static $instance = null;
 
     public function addFieldMultiSite( $errors ) {
+        // Nur anzeigen wenn nicht im Admin-Bereich (Frontend-Registrierung)
+        if (is_admin()) {
+            return;
+        }
         ?>
         <p>
             <label><input type="checkbox" name="psdsgvo_consent" value="1" /> <?php echo Integration::getCheckboxText(self::ID); ?><abbr class="psdsgvo-required" title=" <?php echo Integration::getRequiredMessage(self::ID); ?> ">*</abbr></label>
         </p><br>
         <?php
-
-            if ($errorMessage = $errors->get_error_message( 'psdsgvo_consent' )) : ?>
-                <p class="error"><?php echo $errorMessage; ?></p>
-        <?php endif;
     }
 
 	public function addField() {
@@ -59,6 +59,11 @@ class WPRegistration {
 	 * @return mixed
 	 */
 	public function validateGDPRCheckboxMultisite( $result ) {
+	    // Nur validieren wenn nicht im Admin-Bereich (Frontend-Registrierung)
+	    if (is_admin()) {
+	        return $result;
+	    }
+	    
 	    $psdsgvoConsent = '';
 	    if( !empty( $_POST['psdsgvo_consent'] ) ) {
 		    $psdsgvoConsent = sanitize_text_field( $_POST['psdsgvo_consent'] );
