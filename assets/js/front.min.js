@@ -444,7 +444,25 @@
                 e.preventDefault();
                 var embedType = this.getAttribute('data-embed-type');
                 var placeholder = this.closest('.psdsgvo-embed-placeholder');
-                var embedUrl = placeholder.getAttribute('data-embed-url');
+                var embedUrl = placeholder && placeholder.getAttribute('data-embed-url');
+                var parsedEmbedUrl;
+
+                if (!embedUrl || !embedUrl.trim()) {
+                    console.error('PSDSGVO: Missing embed URL.');
+                    return;
+                }
+
+                try {
+                    parsedEmbedUrl = new URL(embedUrl, document.baseURI);
+                } catch (error) {
+                    console.error('PSDSGVO: Invalid embed URL.', error);
+                    return;
+                }
+
+                if (parsedEmbedUrl.protocol !== 'https:' && parsedEmbedUrl.protocol !== 'http:') {
+                    console.error('PSDSGVO: Embed URL must use HTTP or HTTPS.');
+                    return;
+                }
                 
                 // Set cookie for this embed type (365 days)
                 var cookieName = 'psdsgvo_embed_' + embedType;
@@ -452,7 +470,7 @@
                 
                 // Replace placeholder with actual embed
                 var iframe = document.createElement('iframe');
-                iframe.src = embedUrl;
+                iframe.src = parsedEmbedUrl.href;
                 iframe.width = '100%';
                 iframe.height = '400';
                 iframe.frameBorder = '0';

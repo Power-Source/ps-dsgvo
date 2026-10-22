@@ -26,5 +26,9 @@ Recht auf Vergessenwerden durch Anonymisierung von Nutzerdaten.
 
 == Changelog ==
 
+= Unreleased =
+* Content-Embeds akzeptieren nur HTTP(S)-URLs; ungültige URLs setzen kein Consent-Cookie.
+* Fehlerhafte Maskierung der Whitespace-Prüfung in CodeMirror korrigiert.
+
 = 1.0.0 =
 * Initial release.
