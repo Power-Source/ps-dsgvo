@@ -75,9 +75,9 @@ class Page {
 
                     <div class="psdsgvo-navigation psdsgvo-clearfix">
                         <a class="<?php echo (empty($type)) ? 'psdsgvo-active' : ''; ?>"
-                           href="<?php echo $adminUrl; ?>"><?php _e('Integrationen', PS_DSGVO_C_SLUG); ?></a>
+                           href="<?php echo $adminUrl; ?>"><?php _e('Integrationen', 'psource-dsgvo'); ?></a>
                         <a class="<?php echo checked('consents', $type, false) ? 'psdsgvo-active' : ''; ?>"
-                           href="<?php echo $adminUrl; ?>&type=consents"><?php _e('Einwilligungen', PS_DSGVO_C_SLUG); ?></a>
+                           href="<?php echo $adminUrl; ?>&type=consents"><?php _e('Einwilligungen', 'psource-dsgvo'); ?></a>
                         <?php
                         if ($enableAccessRequest) :
                             $totalDeleteRequests = DeleteRequest::getInstance()->getTotal(array(
@@ -92,7 +92,7 @@ class Page {
                             ?>
                             <a class="<?php echo checked('requests', $type, false) ? 'psdsgvo-active' : ''; ?>"
                                href="<?php echo $adminUrl; ?>&type=requests">
-                                <?php _e('Anfragen', PS_DSGVO_C_SLUG); ?>
+                                <?php _e('Anfragen', 'psource-dsgvo'); ?>
                                 <?php
                                 if ($totalDeleteRequests > 1) {
                                     printf('<span class="psdsgvo-badge">%d</span>', $totalDeleteRequests);
@@ -103,11 +103,11 @@ class Page {
                         endif;
                         ?>
                         <a class="<?php echo checked('embed-settings', $type, false) ? 'psdsgvo-active' : ''; ?>"
-                           href="<?php echo $adminUrl; ?>&type=embed-settings"><?php _e('Externe Inhalte', PS_DSGVO_C_SLUG); ?></a>
+                           href="<?php echo $adminUrl; ?>&type=embed-settings"><?php _e('Externe Inhalte', 'psource-dsgvo'); ?></a>
                         <a class="<?php echo checked('checklist', $type, false) ? 'psdsgvo-active' : ''; ?>"
-                           href="<?php echo $adminUrl; ?>&type=checklist"><?php _e('Checkliste', PS_DSGVO_C_SLUG); ?></a>
+                           href="<?php echo $adminUrl; ?>&type=checklist"><?php _e('Checkliste', 'psource-dsgvo'); ?></a>
                         <a class="<?php echo checked('settings', $type, false) ? 'psdsgvo-active' : ''; ?>"
-                           href="<?php echo $adminUrl; ?>&type=settings"><?php _e('Einstellungen', PS_DSGVO_C_SLUG); ?></a>
+                           href="<?php echo $adminUrl; ?>&type=settings"><?php _e('Einstellungen', 'psource-dsgvo'); ?></a>
                     </div>
 
                     <div class="psdsgvo-content psdsgvo-clearfix">
@@ -150,16 +150,16 @@ class Page {
                     </div>
 
                     <div class="psdsgvo-description">
-                        <p><?php _e('Dieses Plugin unterstützt Webseiten- und Webshop-Besitzer bei der Einhaltung der europäischen Datenschutzbestimmungen, die als DSGVO bekannt sind. Ab dem 25. Mai 2018 muss Deine Webseite oder Dein Geschäft den Anforderungen entsprechen.', PS_DSGVO_C_SLUG); ?></p>
+                        <p><?php _e('Dieses Plugin unterstützt Webseiten- und Webshop-Besitzer bei der Einhaltung der europäischen Datenschutzbestimmungen, die als DSGVO bekannt sind. Ab dem 25. Mai 2018 muss Deine Webseite oder Dein Geschäft den Anforderungen entsprechen.', 'psource-dsgvo'); ?></p>
                         <p><?php
                             printf(
-                                __('%s unterstützt derzeit %s. Bitte besuche %s für häufig gestellte Fragen und unsere Entwicklungs-Roadmap.', PS_DSGVO_C_SLUG),
+                                __('%s unterstützt derzeit %s. Bitte besuche %s für häufig gestellte Fragen und unsere Entwicklungs-Roadmap.', 'psource-dsgvo'),
                                 $pluginData['Name'],
                                 implode(', ', Integration::getSupportedIntegrationsLabels()),
                                 sprintf('<a target="_blank" href="%s">%s</a>', '//n3rds.work/', 'WebMasterService N3rds@Work')
                             );
                             ?></p>
-                        <p class="psdsgvo-disclaimer"><?php _e('Haftungsausschluss: Die Ersteller dieses Plugins haben keinen rechtlichen Hintergrund. Bitte wende Dich an eine Anwaltskanzlei, um eine solide Rechtsberatung zu erhalten.', PS_DSGVO_C_SLUG); ?></p>
+                        <p class="psdsgvo-disclaimer"><?php _e('Haftungsausschluss: Die Ersteller dieses Plugins haben keinen rechtlichen Hintergrund. Bitte wende Dich an eine Anwaltskanzlei, um eine solide Rechtsberatung zu erhalten.', 'psource-dsgvo'); ?></p>
                     </div>
                 </div>
 
@@ -193,7 +193,7 @@ class Page {
                                                id="<?php echo $optionName; ?>" value="1" tabindex="1"
                                                data-option="<?php echo $optionName; ?>" <?php checked(true, $checked); ?> />
                                         <label for="<?php echo $optionName; ?>"><?php echo $plugin['name']; ?></label>
-                                        <span class="psdsgvo-instructions"><?php _e('Aktivieren:', PS_DSGVO_C_SLUG); ?></span>
+                                        <span class="psdsgvo-instructions"><?php _e('Aktivieren:', 'psource-dsgvo'); ?></span>
                                         <div class="psdsgvo-switch" aria-hidden="true">
                                             <div class="psdsgvo-switch-label">
                                                 <div class="psdsgvo-switch-inner"></div>
@@ -220,7 +220,7 @@ class Page {
                             <?php else : ?>
                                 <div class="psdsgvo-message psdsgvo-message--error">
                                     <strong><?php echo $plugin['name']; ?></strong><br/>
-                                    <?php printf(__('Dieses Plugin ist veraltet. %s unterstützt Version %s und höher.', PS_DSGVO_C_SLUG), $pluginData['Name'], '<strong>' . $plugin['supported_version'] . '</strong>'); ?>
+                                    <?php printf(__('Dieses Plugin ist veraltet. %s unterstützt Version %s und höher.', 'psource-dsgvo'), $pluginData['Name'], '<strong>' . $plugin['supported_version'] . '</strong>'); ?>
                                 </div>
                             <?php endif; ?>
                         </li>
@@ -229,14 +229,14 @@ class Page {
                     ?>
                 </ul>
             <?php else : ?>
-                <p><strong><?php _e('Es wurden keine unterstützten Plugins gefunden.', PS_DSGVO_C_SLUG); ?></strong></p>
-                <p><?php _e('Folgende Plugins werden ab sofort unterstützt:', PS_DSGVO_C_SLUG); ?></p>
+                <p><strong><?php _e('Es wurden keine unterstützten Plugins gefunden.', 'psource-dsgvo'); ?></strong></p>
+                <p><?php _e('Folgende Plugins werden ab sofort unterstützt:', 'psource-dsgvo'); ?></p>
                 <ul class="ul-square">
                     <?php foreach (Integration::getSupportedPlugins() as $plugin) : ?>
                         <li><?php echo $plugin['name']; ?></li>
                     <?php endforeach; ?>
                 </ul>
-                <p><?php _e('Weitere Plugins werden in Zukunft hinzugefügt.', PS_DSGVO_C_SLUG); ?></p>
+                <p><?php _e('Weitere Plugins werden in Zukunft hinzugefügt.', 'psource-dsgvo'); ?></p>
             <?php endif; ?>
             <?php submit_button(); ?>
         </form>
@@ -253,14 +253,14 @@ class Page {
                 <?php
                 printf(
                     '<p><strong>%s:</strong> %s</p>',
-                    strtoupper(__('Hinweis', PS_DSGVO_C_SLUG)),
-                    __('Wir glauben, dass Du möglicherweise ein Mail-Plugin installiert hast.', PS_DSGVO_C_SLUG)
+                    strtoupper(__('Hinweis', 'psource-dsgvo')),
+                    __('Wir glauben, dass Du möglicherweise ein Mail-Plugin installiert hast.', 'psource-dsgvo')
                 );
                 ?>
-                <p><?php _e('Weißt DU, woher Du Deine E-Mail-Datenbank hast? Hast Du alle Personen in Deinen Newslettern gefragt, ob sie dem Erhalt zustimmen? GDPR erfordert, dass alle Personen in Deiner E-Mail-Software Dir die ausdrückliche Erlaubnis erteilt haben, sie zu versenden.', PS_DSGVO_C_SLUG); ?></p>
+                <p><?php _e('Weißt DU, woher Du Deine E-Mail-Datenbank hast? Hast Du alle Personen in Deinen Newslettern gefragt, ob sie dem Erhalt zustimmen? GDPR erfordert, dass alle Personen in Deiner E-Mail-Software Dir die ausdrückliche Erlaubnis erteilt haben, sie zu versenden.', 'psource-dsgvo'); ?></p>
             </div>
         <?php endif; ?>
-        <p><?php _e('Im Folgenden fragen wir Dich, welche privaten Daten Du derzeit sammelst, und geben Dir Tipps zur Einhaltung.', PS_DSGVO_C_SLUG); ?></p>
+        <p><?php _e('Im Folgenden fragen wir Dich, welche privaten Daten Du derzeit sammelst, und geben Dir Tipps zur Einhaltung.', 'psource-dsgvo'); ?></p>
         <ul class="psdsgvo-list">
             <?php
             foreach (Helper::getCheckList() as $id => $check) :
@@ -339,22 +339,22 @@ class Page {
         ?>
         <form method="post" action="<?php echo admin_url('options.php'); ?>" novalidate="novalidate">
             <?php settings_fields(PS_DSGVO_C_SLUG . '_settings'); ?>
-            <p><strong><?php _e('Datenschutz-Bestimmungen', PS_DSGVO_C_SLUG); ?></strong></p>
+            <p><strong><?php _e('Datenschutz-Bestimmungen', 'psource-dsgvo'); ?></strong></p>
             <div class="psdsgvo-setting">
-                <label for="<?php echo $optionNameEnablePrivacyPolicyExternal; ?>"><?php _e('Aktivieren', PS_DSGVO_C_SLUG); ?></label>
+                <label for="<?php echo $optionNameEnablePrivacyPolicyExternal; ?>"><?php _e('Aktivieren', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <label><input type="checkbox" name="<?php echo $optionNameEnablePrivacyPolicyExternal; ?>"
                                   id="<?php echo $optionNameEnablePrivacyPolicyExternal; ?>" value="1"
-                                  tabindex="1" <?php checked(true, $enablePrivacyPolicyExternal); ?> /> <?php _e('Aktiviere externe Links', PS_DSGVO_C_SLUG); ?>
+                                  tabindex="1" <?php checked(true, $enablePrivacyPolicyExternal); ?> /> <?php _e('Aktiviere externe Links', 'psource-dsgvo'); ?>
                     </label>
                     <div class="psdsgvo-information">
                         <div class="psdsgvo-message psdsgvo-message--notice">
                             <?php
                             printf(
                                 '<p><strong>%s:</strong> %s</p>',
-                                strtoupper(__('Hinweis', PS_DSGVO_C_SLUG)),
+                                strtoupper(__('Hinweis', 'psource-dsgvo')),
                                 sprintf(
-                                    __('Wenn Du dies aktivierst, kannst Du externe Datenschutzrichtlinieninstanzen verwenden', PS_DSGVO_C_SLUG)
+                                    __('Wenn Du dies aktivierst, kannst Du externe Datenschutzrichtlinieninstanzen verwenden', 'psource-dsgvo')
                                 )
                             );
                             ?>
@@ -367,9 +367,9 @@ class Page {
                                     <?php
                                     printf(
                                         '<p><strong>%s:</strong> %s</p>',
-                                        strtoupper(__('Hinweis', PS_DSGVO_C_SLUG)),
+                                        strtoupper(__('Hinweis', 'psource-dsgvo')),
                                         sprintf(
-                                            __('Derzeit ist keine Seite mit Datenschutzrichtlinien ausgewählt', PS_DSGVO_C_SLUG)
+                                            __('Derzeit ist keine Seite mit Datenschutzrichtlinien ausgewählt', 'psource-dsgvo')
                                         )
                                     );
                                     ?>
@@ -381,7 +381,7 @@ class Page {
             </div>
             <?php if ($enablePrivacyPolicyExternal) : ?>
                 <div class="psdsgvo-setting">
-                    <label for="<?php echo $optionNamePrivacyPolicyLink; ?>"><?php _e('Link zur externen Datenschutzrichtlinie', PS_DSGVO_C_SLUG); ?></label>
+                    <label for="<?php echo $optionNamePrivacyPolicyLink; ?>"><?php _e('Link zur externen Datenschutzrichtlinie', 'psource-dsgvo'); ?></label>
                     <div class="psdsgvo-options">
                         <input type="url" name="<?php echo $optionNamePrivacyPolicyLink; ?>" class="regular-text"
                                id="<?php echo $optionNamePrivacyPolicyLink; ?>"
@@ -391,12 +391,12 @@ class Page {
                 </div>
             <?php else: ?>
                 <div class="psdsgvo-setting">
-                    <label for="<?php echo $optionNamePrivacyPolicyPage; ?>"><?php _e('Datenschutz-Bestimmungen', PS_DSGVO_C_SLUG); ?></label>
+                    <label for="<?php echo $optionNamePrivacyPolicyPage; ?>"><?php _e('Datenschutz-Bestimmungen', 'psource-dsgvo'); ?></label>
                     <div class="psdsgvo-options">
                         <?php
                         wp_dropdown_pages(array(
                             'post_status' => 'publish,private,draft',
-                            'show_option_none' => __('Wähle eine Option', PS_DSGVO_C_SLUG),
+                            'show_option_none' => __('Wähle eine Option', 'psource-dsgvo'),
                             'name' => $optionNamePrivacyPolicyPage,
                             'selected' => $privacyPolicyPage
                         ));
@@ -405,32 +405,32 @@ class Page {
                 </div>
             <?php endif; ?>
             <div class="psdsgvo-setting">
-                <label for="<?php echo $optionNamePrivacyPolicyText; ?>"><?php _e('Link Text', PS_DSGVO_C_SLUG); ?></label>
+                <label for="<?php echo $optionNamePrivacyPolicyText; ?>"><?php _e('Link Text', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <input type="text" name="<?php echo $optionNamePrivacyPolicyText; ?>" class="regular-text"
                            id="<?php echo $optionNamePrivacyPolicyText; ?>"
                            placeholder="<?php echo $privacyPolicyText; ?>" value="<?php echo $privacyPolicyText; ?>"/>
                 </div>
             </div>
-            <p><strong><?php _e('Benutzerdaten anfordern', PS_DSGVO_C_SLUG); ?></strong></p>
+            <p><strong><?php _e('Benutzerdaten anfordern', 'psource-dsgvo'); ?></strong></p>
             <div class="psdsgvo-information">
-                <p><?php _e('Ermögliche den Besuchern Deiner Webseite, ihre in der WordPress-Datenbank gespeicherten Daten anzufordern (Kommentare, WooCommerce-Bestellungen usw.). Die gefundenen Daten werden an ihre E-Mail-Adresse gesendet und ermöglichen es ihnen, eine zusätzliche Anfrage zur Anonymisierung der Daten zu stellen.', PS_DSGVO_C_SLUG); ?></p>
+                <p><?php _e('Ermögliche den Besuchern Deiner Webseite, ihre in der ClasicPress-Datenbank gespeicherten Daten anzufordern (Kommentare, WooCommerce-Bestellungen usw.). Die gefundenen Daten werden an ihre E-Mail-Adresse gesendet und ermöglichen es ihnen, eine zusätzliche Anfrage zur Anonymisierung der Daten zu stellen.', 'psource-dsgvo'); ?></p>
             </div>
             <div class="psdsgvo-setting">
-                <label for="<?php echo $optionNameEnableAccessRequest; ?>"><?php _e('Aktivieren', PS_DSGVO_C_SLUG); ?></label>
+                <label for="<?php echo $optionNameEnableAccessRequest; ?>"><?php _e('Aktivieren', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <label><input type="checkbox" name="<?php echo $optionNameEnableAccessRequest; ?>"
                                   id="<?php echo $optionNameEnableAccessRequest; ?>" value="1"
-                                  tabindex="1" <?php checked(true, $enableAccessRequest); ?> /> <?php _e('Seite aktivieren', PS_DSGVO_C_SLUG); ?>
+                                  tabindex="1" <?php checked(true, $enableAccessRequest); ?> /> <?php _e('Seite aktivieren', 'psource-dsgvo'); ?>
                     </label>
                     <div class="psdsgvo-information">
                         <div class="psdsgvo-message psdsgvo-message--notice">
                             <?php
                             printf(
                                 '<p><strong>%s:</strong> %s</p>',
-                                strtoupper(__('Hinweis', PS_DSGVO_C_SLUG)),
+                                strtoupper(__('Hinweis', 'psource-dsgvo')),
                                 sprintf(
-                                    __('Wenn Du dies aktivierst, wird eine private Seite erstellt, die den erforderlichen Shortcode enthält: %s. Du kannst selbst bestimmen, wann und wie diese Seite veröffentlicht werden soll.', PS_DSGVO_C_SLUG),
+                                    __('Wenn Du dies aktivierst, wird eine private Seite erstellt, die den erforderlichen Shortcode enthält: %s. Du kannst selbst bestimmen, wann und wie diese Seite veröffentlicht werden soll.', 'psource-dsgvo'),
                                     '<span class="psdsgvo-pre"><strong>[psdsgvo_access_request_form]</strong></span>'
                                 )
                             );
@@ -441,25 +441,25 @@ class Page {
             </div>
             <?php if ($enableAccessRequest) : ?>
                 <div class="psdsgvo-setting">
-                    <label for="<?php echo $optionNameAccessRequestPage; ?>"><?php _e('Seite', PS_DSGVO_C_SLUG); ?></label>
+                    <label for="<?php echo $optionNameAccessRequestPage; ?>"><?php _e('Seite', 'psource-dsgvo'); ?></label>
                     <div class="psdsgvo-options">
                         <?php
                         wp_dropdown_pages(array(
                             'post_status' => 'publish,private,draft',
-                            'show_option_none' => __('Wähle eine Option', PS_DSGVO_C_SLUG),
+                            'show_option_none' => __('Wähle eine Option', 'psource-dsgvo'),
                             'name' => $optionNameAccessRequestPage,
                             'selected' => $accessRequestPage
                         ));
                         ?>
                         <?php if (!empty($accessRequestPage)) : ?>
                             <div class="psdsgvo-information">
-                                <?php printf('<p><a href="%s">%s</a></p>', get_edit_post_link($accessRequestPage), __('Klicke hier, um diese Seite zu bearbeiten', PS_DSGVO_C_SLUG)); ?>
+                                <?php printf('<p><a href="%s">%s</a></p>', get_edit_post_link($accessRequestPage), __('Klicke hier, um diese Seite zu bearbeiten', 'psource-dsgvo')); ?>
                             </div>
                         <?php endif; ?>
                     </div>
                 </div>
                 <div class="psdsgvo-setting">
-                    <label for="<?php echo $optionNameAccessRequestFormCheckboxText; ?>"><?php _e('Kontrollkästchentext', PS_DSGVO_C_SLUG); ?></label>
+                    <label for="<?php echo $optionNameAccessRequestFormCheckboxText; ?>"><?php _e('Kontrollkästchentext', 'psource-dsgvo'); ?></label>
                     <div class="psdsgvo-options">
                         <input type="text" name="<?php echo $optionNameAccessRequestFormCheckboxText; ?>"
                                class="regular-text" id="<?php echo $optionNameAccessRequestFormCheckboxText; ?>"
@@ -468,7 +468,7 @@ class Page {
                     </div>
                 </div>
                 <div class="psdsgvo-setting">
-                    <label for="<?php echo $optionNameDeleteRequestFormExplanationText; ?>"><?php _e('Erklärung der Anonymisierungsanfrage', PS_DSGVO_C_SLUG); ?></label>
+                    <label for="<?php echo $optionNameDeleteRequestFormExplanationText; ?>"><?php _e('Erklärung der Anonymisierungsanfrage', 'psource-dsgvo'); ?></label>
                     <div class="psdsgvo-options">
                         <textarea name="<?php echo $optionNameDeleteRequestFormExplanationText; ?>" rows="5"
                                   id="<?php echo $optionNameAccessRequestFormCheckboxText; ?>"
@@ -477,19 +477,19 @@ class Page {
                     </div>
                 </div>
             <?php endif; ?>
-            <p><strong><?php _e('Zustimmung', PS_DSGVO_C_SLUG); ?></strong></p>
+            <p><strong><?php _e('Zustimmung', 'psource-dsgvo'); ?></strong></p>
             <div class="psdsgvo-information">
-                <p><?php _e('Deine Besucher können über eine Zustimmungsleiste am unteren Bildschirmrand allen erstellten Zustimmungen (Skripten) die Berechtigung erteilen. Dort können sie auch auf ihre persönlichen Einstellungen zugreifen, um einzelnen Zustimmungen die Erlaubnis zu erteilen oder zu verweigern. Sobald ihre Einstellungen gespeichert sind, verschwindet die Leiste für 365 Tage.', PS_DSGVO_C_SLUG); ?></p>
+                <p><?php _e('Deine Besucher können über eine Zustimmungsleiste am unteren Bildschirmrand allen erstellten Zustimmungen (Skripten) die Berechtigung erteilen. Dort können sie auch auf ihre persönlichen Einstellungen zugreifen, um einzelnen Zustimmungen die Erlaubnis zu erteilen oder zu verweigern. Sobald ihre Einstellungen gespeichert sind, verschwindet die Leiste für 365 Tage.', 'psource-dsgvo'); ?></p>
                 <div class="psdsgvo-message psdsgvo-message--notice">
                     <?php
                     printf(
                         '<p><strong>%s:</strong> %s</p>',
-                        strtoupper(__('Hinweis', PS_DSGVO_C_SLUG)),
+                        strtoupper(__('Hinweis', 'psource-dsgvo')),
                         sprintf(
-                            __('Lasse Deine Besucher erneut auf ihre Einstellungen zugreifen, indem Du einen Link zum Modal mit dem Shortcode %s platzierst oder die Klasse "%s" zu einem Menüelement hinzufügst.', PS_DSGVO_C_SLUG),
+                            __('Lasse Deine Besucher erneut auf ihre Einstellungen zugreifen, indem Du einen Link zum Modal mit dem Shortcode %s platzierst oder die Klasse "%s" zu einem Menüelement hinzufügst.', 'psource-dsgvo'),
                             sprintf(
                                 '<span class="psdsgvo-pre"><strong>[psdsgvo_consents_settings_link]<em>%s</em>[/psdsgvo_consents_settings_link]</strong></span>',
-                                __('Meine Einstellungen', PS_DSGVO_C_SLUG)
+                                __('Meine Einstellungen', 'psource-dsgvo')
                             ),
                             '<span class="psdsgvo-pre"><strong>psdsgvo-consents-settings-link</strong></span>'
                         )
@@ -498,7 +498,7 @@ class Page {
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="<?php echo htmlspecialchars($optionNameConsentsBarExplanationText); ?>"><?php _e('Leiste: Erläuterung', PS_DSGVO_C_SLUG); ?></label>
+                <label for="<?php echo htmlspecialchars($optionNameConsentsBarExplanationText); ?>"><?php _e('Leiste: Erläuterung', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <textarea name="<?php echo htmlspecialchars($optionNameConsentsBarExplanationText); ?>" rows="2"
                               id="<?php echo htmlspecialchars($optionNameConsentsBarExplanationText); ?>"
@@ -506,7 +506,7 @@ class Page {
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="<?php echo htmlspecialchars($optionNameConsentsBarMoreInformationText); ?>"><?php _e('Leiste: Weitere Informationen Text', PS_DSGVO_C_SLUG); ?></label>
+                <label for="<?php echo htmlspecialchars($optionNameConsentsBarMoreInformationText); ?>"><?php _e('Leiste: Weitere Informationen Text', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <input type="text" name="<?php echo htmlspecialchars($optionNameConsentsBarMoreInformationText); ?>"
                             class="regular-text" id="<?php echo htmlspecialchars($optionNameConsentsBarMoreInformationText); ?>"
@@ -515,7 +515,7 @@ class Page {
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="<?php echo htmlspecialchars($optionNameConsentsBarButtonText); ?>"><?php _e('Leiste: Schaltflächentext akzeptieren', PS_DSGVO_C_SLUG); ?></label>
+                <label for="<?php echo htmlspecialchars($optionNameConsentsBarButtonText); ?>"><?php _e('Leiste: Schaltflächentext akzeptieren', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <input type="text" name="<?php echo htmlspecialchars($optionNameConsentsBarButtonText); ?>"
                             class="regular-text" id="<?php echo htmlspecialchars($optionNameConsentsBarButtonText); ?>"
@@ -524,21 +524,21 @@ class Page {
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="<?php echo $optionNameLeisteFarbe; ?>"><?php _e('Leiste Farbe', PS_DSGVO_C_SLUG); ?></label>
+                <label for="<?php echo $optionNameLeisteFarbe; ?>"><?php _e('Leiste Farbe', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <input type="color" name="<?php echo $optionNameLeisteFarbe; ?>"
                            id="<?php echo $optionNameLeisteFarbe; ?>" value="<?php echo $barColor; ?>">
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="<?php echo $optionNameBarTextColor; ?>"><?php _e('Leiste Textfarbe', PS_DSGVO_C_SLUG); ?></label>
+                <label for="<?php echo $optionNameBarTextColor; ?>"><?php _e('Leiste Textfarbe', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <input type="color" name="<?php echo $optionNameBarTextColor; ?>"
                            id="<?php echo $optionNameBarTextColor; ?>" value="<?php echo $barTextColor; ?>">
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="<?php echo $optionNameBarButtonColorPrimary; ?>"><?php _e('Button Background Color', PS_DSGVO_C_SLUG); ?></label>
+                <label for="<?php echo $optionNameBarButtonColorPrimary; ?>"><?php _e('Button Background Color', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <input type="color" name="<?php echo $optionNameBarButtonColorPrimary; ?>"
                            id="<?php echo $optionNameBarButtonColorPrimary; ?>"
@@ -546,7 +546,7 @@ class Page {
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="<?php echo $optionNameBarButtonColorSecondary; ?>"><?php _e('Button Text Color', PS_DSGVO_C_SLUG); ?></label>
+                <label for="<?php echo $optionNameBarButtonColorSecondary; ?>"><?php _e('Button Text Color', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <input type="color" name="<?php echo $optionNameBarButtonColorSecondary; ?>"
                            id="<?php echo $optionNameBarButtonColorSecondary; ?>"
@@ -554,7 +554,7 @@ class Page {
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="<?php echo htmlspecialchars($optionNameConsentsModalTitle); ?>"><?php _e('Modal: Title', PS_DSGVO_C_SLUG); ?></label>
+                <label for="<?php echo htmlspecialchars($optionNameConsentsModalTitle); ?>"><?php _e('Modal: Title', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <input type="text" name="<?php echo htmlspecialchars($optionNameConsentsModalTitle); ?>"
                            class="regular-text" id="<?php echo htmlspecialchars($optionNameConsentsModalTitle); ?>"
@@ -563,7 +563,7 @@ class Page {
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="<?php echo htmlspecialchars($optionNameConsentsModalExplanationText); ?>"><?php _e('Modal: Erklärung', PS_DSGVO_C_SLUG); ?></label>
+                <label for="<?php echo htmlspecialchars($optionNameConsentsModalExplanationText); ?>"><?php _e('Modal: Erklärung', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <textarea name="<?php echo htmlspecialchars($optionNameConsentsModalExplanationText); ?>" rows="5"
                               id="<?php echo htmlspecialchars($optionNameConsentsModalExplanationText); ?>"
@@ -607,49 +607,49 @@ class Page {
         ?>
         <form method="post" action="">
             <?php wp_nonce_field('consent_create_or_update', 'consent_nonce'); ?>
-            <p><strong><?php _e('Neue Zustimmung hinzufügen', PS_DSGVO_C_SLUG); ?></strong></p>
+            <p><strong><?php _e('Neue Zustimmung hinzufügen', 'psource-dsgvo'); ?></strong></p>
             <div class="psdsgvo-setting">
-                <label for="psdsgvo_active"><?php _e('Aktiv', PS_DSGVO_C_SLUG); ?></label>
+                <label for="psdsgvo_active"><?php _e('Aktiv', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <label><input type="checkbox" name="active" id="psdsgvo_active"
-                                  value="1" <?php checked(1, $consent->getActive()); ?> /> <?php _e('Ja', PS_DSGVO_C_SLUG); ?>
+                                  value="1" <?php checked(1, $consent->getActive()); ?> /> <?php _e('Ja', 'psource-dsgvo'); ?>
                     </label>
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="psdsgvo_title"><?php _e('Titel', PS_DSGVO_C_SLUG); ?></label>
+                <label for="psdsgvo_title"><?php _e('Titel', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <input type="text" name="title" class="regular-text" id="psdsgvo_title"
                            value="<?php echo $consent->getTitle(); ?>" required="required"/>
                     <div class="psdsgvo-information">
-                        <p><?php _e('z.B. "Google Analytics" oder "Werbung""', PS_DSGVO_C_SLUG); ?></p>
+                        <p><?php _e('z.B. "Google Analytics" oder "Werbung""', 'psource-dsgvo'); ?></p>
                     </div>
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="psdsgvo_description"><?php _e('Beschreibung', PS_DSGVO_C_SLUG); ?></label>
+                <label for="psdsgvo_description"><?php _e('Beschreibung', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <textarea name="description" id="psdsgvo_description" rows="5" autocomplete="false"
                               autocorrect="false" autocapitalize="false"
                               spellcheck="false"><?php echo $consent->getDescription(); ?></textarea>
                     <div class="psdsgvo-information">
-                        <p><?php _e('Beschreibe Dein Einwilligungsskript so gründlich wie möglich. %privacy_policy% funktioniert nicht.', PS_DSGVO_C_SLUG); ?></p>
+                        <p><?php _e('Beschreibe Dein Einwilligungsskript so gründlich wie möglich. %privacy_policy% funktioniert nicht.', 'psource-dsgvo'); ?></p>
                     </div>
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="psdsgvo_snippet"><?php _e('Code-Auszug', PS_DSGVO_C_SLUG); ?></label>
+                <label for="psdsgvo_snippet"><?php _e('Code-Auszug', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <textarea name="snippet" id="psdsgvo_snippet" rows="10" autocomplete="false" autocorrect="false"
                               autocapitalize="false"
                               spellcheck="false"><?php echo htmlspecialchars($consent->getSnippet(), ENT_QUOTES, get_option('blog_charset')); ?></textarea>
                     <div class="psdsgvo-information">
-                        <p><?php _e('Codefragmente für Google Analytics, Facebook Pixel usw..', PS_DSGVO_C_SLUG); ?></p>
+                        <p><?php _e('Codefragmente für Google Analytics, Facebook Pixel usw..', 'psource-dsgvo'); ?></p>
                     </div>
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="psdsgvo_code_wrap"><?php _e('Code Wrapper', PS_DSGVO_C_SLUG); ?></label>
+                <label for="psdsgvo_code_wrap"><?php _e('Code Wrapper', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <select name="wrap" id="psdsgvo_code_wrap">
                         <?php
@@ -666,7 +666,7 @@ class Page {
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="psdsgvo_placement"><?php _e('Platzierung', PS_DSGVO_C_SLUG); ?></label>
+                <label for="psdsgvo_placement"><?php _e('Platzierung', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <select name="placement" id="psdsgvo_placement">
                         <?php
@@ -684,38 +684,38 @@ class Page {
                         <?php
                         printf(
                             '<strong>%s:</strong> %s<br />',
-                            strtoupper(__('Header', PS_DSGVO_C_SLUG)),
-                            __('Das Snippet wird am Ende des HEAD-Tags hinzugefügt.', PS_DSGVO_C_SLUG)
+                            strtoupper(__('Header', 'psource-dsgvo')),
+                            __('Das Snippet wird am Ende des HEAD-Tags hinzugefügt.', 'psource-dsgvo')
                         );
                         printf(
                             '<strong>%s:</strong> %s<br />',
-                            strtoupper(__('Body', PS_DSGVO_C_SLUG)),
-                            __('Das Snippet wird direkt nach dem BODY-Tag hinzugefügt.', PS_DSGVO_C_SLUG)
+                            strtoupper(__('Body', 'psource-dsgvo')),
+                            __('Das Snippet wird direkt nach dem BODY-Tag hinzugefügt.', 'psource-dsgvo')
                         );
                         printf(
                             '<strong>%s:</strong> %s',
-                            strtoupper(__('Footer', PS_DSGVO_C_SLUG)),
-                            __('Das Snippet wird am Ende des BODY-Tags hinzugefügt.', PS_DSGVO_C_SLUG)
+                            strtoupper(__('Footer', 'psource-dsgvo')),
+                            __('Das Snippet wird am Ende des BODY-Tags hinzugefügt.', 'psource-dsgvo')
                         );
                         ?>
                     </div>
                 </div>
             </div>
             <div class="psdsgvo-setting">
-                <label for="psdsgvo_active"><?php _e('Erforderlich', PS_DSGVO_C_SLUG); ?></label>
+                <label for="psdsgvo_active"><?php _e('Erforderlich', 'psource-dsgvo'); ?></label>
                 <div class="psdsgvo-options">
                     <label><input type="checkbox" name="required" id="psdsgvo-required"
-                                  value="1" <?php checked(1, $consent->getRequired()); ?> /> <?php _e('Ja', PS_DSGVO_C_SLUG); ?>
+                                  value="1" <?php checked(1, $consent->getRequired()); ?> /> <?php _e('Ja', 'psource-dsgvo'); ?>
                     </label>
                     <div class="psdsgvo-information">
-                        <p><?php _e('Wenn Du dieses Kontrollkästchen aktivierst, wird diese Zustimmung immer ausgelöst, sodass Benutzer sich nicht anmelden oder abmelden können.', PS_DSGVO_C_SLUG); ?></p>
+                        <p><?php _e('Wenn Du dieses Kontrollkästchen aktivierst, wird diese Zustimmung immer ausgelöst, sodass Benutzer sich nicht anmelden oder abmelden können.', 'psource-dsgvo'); ?></p>
                     </div>
                 </div>
             </div>
             <p class="submit">
-                <?php submit_button((!empty($consentId) ? __('Aktualisieren', PS_DSGVO_C_SLUG) : __('Hinzufügen', PS_DSGVO_C_SLUG)), 'primary', 'submit', false); ?>
+                <?php submit_button((!empty($consentId) ? __('Aktualisieren', 'psource-dsgvo') : __('Hinzufügen', 'psource-dsgvo')), 'primary', 'submit', false); ?>
                 <a class="button button-secondary"
-                   href="<?php echo Helper::getPluginAdminUrl('consents'); ?>"><?php _e('Zurück zur Übersicht', PS_DSGVO_C_SLUG); ?></a>
+                   href="<?php echo Helper::getPluginAdminUrl('consents'); ?>"><?php _e('Zurück zur Übersicht', 'psource-dsgvo'); ?></a>
             </p>
         </form>
         <?php
@@ -734,28 +734,28 @@ class Page {
         $consents = Consent::getInstance()->getList(array(), $limit, $offset);
         ?>
         <div class="psdsgvo-message psdsgvo-message--notice">
-            <p><?php _e('Bitte Deine Besucher um Erlaubnis, bestimmte Skripte für Tracking- oder Werbezwecke zu aktivieren. Füge für jeden Skripttyp, für den Du eine Berechtigung anforderst, eine Zustimmung hinzu. Skripte werden nur aktiviert, wenn die Erlaubnis erteilt wurde.', PS_DSGVO_C_SLUG); ?></p>
+            <p><?php _e('Bitte Deine Besucher um Erlaubnis, bestimmte Skripte für Tracking- oder Werbezwecke zu aktivieren. Füge für jeden Skripttyp, für den Du eine Berechtigung anforderst, eine Zustimmung hinzu. Skripte werden nur aktiviert, wenn die Erlaubnis erteilt wurde.', 'psource-dsgvo'); ?></p>
             <p><a class="button button-primary"
-                  href="<?php echo Helper::getPluginAdminUrl('consents', array('action' => 'create')); ?>"><?php _ex('Neue hinzufügen', 'consent', PS_DSGVO_C_SLUG); ?></a>
+                  href="<?php echo Helper::getPluginAdminUrl('consents', array('action' => 'create')); ?>"><?php _ex('Neue hinzufügen', 'consent', 'psource-dsgvo'); ?></a>
             </p>
         </div>
         <div class="psdsgvo-message psdsgvo-message--notice">
-            <p><?php _e('Klicke auf diese Schaltfläche, wenn Du die Zustimmungsleiste zurücksetzen möchtest. Dies bedeutet, dass die Zustimmungsleiste für alle Benutzer erneut angezeigt wird.', PS_DSGVO_C_SLUG); ?></p>
+            <p><?php _e('Klicke auf diese Schaltfläche, wenn Du die Zustimmungsleiste zurücksetzen möchtest. Dies bedeutet, dass die Zustimmungsleiste für alle Benutzer erneut angezeigt wird.', 'psource-dsgvo'); ?></p>
             <form method="post">
-                <button type="submit" class="button button-primary" name="reset-cookie-bar">Zustimmungsleiste zurücksetzen</button>
+                <button type="submit" class="button button-primary" name="reset-cookie-bar"><?php esc_html_e('Zustimmungsleiste zurücksetzen', 'psource-dsgvo'); ?></button>
             </form>
         </div>
         <?php if (!empty($consents)) : ?>
             <table class="psdsgvo-table">
                 <thead>
                 <tr>
-                    <th scope="col" width="10%"><?php _e('Zustimmung', PS_DSGVO_C_SLUG); ?></th>
-                    <th scope="col" width="16%"><?php _e('Titel', PS_DSGVO_C_SLUG); ?></th>
-                    <th scope="col" width="12%"><?php _e('Erforderlich', PS_DSGVO_C_SLUG); ?></th>
-                    <th scope="col" width="20%"><?php _e('Geändert am', PS_DSGVO_C_SLUG); ?></th>
-                    <th scope="col" width="20%"><?php _e('Erstellt am', PS_DSGVO_C_SLUG); ?></th>
-                    <th scope="col" width="14%"><?php _e('Aktion', PS_DSGVO_C_SLUG); ?></th>
-                    <th scope="col" width="8%"><?php _e('Aktiv', PS_DSGVO_C_SLUG); ?></th>
+                    <th scope="col" width="10%"><?php _e('Zustimmung', 'psource-dsgvo'); ?></th>
+                    <th scope="col" width="16%"><?php _e('Titel', 'psource-dsgvo'); ?></th>
+                    <th scope="col" width="12%"><?php _e('Erforderlich', 'psource-dsgvo'); ?></th>
+                    <th scope="col" width="20%"><?php _e('Geändert am', 'psource-dsgvo'); ?></th>
+                    <th scope="col" width="20%"><?php _e('Erstellt am', 'psource-dsgvo'); ?></th>
+                    <th scope="col" width="14%"><?php _e('Aktion', 'psource-dsgvo'); ?></th>
+                    <th scope="col" width="8%"><?php _e('Aktiv', 'psource-dsgvo'); ?></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -770,11 +770,11 @@ class Page {
                             printf(
                                 '<a href="%s">%s</a>',
                                 Consent::getActionUrl($consent->getId()),
-                                ((!empty($title)) ? $title : __('(kein Titel)', PS_DSGVO_C_SLUG))
+                                ((!empty($title)) ? $title : __('(kein Titel)', 'psource-dsgvo'))
                             );
                             ?>
                         </td>
-                        <td><?php echo ($consent->getRequired()) ? __('Ja', PS_DSGVO_C_SLUG) : __('Nein', PS_DSGVO_C_SLUG); ?></td>
+                        <td><?php echo ($consent->getRequired()) ? __('Ja', 'psource-dsgvo') : __('Nein', 'psource-dsgvo'); ?></td>
                         <td><?php echo $consent->getDateModified(); ?></td>
                         <td><?php echo $consent->getDateCreated(); ?></td>
                         <td>
@@ -784,17 +784,17 @@ class Page {
                                 sprintf(
                                     '<a href="%s">%s</a>',
                                     Consent::getActionUrl($consent->getId()),
-                                    __('Bearbeiten', PS_DSGVO_C_SLUG)
+                                    __('Bearbeiten', 'psource-dsgvo')
                                 ),
                                 sprintf(
                                     '<a href="%s">%s</a>',
                                     Consent::getActionUrl($consent->getId(), 'delete'),
-                                    __('Entfernen', PS_DSGVO_C_SLUG)
+                                    __('Entfernen', 'psource-dsgvo')
                                 )
                             );
                             ?>
                         </td>
-                        <td><?php echo ($consent->getActive()) ? __('Ja', PS_DSGVO_C_SLUG) : __('Nein', PS_DSGVO_C_SLUG); ?></td>
+                        <td><?php echo ($consent->getActive()) ? __('Ja', 'psource-dsgvo') : __('Nein', 'psource-dsgvo'); ?></td>
                     </tr>
                 <?php
                 endforeach;
@@ -817,11 +817,11 @@ class Page {
                     'before_page_number' => '<span>',
                     'after_page_number' => '</span>'
                 ));
-                printf('<span class="psdsgvo-pagination__results">%s</span>', sprintf(__('%d von %d Ergebnisse gefunden', PS_DSGVO_C_SLUG), count($consents), $total));
+                printf('<span class="psdsgvo-pagination__results">%s</span>', sprintf(__('%d von %d Ergebnisse gefunden', 'psource-dsgvo'), count($consents), $total));
                 ?>
             </div>
         <?php else : ?>
-            <p><strong><?php _e('Keine Einwilligungen gefunden.', PS_DSGVO_C_SLUG); ?></strong></p>
+            <p><strong><?php _e('Keine Einwilligungen gefunden.', 'psource-dsgvo'); ?></strong></p>
         <?php endif; ?>
         <?php
     }
@@ -845,19 +845,19 @@ class Page {
         if (!empty($requests)) :
             ?>
             <div class="psdsgvo-message psdsgvo-message--notice">
-                <p><?php _e('Anonymisiere eine Anfrage, indem Du das Kontrollkästchen aktivierst und unten auf die grüne Schaltfläche zum Anonymisieren klickst.', PS_DSGVO_C_SLUG); ?></p>
+                <p><?php _e('Anonymisiere eine Anfrage, indem Du das Kontrollkästchen aktivierst und unten auf die grüne Schaltfläche zum Anonymisieren klickst.', 'psource-dsgvo'); ?></p>
                 <p>
-                    <?php printf('<strong>%s:</strong> %s', __('WordPress Benutzer', PS_DSGVO_C_SLUG), 'Anonymisiert Vor- und Nachnamen, Anzeigenamen, Spitznamen und E-Mail-Adresse.', PS_DSGVO_C_SLUG); ?>
+                    <?php printf('<strong>%s:</strong> %s', __('ClasicPress Benutzer', 'psource-dsgvo'), __('Anonymisiert Vor- und Nachnamen, Anzeigenamen, Spitznamen und E-Mail-Adresse.', 'psource-dsgvo')); ?>
                     <br/>
-                    <?php printf('<strong>%s:</strong> %s', __('WordPress Kommentare', PS_DSGVO_C_SLUG), 'Anonymisiert Autorennamen, E-Mail-Adresse und IP-Adresse.', PS_DSGVO_C_SLUG); ?>
+                    <?php printf('<strong>%s:</strong> %s', __('ClasicPress Kommentare', 'psource-dsgvo'), __('Anonymisiert Autorennamen, E-Mail-Adresse und IP-Adresse.', 'psource-dsgvo')); ?>
                     <br/>
-                    <?php printf('<strong>%s:</strong> %s', __('WooCommerce', PS_DSGVO_C_SLUG), 'Anonymisiert Rechnungs- und Versanddetails pro Bestellung.', PS_DSGVO_C_SLUG); ?>
+                    <?php printf('<strong>%s:</strong> %s', __('WooCommerce', 'psource-dsgvo'), __('Anonymisiert Rechnungs- und Versanddetails pro Bestellung.', 'psource-dsgvo')); ?>
                 </p>
                 <?php
                 printf(
                     '<p><strong>%s:</strong> %s</p>',
-                    strtoupper(__('Hinweis', PS_DSGVO_C_SLUG)),
-                    sprintf(__('Anfragen werden nach %d Tagen automatisch anonymisiert.', PS_DSGVO_C_SLUG), 30)
+                    strtoupper(__('Hinweis', 'psource-dsgvo')),
+                    sprintf(__('Anfragen werden nach %d Tagen automatisch anonymisiert.', 'psource-dsgvo'), 30)
                 );
                 ?>
             </div>
@@ -867,12 +867,12 @@ class Page {
                 <table class="psdsgvo-table">
                     <thead>
                     <tr>
-                        <th scope="col" width="10%"><?php _e('Anfrage', PS_DSGVO_C_SLUG); ?></th>
-                        <th scope="col" width="22%"><?php _e('Typ', PS_DSGVO_C_SLUG); ?></th>
-                        <th scope="col" width="18%"><?php _e('IP Addresse', PS_DSGVO_C_SLUG); ?></th>
-                        <th scope="col" width="22%"><?php _e('Datum', PS_DSGVO_C_SLUG); ?></th>
-                        <th scope="col" width="12%"><?php _e('Verarbeitet', PS_DSGVO_C_SLUG); ?></th>
-                        <th scope="col" width="10%"><?php _e('Aktion', PS_DSGVO_C_SLUG); ?></th>
+                        <th scope="col" width="10%"><?php _e('Anfrage', 'psource-dsgvo'); ?></th>
+                        <th scope="col" width="22%"><?php _e('Typ', 'psource-dsgvo'); ?></th>
+                        <th scope="col" width="18%"><?php _e('IP Addresse', 'psource-dsgvo'); ?></th>
+                        <th scope="col" width="22%"><?php _e('Datum', 'psource-dsgvo'); ?></th>
+                        <th scope="col" width="12%"><?php _e('Verarbeitet', 'psource-dsgvo'); ?></th>
+                        <th scope="col" width="10%"><?php _e('Aktion', 'psource-dsgvo'); ?></th>
                         <th scope="col" width="6%"><input type="checkbox" class="psdsgvo-select-all"/></th>
                     </tr>
                     </thead>
@@ -893,9 +893,9 @@ class Page {
                             <td>
                                 <?php
                                 if ($request->getDataId() !== 0 && !$request->isAnonymised()) {
-                                    printf('<a target="_blank" href="%s">%s</a>', $request->getManageUrl(), __('Ansicht', PS_DSGVO_C_SLUG));
+                                    printf('<a target="_blank" href="%s">%s</a>', $request->getManageUrl(), __('Ansicht', 'psource-dsgvo'));
                                 } else {
-                                    _e('N/A', PS_DSGVO_C_SLUG);
+                                    _e('N/A', 'psource-dsgvo');
                                 }
                                 ?>
                             </td>
@@ -914,7 +914,7 @@ class Page {
                     ?>
                     </tbody>
                 </table>
-                <?php submit_button(__('Ausgewählte Anfrage(n) anonymisieren', PS_DSGVO_C_SLUG), 'primary psdsgvo-remove'); ?>
+                <?php submit_button(__('Ausgewählte Anfrage(n) anonymisieren', 'psource-dsgvo'), 'primary psdsgvo-remove'); ?>
             </form>
 
             <div class="psdsgvo-pagination">
@@ -933,13 +933,13 @@ class Page {
                     'before_page_number' => '<span>',
                     'after_page_number' => '</span>'
                 ));
-                printf('<span class="psdsgvo-pagination__results">%s</span>', sprintf(__('%d von %d Ergebnisse gefunden', PS_DSGVO_C_SLUG), count($requests), $total));
+                printf('<span class="psdsgvo-pagination__results">%s</span>', sprintf(__('%d von %d Ergebnisse gefunden', 'psource-dsgvo'), count($requests), $total));
                 ?>
             </div>
         <?php
         else :
             ?>
-            <p><strong><?php _e('Keine Anfragen gefunden.', PS_DSGVO_C_SLUG); ?></strong></p>
+            <p><strong><?php _e('Keine Anfragen gefunden.', 'psource-dsgvo'); ?></strong></p>
         <?php
         endif;
         ?>
@@ -962,20 +962,20 @@ class Page {
                 <?php
                 printf(
                     '<p><strong>%s:</strong> %s</p>',
-                    strtoupper(__('Hinweis', PS_DSGVO_C_SLUG)),
-                    sprintf(__('Anfragen werden nach %d Tagen automatisch anonymisiert.', PS_DSGVO_C_SLUG), 30)
+                    strtoupper(__('Hinweis', 'psource-dsgvo')),
+                    sprintf(__('Anfragen werden nach %d Tagen automatisch anonymisiert.', 'psource-dsgvo'), 30)
                 );
                 ?>
             </div>
             <table class="psdsgvo-table">
                 <thead>
                 <tr>
-                    <th scope="col" width="10%"><?php _e('ID', PS_DSGVO_C_SLUG); ?></th>
-                    <th scope="col" width="20%"><?php _e('Anfragen zu bearbeiten', PS_DSGVO_C_SLUG); ?></th>
-                    <th scope="col" width="22%"><?php _e('Email Addresse', PS_DSGVO_C_SLUG); ?></th>
-                    <th scope="col" width="18%"><?php _e('IP Addresse', PS_DSGVO_C_SLUG); ?></th>
-                    <th scope="col" width="22%"><?php _e('Datum', PS_DSGVO_C_SLUG); ?></th>
-                    <th scope="col" width="8%"><?php _e('Status', PS_DSGVO_C_SLUG); ?></th>
+                    <th scope="col" width="10%"><?php _e('ID', 'psource-dsgvo'); ?></th>
+                    <th scope="col" width="20%"><?php _e('Anfragen zu bearbeiten', 'psource-dsgvo'); ?></th>
+                    <th scope="col" width="22%"><?php _e('Email Addresse', 'psource-dsgvo'); ?></th>
+                    <th scope="col" width="18%"><?php _e('IP Addresse', 'psource-dsgvo'); ?></th>
+                    <th scope="col" width="22%"><?php _e('Datum', 'psource-dsgvo'); ?></th>
+                    <th scope="col" width="8%"><?php _e('Status', 'psource-dsgvo'); ?></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -994,7 +994,7 @@ class Page {
                                 printf(
                                     '<a href="%s">%s</a>',
                                     Helper::getPluginAdminUrl('requests', array('id' => $request->getId())),
-                                    __('Verwalten', PS_DSGVO_C_SLUG)
+                                    __('Verwalten', 'psource-dsgvo')
                                 );
                             }
                             ?>
@@ -1002,7 +1002,7 @@ class Page {
                         <td><?php echo $request->getEmailAddress(); ?></td>
                         <td><?php echo $request->getIpAddress(); ?></td>
                         <td><?php echo $request->getDateCreated(); ?></td>
-                        <td><?php echo ($request->getExpired()) ? __('Abgelaufen', PS_DSGVO_C_SLUG) : __('Aktiv', PS_DSGVO_C_SLUG); ?></td>
+                        <td><?php echo ($request->getExpired()) ? __('Abgelaufen', 'psource-dsgvo') : __('Aktiv', 'psource-dsgvo'); ?></td>
                     </tr>
                 <?php
                 endforeach;
@@ -1025,13 +1025,13 @@ class Page {
                     'before_page_number' => '<span>',
                     'after_page_number' => '</span>'
                 ));
-                printf('<span class="psdsgvo-pagination__results">%s</span>', sprintf(__('%d von %d Ergebnisse gefunden', PS_DSGVO_C_SLUG), count($requests), $total));
+                printf('<span class="psdsgvo-pagination__results">%s</span>', sprintf(__('%d von %d Ergebnisse gefunden', 'psource-dsgvo'), count($requests), $total));
                 ?>
             </div>
         <?php
         else :
             ?>
-            <p><strong><?php _e('Keine Anfragen gefunden.', PS_DSGVO_C_SLUG); ?></strong></p>
+            <p><strong><?php _e('Keine Anfragen gefunden.', 'psource-dsgvo'); ?></strong></p>
         <?php
         endif;
     }
@@ -1043,14 +1043,14 @@ class Page {
         $embedSettings = \PSDSGVO\Includes\Extensions\ContentEmbeds::getInstance();
         $embedTypes = $embedSettings->getEmbedTypes();
         ?>
-        <p><?php _e('Verwalte externe Inhalte wie YouTube-Videos, Vimeo, Google Maps und andere Embeds. Wenn aktiviert, werden diese Inhalte durch Platzhalter ersetzt, bis der Benutzer seine Zustimmung gibt.', PS_DSGVO_C_SLUG); ?></p>
+        <p><?php _e('Verwalte externe Inhalte wie YouTube-Videos, Vimeo, Google Maps und andere Embeds. Wenn aktiviert, werden diese Inhalte durch Platzhalter ersetzt, bis der Benutzer seine Zustimmung gibt.', 'psource-dsgvo'); ?></p>
         
         <div class="psdsgvo-message psdsgvo-message--notice">
             <?php
             printf(
                 '<p><strong>%s:</strong> %s</p>',
-                strtoupper(__('Hinweis', PS_DSGVO_C_SLUG)),
-                __('Externe Inhalte werden standardmäßig blockiert und erst nach Zustimmung des Besuchers geladen. Dies hilft, die DSGVO-Konformität Ihrer Website zu verbessern.', PS_DSGVO_C_SLUG)
+                strtoupper(__('Hinweis', 'psource-dsgvo')),
+                __('Externe Inhalte werden standardmäßig blockiert und erst nach Zustimmung des Besuchers geladen. Dies hilft, die DSGVO-Konformität Ihrer Website zu verbessern.', 'psource-dsgvo')
             );
             ?>
         </div>
@@ -1073,7 +1073,7 @@ class Page {
                             <label for="<?php echo $optionName; ?>">
                                 <strong><?php echo esc_html($config['label']); ?></strong>
                             </label>
-                            <span class="psdsgvo-instructions"><?php _e('Aktivieren:', PS_DSGVO_C_SLUG); ?></span>
+                            <span class="psdsgvo-instructions"><?php _e('Aktivieren:', 'psource-dsgvo'); ?></span>
                             <div class="psdsgvo-switch" aria-hidden="true">
                                 <div class="psdsgvo-switch-label">
                                     <div class="psdsgvo-switch-inner"></div>
@@ -1089,13 +1089,13 @@ class Page {
                             </div>
                             
                             <div class="psdsgvo-setting">
-                                <label for="<?php echo $optionNameMessage; ?>"><?php _e('Platzhalter-Nachricht', PS_DSGVO_C_SLUG); ?></label>
+                                <label for="<?php echo $optionNameMessage; ?>"><?php _e('Platzhalter-Nachricht', 'psource-dsgvo'); ?></label>
                                 <div class="psdsgvo-options">
                                     <textarea name="<?php echo $optionNameMessage; ?>" rows="3"
                                               class="regular-text" id="<?php echo $optionNameMessage; ?>"
                                               placeholder="<?php echo esc_attr($embedSettings->getPlaceholderMessage($typeId)); ?>"><?php echo esc_textarea($customMessage); ?></textarea>
                                     <p class="description">
-                                        <?php _e('Diese Nachricht wird angezeigt, wenn der Inhalt blockiert ist.', PS_DSGVO_C_SLUG); ?>
+                                        <?php _e('Diese Nachricht wird angezeigt, wenn der Inhalt blockiert ist.', 'psource-dsgvo'); ?>
                                     </p>
                                 </div>
                             </div>

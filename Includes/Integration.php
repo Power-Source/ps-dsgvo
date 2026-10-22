@@ -134,17 +134,17 @@ class Integration {
                         $output .= '<li class="psdsgvo-clearfix">';
                         $output .= '<div class="psdsgvo-checkbox">';
                         $output .= '<input type="checkbox" name="' . $optionNameForms . '[]" id="' . $formSettingId . '" value="' . $form . '" tabindex="1" data-option="' . $optionNameForms . '" data-append="1" ' . checked(true, $enabled, false) . ' />';
-                        $output .= '<label for="' . $formSettingId . '"><strong>' . sprintf(__('Formular: %s', PS_DSGVO_C_SLUG), get_the_title($form)) . '</strong></label>';
-                        $output .= '<span class="psdsgvo-instructions">' . __('Für dieses Formular aktivieren:', PS_DSGVO_C_SLUG) . '</span>';
+                        $output .= '<label for="' . $formSettingId . '"><strong>' . sprintf(__('Formular: %s', 'psource-dsgvo'), get_the_title($form)) . '</strong></label>';
+                        $output .= '<span class="psdsgvo-instructions">' . __('Für dieses Formular aktivieren:', 'psource-dsgvo') . '</span>';
                         $output .= '</div>';
                         $output .= '<div class="psdsgvo-setting">';
-                        $output .= '<label for="' . $textSettingId . '">' . __('Checkboxtext', PS_DSGVO_C_SLUG) . '</label>';
+                        $output .= '<label for="' . $textSettingId . '">' . __('Checkboxtext', 'psource-dsgvo') . '</label>';
                         $output .= '<div class="psdsgvo-options">';
                         $output .= '<textarea name="' . $optionNameFormText . '[' . $form . ']' . '" class="regular-text" id="' . $textSettingId . '" placeholder="' . $text . '">' . $text . '</textarea>';
                         $output .= '</div>';
                         $output .= '</div>';
                         $output .= '<div class="psdsgvo-setting">';
-                        $output .= '<label for="' . $errorSettingId . '">' . __('Fehlermeldung', PS_DSGVO_C_SLUG) . '</label>';
+                        $output .= '<label for="' . $errorSettingId . '">' . __('Fehlermeldung', 'psource-dsgvo') . '</label>';
                         $output .= '<div class="psdsgvo-options">';
                         $output .= '<input type="text" name="' . $optionNameErrorMessage . '[' . $form . ']' . '" class="regular-text" id="' . $errorSettingId . '" placeholder="' . $errorMessage . '" value="' . $errorMessage . '" />';
                         $output .= '</div>';
@@ -154,7 +154,7 @@ class Integration {
                     }
                     $output .= '</ul>';
                 } else {
-                    $output = '<p>' . __('Keine Formulare gefunden.', PS_DSGVO_C_SLUG) . '</p>';
+                    $output = '<p>' . __('Keine Formulare gefunden.', 'psource-dsgvo') . '</p>';
                 }
                 break;
             case GForms::ID :
@@ -178,23 +178,23 @@ class Integration {
                         $output .= '<li class="psdsgvo-clearfix">';
                         $output .= '<div class="psdsgvo-checkbox">';
                         $output .= '<input type="checkbox" name="' . $optionNameForms . '[]" id="' . $formSettingId . '" value="' . $form['id'] . '" tabindex="1" data-option="' . $optionNameForms . '" data-append="1" ' . checked(true, $enabled, false) . ' />';
-                        $output .= '<label for="' . $formSettingId . '"><strong>' . sprintf(__('Formular: %s', PS_DSGVO_C_SLUG), $form['title']) . '</strong></label>';
-                        $output .= '<span class="psdsgvo-instructions">' . __('Aktiviere für dieses Formular:', PS_DSGVO_C_SLUG) . '</span>';
+                        $output .= '<label for="' . $formSettingId . '"><strong>' . sprintf(__('Formular: %s', 'psource-dsgvo'), $form['title']) . '</strong></label>';
+                        $output .= '<span class="psdsgvo-instructions">' . __('Aktiviere für dieses Formular:', 'psource-dsgvo') . '</span>';
                         $output .= '</div>';
                         $output .= '<div class="psdsgvo-setting">';
-                        $output .= '<label for="' . $textSettingId . '">' . __('Kontrollkästchentext', PS_DSGVO_C_SLUG) . '</label>';
+                        $output .= '<label for="' . $textSettingId . '">' . __('Kontrollkästchentext', 'psource-dsgvo') . '</label>';
                         $output .= '<div class="psdsgvo-options">';
                         $output .= '<textarea name="' . $optionNameFormText . '[' . $form['id'] . ']' . '" class="regular-text" id="' . $textSettingId . '" placeholder="' . $text . '">' . $text . '</textarea>';
                         $output .= '</div>';
                         $output .= '</div>';
                         $output .= '<div class="psdsgvo-setting">';
-                        $output .= '<label for="' . $errorSettingId . '">' . __('Fehlermeldung', PS_DSGVO_C_SLUG) . '</label>';
+                        $output .= '<label for="' . $errorSettingId . '">' . __('Fehlermeldung', 'psource-dsgvo') . '</label>';
                         $output .= '<div class="psdsgvo-options">';
                         $output .= '<input type="text" name="' . $optionNameErrorMessage . '[' . $form['id'] . ']' . '" class="regular-text" id="' . $errorSettingId . '" placeholder="' . $errorMessage . '" value="' . $errorMessage . '" />';
                         $output .= '</div>';
                         $output .= '</div>';
                         $output .= '<div class="psdsgvo-setting">';
-                        $output .= '<label for="' . $requiredSettingId . '">' . __('Erforderlich Nachricht', PS_DSGVO_C_SLUG) . '</label>';
+                        $output .= '<label for="' . $requiredSettingId . '">' . __('Erforderlich Nachricht', 'psource-dsgvo') . '</label>';
                         $output .= '<div class="psdsgvo-options">';
                         $output .= '<input type="text" name="' . $optionNameRequiredMessage . '[' . $form['id'] . ']' . '" class="regular-text" id="' . $requiredSettingId . '" placeholder="' . $requiredMessage . '" value="' . $requiredMessage . '" />';
                         $output .= '</div>';
@@ -204,7 +204,7 @@ class Integration {
                     }
                     $output .= '</ul>';
                 } else {
-                    $output = '<p>' . __('Keine Formulare gefunden.', PS_DSGVO_C_SLUG) . '</p>';
+                    $output = '<p>' . __('Keine Formulare gefunden.', 'psource-dsgvo') . '</p>';
                 }
                 break;
             default :
@@ -217,19 +217,19 @@ class Integration {
                 $output .= '<ul class="psdsgvo-checklist-options">';
                 $output .= '<li class="psdsgvo-clearfix">';
                 $output .= '<div class="psdsgvo-setting">';
-                $output .= '<label for="' . $optionNameText . '">' . __('Kontrollkästchentext', PS_DSGVO_C_SLUG) . '</label>';
+                $output .= '<label for="' . $optionNameText . '">' . __('Kontrollkästchentext', 'psource-dsgvo') . '</label>';
                 $output .= '<div class="psdsgvo-options">';
                 $output .= '<textarea name="' . $optionNameText . '" class="regular-text" id="' . $optionNameText . '" placeholder="' . $text . '">' . $text . '</textarea>';
                 $output .= '</div>';
                 $output .= '</div>';
                 $output .= '<div class="psdsgvo-setting">';
-                $output .= '<label for="' . $optionNameErrorMessage . '">' . __('Fehlermeldung', PS_DSGVO_C_SLUG) . '</label>';
+                $output .= '<label for="' . $optionNameErrorMessage . '">' . __('Fehlermeldung', 'psource-dsgvo') . '</label>';
                 $output .= '<div class="psdsgvo-options">';
                 $output .= '<input type="text" name="' . $optionNameErrorMessage . '" class="regular-text" id="' . $optionNameErrorMessage . '" placeholder="' . $errorMessage . '" value="' . $errorMessage . '" />';
                 $output .= '</div>';
                 $output .= '</div>';
                 $output .= '<div class="psdsgvo-setting">';
-                $output .= '<label for="' . $optionNameRequiredMessage . '">' . __('Erforderlich Nachricht', PS_DSGVO_C_SLUG) . '</label>';
+                $output .= '<label for="' . $optionNameRequiredMessage . '">' . __('Erforderlich Nachricht', 'psource-dsgvo') . '</label>';
                 $output .= '<div class="psdsgvo-options">';
                 $output .= '<input type="text" name="' . $optionNameRequiredMessage . '" class="regular-text" id="' . $optionNameRequiredMessage . '" placeholder="' . $requiredMessage . '" value="' . $requiredMessage . '" />';
                 $output .= '</div>';
@@ -255,7 +255,7 @@ class Integration {
             $output = apply_filters('psdsgvo_' . $plugin . '_checkbox_text', $output);
         }
         if (empty($output)) {
-            $output = __('Durch die Verwendung dieses Formulars stimmst Du der Speicherung und Verarbeitung Deiner Daten durch diese Webseite zu.', PS_DSGVO_C_SLUG);
+            $output = __('Durch die Verwendung dieses Formulars stimmst Du der Speicherung und Verarbeitung Deiner Daten durch diese Webseite zu.', 'psource-dsgvo');
         }
         $output = wp_kses($output, Helper::getAllowedHTMLTags($plugin));
         return apply_filters('psdsgvo_checkbox_text', $output);
@@ -272,7 +272,7 @@ class Integration {
             $output = apply_filters('psdsgvo_' . $plugin . '_error_message', $output);
         }
         if (empty($output)) {
-            $output = __('Bitte akzeptiere das Kontrollkästchen Datenschutz.', PS_DSGVO_C_SLUG);
+            $output = __('Bitte akzeptiere das Kontrollkästchen Datenschutz.', 'psource-dsgvo');
         }
         return apply_filters('psdsgvo_error_message', wp_kses($output, Helper::getAllowedHTMLTags($plugin)));
     }
@@ -288,7 +288,7 @@ class Integration {
             $output = apply_filters('psdsgvo_' . $plugin . '_required_message', $output);
         }
         if (empty($output)) {
-            $output = __('Du musst dieses Kontrollkästchen akzeptieren.', PS_DSGVO_C_SLUG);
+            $output = __('Du musst dieses Kontrollkästchen akzeptieren.', 'psource-dsgvo');
         }
         return apply_filters('psdsgvo_required_message', esc_attr($output));
     }
@@ -299,7 +299,7 @@ class Integration {
     public static function getPrivacyPolicyText() {
         $output = get_option(PS_DSGVO_C_PREFIX . '_settings_privacy_policy_text');
         if (empty($output)) {
-            $output = __('Datenschutz-Bestimmungen', PS_DSGVO_C_SLUG);
+            $output = __('Datenschutz-Bestimmungen', 'psource-dsgvo');
         }
         return apply_filters('psdsgvo_privacy_policy_text', $output);
     }
@@ -307,7 +307,7 @@ class Integration {
     public static function getPrivacyPolicyLink() {
         $output = get_option(PS_DSGVO_C_PREFIX . '_settings_privacy_policy_link');
         if (empty($output)) {
-            $output = __('http://www.example.com', PS_DSGVO_C_SLUG);
+            $output = __('http://www.example.com', 'psource-dsgvo');
         }
         return apply_filters('psdsgvo_privacy_policy_link', $output);
     }
@@ -319,7 +319,7 @@ class Integration {
     public static function getAccessRequestFormCheckboxText($insertPrivacyPolicyLink = true) {
         $output = get_option(PS_DSGVO_C_PREFIX . '_settings_access_request_form_checkbox_text');
         if (empty($output)) {
-            $output = __('Durch die Verwendung dieses Formulars stimmst Du der Speicherung und Verarbeitung Deiner Daten durch diese Webseite zu.', PS_DSGVO_C_SLUG);
+            $output = __('Durch die Verwendung dieses Formulars stimmst Du der Speicherung und Verarbeitung Deiner Daten durch diese Webseite zu.', 'psource-dsgvo');
         }
         $output = ($insertPrivacyPolicyLink === true) ? self::insertPrivacyPolicyLink($output) : $output;
         return apply_filters('psdsgvo_access_request_form_checkbox_text', wp_kses($output, Helper::getAllowedHTMLTags()));
@@ -333,7 +333,7 @@ class Integration {
         $output = get_option(PS_DSGVO_C_PREFIX . '_settings_delete_request_form_explanation_text');
         if (empty($output)) {
             $output = sprintf(
-                __('Nachfolgend zeigen wir Dir alle Daten, die von %s auf %s gespeichert wurden. Wähle die Daten aus, die der Webseitenbesitzer anonymisieren soll, damit sie nicht mehr mit Deiner Email-Adresse verknüpft werden können. Es liegt in der Verantwortung des Eigentümers der Webseite, auf Deine Anfrage zu reagieren. Wenn Deine Daten anonymisiert sind, erhältst Du eine E-Mail-Bestätigung.', PS_DSGVO_C_SLUG),
+                __('Nachfolgend zeigen wir Dir alle Daten, die von %s auf %s gespeichert wurden. Wähle die Daten aus, die der Webseitenbesitzer anonymisieren soll, damit sie nicht mehr mit Deiner Email-Adresse verknüpft werden können. Es liegt in der Verantwortung des Eigentümers der Webseite, auf Deine Anfrage zu reagieren. Wenn Deine Daten anonymisiert sind, erhältst Du eine E-Mail-Bestätigung.', 'psource-dsgvo'),
                 get_option('blogname'),
                 get_option('siteurl')
             );
@@ -372,17 +372,17 @@ class Integration {
     /**
      * @return array
      */
-    public static function getSupportedWordPressFunctionality() {
+    public static function getSupportedClasicPressFunctionality() {
         return array(
             array(
                 'id' => 'wordpress',
-                'name' => __('WordPress Kommentare', PS_DSGVO_C_SLUG),
-                'description' => __('Bei Aktivierung wird das Kontrollkästchen DSGVO automatisch direkt über der Schaltfläche "Senden" hinzugefügt.', PS_DSGVO_C_SLUG),
+                'name' => __('ClasicPress Kommentare', 'psource-dsgvo'),
+                'description' => __('Bei Aktivierung wird das Kontrollkästchen DSGVO automatisch direkt über der Schaltfläche "Senden" hinzugefügt.', 'psource-dsgvo'),
             ),
             array(
                 'id' => WPRegistration::ID,
-                'name' => __('Wordpress Registrierung', PS_DSGVO_C_SLUG),
-                'description' => __('Bei Aktivierung wird das Kontrollkästchen DSGVO automatisch direkt über der Registrierungsschaltfläche hinzugefügt.', PS_DSGVO_C_SLUG),
+                'name' => __('Wordpress Registrierung', 'psource-dsgvo'),
+                'description' => __('Bei Aktivierung wird das Kontrollkästchen DSGVO automatisch direkt über der Registrierungsschaltfläche hinzugefügt.', 'psource-dsgvo'),
             )
         );
     }
@@ -396,22 +396,22 @@ class Integration {
                 'id' => CF7::ID,
                 'supported_version' => CF7::SUPPORTED_VERSION,
                 'file' => 'contact-form-7/wp-contact-form-7.php',
-                'name' => __('Contact Form 7', PS_DSGVO_C_SLUG),
-                'description' => __('Ein DSGVO-Formular-Tag wird automatisch zu jedem von Dir aktivierten Formular hinzugefügt.', PS_DSGVO_C_SLUG),
+                'name' => __('Contact Form 7', 'psource-dsgvo'),
+                'description' => __('Ein DSGVO-Formular-Tag wird automatisch zu jedem von Dir aktivierten Formular hinzugefügt.', 'psource-dsgvo'),
             ),
             array(
                 'id' => GForms::ID,
                 'supported_version' => GForms::SUPPORTED_VERSION,
                 'file' => 'gravityforms/gravityforms.php',
-                'name' => __('Gravity Forms', PS_DSGVO_C_SLUG),
-                'description' => __('Ein DSGVO-Formular-Tag wird automatisch zu jedem von Dir aktivierten Formular hinzugefügt.', PS_DSGVO_C_SLUG),
+                'name' => __('Gravity Forms', 'psource-dsgvo'),
+                'description' => __('Ein DSGVO-Formular-Tag wird automatisch zu jedem von Dir aktivierten Formular hinzugefügt.', 'psource-dsgvo'),
             ),
             array(
                 'id' => WC::ID,
                 'supported_version' => WC::SUPPORTED_VERSION,
                 'file' => 'woocommerce/woocommerce.php',
-                'name' => __('WooCommerce', PS_DSGVO_C_SLUG),
-                'description' => __('Das Kontrollkästchen DSGVO wird am Ende Deiner Checkout-Seite automatisch hinzugefügt.', PS_DSGVO_C_SLUG),
+                'name' => __('WooCommerce', 'psource-dsgvo'),
+                'description' => __('Das Kontrollkästchen DSGVO wird am Ende Deiner Checkout-Seite automatisch hinzugefügt.', 'psource-dsgvo'),
             )
         );
     }
@@ -420,7 +420,7 @@ class Integration {
      * @return array
      */
     public static function getSupportedIntegrations() {
-        return array_merge(self::getSupportedPlugins(), self::getSupportedWordPressFunctionality());
+        return array_merge(self::getSupportedPlugins(), self::getSupportedClasicPressFunctionality());
     }
 
     /**

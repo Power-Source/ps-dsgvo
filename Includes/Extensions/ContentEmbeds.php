@@ -20,81 +20,76 @@ class ContentEmbeds {
 
     /**
      * Verfügbare Embed-Typen
-     */
-    private $embedTypes = array(
-        'youtube' => array(
-            'label' => 'YouTube',
-            'description' => 'YouTube Videos',
-            'patterns' => array(
-                'youtube.com/embed',
-                'youtube.com/watch',
-                'youtu.be',
-            ),
-            'cookie_info' => 'YouTube verwendet Cookies um Nutzerverhalten zu tracken.',
-        ),
-        'vimeo' => array(
-            'label' => 'Vimeo',
-            'description' => 'Vimeo Videos',
-            'patterns' => array(
-                'vimeo.com',
-                'player.vimeo.com',
-            ),
-            'cookie_info' => 'Vimeo verwendet Cookies um Nutzerverhalten zu tracken.',
-        ),
-        'google_maps' => array(
-            'label' => 'Google Maps',
-            'description' => 'Google Maps Karten',
-            'patterns' => array(
-                'maps.google.com',
-                'google.com/maps',
-                'maps.googleapis.com',
-            ),
-            'cookie_info' => 'Google Maps verwendet Cookies und sammelt Standortdaten.',
-        ),
-        'twitter' => array(
-            'label' => 'Twitter/X',
-            'description' => 'Twitter/X Embeds',
-            'patterns' => array(
-                'twitter.com',
-                'platform.twitter.com',
-                'x.com',
-            ),
-            'cookie_info' => 'Twitter verwendet Cookies um Nutzerverhalten zu tracken.',
-        ),
-        'instagram' => array(
-            'label' => 'Instagram',
-            'description' => 'Instagram Posts',
-            'patterns' => array(
-                'instagram.com',
-            ),
-            'cookie_info' => 'Instagram (Facebook) verwendet Cookies um Nutzerverhalten zu tracken.',
-        ),
-        'facebook' => array(
-            'label' => 'Facebook',
-            'description' => 'Facebook Embeds',
-            'patterns' => array(
-                'facebook.com',
-                'fb.com',
-            ),
-            'cookie_info' => 'Facebook verwendet Cookies um Nutzerverhalten zu tracken.',
-        ),
-        'spotify' => array(
-            'label' => 'Spotify',
-            'description' => 'Spotify Player',
-            'patterns' => array(
-                'spotify.com',
-                'open.spotify.com',
-            ),
-            'cookie_info' => 'Spotify verwendet Cookies um Nutzerverhalten zu tracken.',
-        ),
-    );
-
-    /**
-     * Gibt alle verfügbaren Embed-Typen zurück
      * @return array
      */
     public function getEmbedTypes() {
-        return $this->embedTypes;
+        return array(
+            'youtube' => array(
+                'label' => 'YouTube',
+                'description' => __('YouTube Videos', 'psource-dsgvo'),
+                'patterns' => array(
+                    'youtube.com/embed',
+                    'youtube.com/watch',
+                    'youtu.be',
+                ),
+                'cookie_info' => __('YouTube verwendet Cookies um Nutzerverhalten zu tracken.', 'psource-dsgvo'),
+            ),
+            'vimeo' => array(
+                'label' => 'Vimeo',
+                'description' => __('Vimeo Videos', 'psource-dsgvo'),
+                'patterns' => array(
+                    'vimeo.com',
+                    'player.vimeo.com',
+                ),
+                'cookie_info' => __('Vimeo verwendet Cookies um Nutzerverhalten zu tracken.', 'psource-dsgvo'),
+            ),
+            'google_maps' => array(
+                'label' => 'Google Maps',
+                'description' => __('Google Maps Karten', 'psource-dsgvo'),
+                'patterns' => array(
+                    'maps.google.com',
+                    'google.com/maps',
+                    'maps.googleapis.com',
+                ),
+                'cookie_info' => __('Google Maps verwendet Cookies und sammelt Standortdaten.', 'psource-dsgvo'),
+            ),
+            'twitter' => array(
+                'label' => 'Twitter/X',
+                'description' => __('Twitter/X Embeds', 'psource-dsgvo'),
+                'patterns' => array(
+                    'twitter.com',
+                    'platform.twitter.com',
+                    'x.com',
+                ),
+                'cookie_info' => __('Twitter verwendet Cookies um Nutzerverhalten zu tracken.', 'psource-dsgvo'),
+            ),
+            'instagram' => array(
+                'label' => 'Instagram',
+                'description' => __('Instagram Posts', 'psource-dsgvo'),
+                'patterns' => array(
+                    'instagram.com',
+                ),
+                'cookie_info' => __('Instagram (Facebook) verwendet Cookies um Nutzerverhalten zu tracken.', 'psource-dsgvo'),
+            ),
+            'facebook' => array(
+                'label' => 'Facebook',
+                'description' => __('Facebook Embeds', 'psource-dsgvo'),
+                'patterns' => array(
+                    'facebook.com',
+                    'fb.com',
+                ),
+                'cookie_info' => __('Facebook verwendet Cookies um Nutzerverhalten zu tracken.', 'psource-dsgvo'),
+            ),
+            'spotify' => array(
+                'label' => 'Spotify',
+                'description' => __('Spotify Player', 'psource-dsgvo'),
+                'patterns' => array(
+                    'spotify.com',
+                    'open.spotify.com',
+                ),
+                'cookie_info' => __('Spotify verwendet Cookies um Nutzerverhalten zu tracken.', 'psource-dsgvo'),
+            ),
+        );
     }
 
     /**
@@ -115,9 +110,10 @@ class ContentEmbeds {
      * @return string
      */
     public function getPlaceholderMessage($type) {
+        $embedTypes = $this->getEmbedTypes();
         $default = sprintf(
-            __('Dieser Inhalt wird von %s geladen. Um diesen Inhalt zu sehen, müssen Sie der Verwendung von Cookies zustimmen.', PS_DSGVO_C_SLUG),
-            $this->embedTypes[$type]['label']
+            __('Dieser Inhalt wird von %s geladen. Um diesen Inhalt zu sehen, müssen Sie der Verwendung von Cookies zustimmen.', 'psource-dsgvo'),
+            $embedTypes[$type]['label']
         );
         
         $custom = get_option(PS_DSGVO_C_PREFIX . '_embed_settings_' . $type . '_message', '');
@@ -154,7 +150,7 @@ class ContentEmbeds {
         
         if (!empty($consents)) {
             // Blockiere alle Embed-Typen
-            foreach ($this->embedTypes as $type => $config) {
+            foreach ($this->getEmbedTypes() as $type => $config) {
                 $oldContent = $content;
                 $content = $this->replaceEmbeds($content, $type);
                 if ($oldContent !== $content) {
@@ -173,11 +169,12 @@ class ContentEmbeds {
      * @return string|null
      */
     private function replaceEmbeds($content, $type) {
-        if (!isset($this->embedTypes[$type]) || empty($content)) {
+        $embedTypes = $this->getEmbedTypes();
+        if (!isset($embedTypes[$type]) || empty($content)) {
             return $content;
         }
         
-        $config = $this->embedTypes[$type];
+        $config = $embedTypes[$type];
         
         // Prüfe ob User bereits Consent gegeben hat
         if ($this->hasUserConsent($type)) {
@@ -231,12 +228,12 @@ class ContentEmbeds {
                 <p><?php echo esc_html($message); ?></p>
                 <p class="psdsgvo-embed-cookie-info"><small><?php echo esc_html($cookieInfo); ?></small></p>
                 <button class="psdsgvo-embed-consent-btn" data-embed-type="<?php echo esc_attr($type); ?>">
-                    <?php _e('Inhalt laden', PS_DSGVO_C_SLUG); ?>
+                    <?php _e('Inhalt laden', 'psource-dsgvo'); ?>
                 </button>
                 <p class="psdsgvo-embed-privacy-link">
                     <small>
                         <a href="<?php echo esc_url(Helper::getPrivacyPolicyUrl()); ?>" target="_blank">
-                            <?php _e('Datenschutzerklärung', PS_DSGVO_C_SLUG); ?>
+                            <?php _e('Datenschutzerklärung', 'psource-dsgvo'); ?>
                         </a>
                     </small>
                 </p>

@@ -99,7 +99,7 @@ class WPRegistration {
             'user' => Helper::anonymizeEmail($userEmail),
             'ip_address' => Helper::anonymizeIP(Helper::getClientIpAddress()),
             'date_created' => Helper::localDateTime(time())->format('Y-m-d H:i:s'),
-            'log' => __('user has given consent when registering', PS_DSGVO_C_SLUG),
+            'log' => __('user has given consent when registering', 'psource-dsgvo'),
             'consent_text' => Integration::getCheckboxText(self::ID)
         ));
 	}

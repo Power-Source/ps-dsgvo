@@ -181,11 +181,11 @@ class CF7 {
                 if (isset($data['psdsgvo']) && $data['psdsgvo'] == 1) {
                     $value = Helper::localDateFormat(get_option('date_format') . ' ' . get_option('time_format'), time());
                 } else {
-                    $value = __('Not accepted.', PS_DSGVO_C_SLUG);
+                    $value = __('Not accepted.', 'psource-dsgvo');
                 }
                 $output = apply_filters(
                     'psdsgvo_cf7_mail_body_output',
-                    __('GDPR accepted on:', PS_DSGVO_C_SLUG) . "\n$value",
+                    __('GDPR accepted on:', 'psource-dsgvo') . "\n$value",
                     $data,
                     $submission
                 );

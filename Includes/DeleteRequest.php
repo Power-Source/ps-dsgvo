@@ -231,16 +231,16 @@ class DeleteRequest {
     public function getNiceTypeLabel() {
         switch ($this->getType()) {
             case 'unknown' :
-                $output = __('Unbekannt', PS_DSGVO_C_SLUG);
+                $output = __('Unbekannt', 'psource-dsgvo');
                 break;
             case 'user' :
-                $output = __('Benutzer', PS_DSGVO_C_SLUG);
+                $output = __('Benutzer', 'psource-dsgvo');
                 break;
             case 'comment' :
-                $output = __('Kommentar', PS_DSGVO_C_SLUG);
+                $output = __('Kommentar', 'psource-dsgvo');
                 break;
             case 'woocommerce_order' :
-                $output = __('WooCommerce Bestellung', PS_DSGVO_C_SLUG);
+                $output = __('WooCommerce Bestellung', 'psource-dsgvo');
                 break;
             default :
                 $output = $this->getType();

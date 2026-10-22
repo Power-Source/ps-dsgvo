@@ -15,7 +15,7 @@ class Shortcode {
      */
     private static function getAccessRequestData() {
         $output = '';
-        $token = (isset($_REQUEST['psdsgvo'])) ? esc_html($_REQUEST['psdsgvo']) : false;  // WordPress dekodiert automatisch
+        $token = (isset($_REQUEST['psdsgvo'])) ? esc_html($_REQUEST['psdsgvo']) : false;  // ClasicPress dekodiert automatisch
         $request = ($token !== false) ? AccessRequest::getInstance()->getByToken($token) : false;
         if ($request !== false) {
             if (
@@ -31,29 +31,29 @@ class Shortcode {
                     apply_filters('psdsgvo_the_content', Integration::getDeleteRequestFormExplanationText())
                 );
 
-                // WordPress Users
-                $output .= sprintf('<h2 class="psdsgvo-title">%s</h2>', __('Benutzer', PS_DSGVO_C_SLUG));
+                // ClasicPress Users
+                $output .= sprintf('<h2 class="psdsgvo-title">%s</h2>', __('Benutzer', 'psource-dsgvo'));
                 if (!empty($users)) {
                     $output .= $users;
                 } else {
                     $output .= sprintf(
                         '<div class="psdsgvo-message psdsgvo-message--notice">%s</div>',
                         sprintf(
-                            __('Keine Benutzer mit E-Mail-Adresse %s gefunden.', PS_DSGVO_C_SLUG),
+                            __('Keine Benutzer mit E-Mail-Adresse %s gefunden.', 'psource-dsgvo'),
                             sprintf('<strong>%s</strong>', $request->getEmailAddress())
                         )
                     );
                 }
 
-                // WordPress Comments
-                $output .= sprintf('<h2 class="psdsgvo-title">%s</h2>', __('Kommentare', PS_DSGVO_C_SLUG));
+                // ClasicPress Comments
+                $output .= sprintf('<h2 class="psdsgvo-title">%s</h2>', __('Kommentare', 'psource-dsgvo'));
                 if (!empty($comments)) {
                     $output .= $comments;
                 } else {
                     $output .= sprintf(
                         '<div class="psdsgvo-message psdsgvo-message--notice">%s</div>',
                         sprintf(
-                            __('Keine Kommentare mit E-Mail-Adresse %s gefunden.', PS_DSGVO_C_SLUG),
+                            __('Keine Kommentare mit E-Mail-Adresse %s gefunden.', 'psource-dsgvo'),
                             sprintf('<strong>%s</strong>', $request->getEmailAddress())
                         )
                     );
@@ -62,14 +62,14 @@ class Shortcode {
                 // WooCommerce Orders
                 if (in_array('woocommerce/woocommerce.php', Helper::getActivePlugins())) {
                     $woocommerceOrders = Data::getOutput($data->getWooCommerceOrders(), 'woocommerce_order', $request->getId());
-                    $output .= sprintf('<h2 class="psdsgvo-title">%s</h2>', __('WooCommerce Bestellungen', PS_DSGVO_C_SLUG));
+                    $output .= sprintf('<h2 class="psdsgvo-title">%s</h2>', __('WooCommerce Bestellungen', 'psource-dsgvo'));
                     if (!empty($woocommerceOrders)) {
                         $output .= $woocommerceOrders;
                     } else {
                         $output .= sprintf(
                             '<div class="psdsgvo-message psdsgvo-message--notice">%s</div>',
                             sprintf(
-                                __('Es wurden keine WooCommerce-Bestellungen mit der E-Mail-Adresse %s gefunden.', PS_DSGVO_C_SLUG),
+                                __('Es wurden keine WooCommerce-Bestellungen mit der E-Mail-Adresse %s gefunden.', 'psource-dsgvo'),
                                 sprintf('<strong>%s</strong>', $request->getEmailAddress())
                             )
                         );
@@ -82,12 +82,12 @@ class Shortcode {
                 $output .= sprintf(
                     '<div class="psdsgvo-message psdsgvo-message--error"><p>%s</p></div>',
                     sprintf(
-                        __('<strong>FEHLER</strong>: %s', PS_DSGVO_C_SLUG),
+                        __('<strong>FEHLER</strong>: %s', 'psource-dsgvo'),
                         sprintf(
                             '%s<br /><br />%s',
-                            __('Du kannst Deine Daten nur anzeigen, wenn Du diese Seite auf demselben Gerät mit derselben IP-Adresse und in derselben Browsersitzung wie bei der Ausführung Deiner Anforderung besuchst. Dies ist eine zusätzliche Sicherheitsmaßnahme, um Deine Daten zu schützen.', PS_DSGVO_C_SLUG),
+                            __('Du kannst Deine Daten nur anzeigen, wenn Du diese Seite auf demselben Gerät mit derselben IP-Adresse und in derselben Browsersitzung wie bei der Ausführung Deiner Anforderung besuchst. Dies ist eine zusätzliche Sicherheitsmaßnahme, um Deine Daten zu schützen.', 'psource-dsgvo'),
                             sprintf(
-                                __('Bei Bedarf kannst Du hier nach 24 Stunden eine neue Anfrage stellen: %s.', PS_DSGVO_C_SLUG),
+                                __('Bei Bedarf kannst Du hier nach 24 Stunden eine neue Anfrage stellen: %s.', 'psource-dsgvo'),
                                 sprintf(
                                     '<a target="_blank" href="%s">%s</a>',
                                     get_permalink($accessRequestPage),
@@ -102,8 +102,8 @@ class Shortcode {
             $output .= sprintf(
                 '<div class="psdsgvo-message psdsgvo-message--error"><p>%s</p></div>',
                 sprintf(
-                    __('<strong>FEHLER</strong>: %s', PS_DSGVO_C_SLUG),
-                    __('Diese Anfrage ist abgelaufen oder existiert nicht.', PS_DSGVO_C_SLUG)
+                    __('<strong>FEHLER</strong>: %s', 'psource-dsgvo'),
+                    __('Diese Anfrage ist abgelaufen oder existiert nicht.', 'psource-dsgvo')
                 )
             );
         }
@@ -123,7 +123,7 @@ class Shortcode {
                 'psdsgvo_request_form_email_field',
                 sprintf(
                     '<p><input type="email" name="psdsgvo_email" id="psdsgvo-form__email" placeholder="%s" erforderlich /></p>',
-                    apply_filters('psdsgvo_request_form_email_label', esc_attr__('Deine Emailadresse', PS_DSGVO_C_SLUG))
+                    apply_filters('psdsgvo_request_form_email_label', esc_attr__('Deine Emailadresse', 'psource-dsgvo'))
                 )
             );
             $output .= apply_filters(
@@ -137,7 +137,7 @@ class Shortcode {
                 'psdsgvo_request_form_submit_field',
                 sprintf(
                     '<p><input type="submit" name="psdsgvo_submit" value="%s" /></p>',
-                    apply_filters('psdsgvo_request_form_submit_label', esc_attr__('Abfragen', PS_DSGVO_C_SLUG))
+                    apply_filters('psdsgvo_request_form_submit_label', esc_attr__('Abfragen', 'psource-dsgvo'))
                 )
             );
             $output .= '<div class="psdsgvo-message" style="display: none;"></div>';
@@ -161,12 +161,12 @@ class Shortcode {
         if (current_user_can('administrator')) {
             $output = sprintf(
                 '<p style="color: red;"><strong>%s:</strong> %s</p>',
-                strtoupper(__('Hinweis', PS_DSGVO_C_SLUG)),
-                __('Du musst sicherstellen, dass Du mindestens eine (1)aktive Einwilligung hinzugefügt hast.', PS_DSGVO_C_SLUG)
+                strtoupper(__('Hinweis', 'psource-dsgvo')),
+                __('Du musst sicherstellen, dass Du mindestens eine (1)aktive Einwilligung hinzugefügt hast.', 'psource-dsgvo')
             );
         }
         if (Consent::isActive()) {
-            $label = (!empty($label)) ? esc_html($label) : __('Meine Einstellungen', PS_DSGVO_C_SLUG);
+            $label = (!empty($label)) ? esc_html($label) : __('Meine Einstellungen', 'psource-dsgvo');
             $classes = explode(',', $attributes['class']);
             $classes[] = 'psdsgvo-consents-settings-link';
             $classes = implode(' ', $classes);

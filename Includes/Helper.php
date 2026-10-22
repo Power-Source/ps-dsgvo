@@ -107,14 +107,14 @@ class Helper {
                 $tags .= '>';
             }
             $output .= sprintf(
-                __('Du kannst verwenden: %s', PS_DSGVO_C_SLUG),
+                __('Du kannst verwenden: %s', 'psource-dsgvo'),
                 sprintf('<pre>%s</pre>', esc_html($tags))
             );
         } else {
             $output .= sprintf(
                 '<strong>%s:</strong> %s',
-                strtoupper(__('Hinweis', PS_DSGVO_C_SLUG)),
-                __('Aufgrund von Plugin-Einschränkungen ist kein HTML zulässig.', PS_DSGVO_C_SLUG)
+                strtoupper(__('Hinweis', 'psource-dsgvo')),
+                __('Aufgrund von Plugin-Einschränkungen ist kein HTML zulässig.', 'psource-dsgvo')
             );
         }
         $output .= '</div>';
@@ -131,20 +131,20 @@ class Helper {
             $message = '';
             switch ($notice) {
                 case 'psdsgvo-consent-updated' :
-                    $message = __('Die Zustimmung wurde erfolgreich aktualisiert.', PS_DSGVO_C_SLUG);
+                    $message = __('Die Zustimmung wurde erfolgreich aktualisiert.', 'psource-dsgvo');
                     break;
                 case 'psdsgvo-consent-added' :
-                    $message = __('Die Zustimmung wurde erfolgreich hinzugefügt.', PS_DSGVO_C_SLUG);
+                    $message = __('Die Zustimmung wurde erfolgreich hinzugefügt.', 'psource-dsgvo');
                     break;
                 case 'psdsgvo-consent-removed' :
-                    $message = __('Die Zustimmung wurde erfolgreich entfernt.', PS_DSGVO_C_SLUG);
+                    $message = __('Die Zustimmung wurde erfolgreich entfernt.', 'psource-dsgvo');
                     break;
                 case 'psdsgvo-consent-not-found' :
                     $type = 'error';
-                    $message = __('Diese Zustimmung konnte nicht gefunden werden.', PS_DSGVO_C_SLUG);
+                    $message = __('Diese Zustimmung konnte nicht gefunden werden.', 'psource-dsgvo');
                     break;
                 case 'psdsgvo-cookie-bar-reset' :
-                    $message = __('Die Zustimmungsleiste wurde zurückgesetzt.', PS_DSGVO_C_SLUG);
+                    $message = __('Die Zustimmungsleiste wurde zurückgesetzt.', 'psource-dsgvo');
                     break;
             }
             if (!empty($message)) {
@@ -171,8 +171,8 @@ class Helper {
                     if (in_array('comments', $activeModules)) {
                         $output .= sprintf(
                             '<strong>%s:</strong> %s',
-                            strtoupper(__('Hinweis', PS_DSGVO_C_SLUG)),
-                            __('Bitte deaktiviere das benutzerdefinierte Kommentarformular in Jetpack, um Deine GDPR-Konformität mit WordPress-Kommentaren zu gewährleisten.', PS_DSGVO_C_SLUG)
+                            strtoupper(__('Hinweis', 'psource-dsgvo')),
+                            __('Bitte deaktiviere das benutzerdefinierte Kommentarformular in Jetpack, um Deine GDPR-Konformität mit ClasicPress-Kommentaren zu gewährleisten.', 'psource-dsgvo')
                         );
                     }
                 }
@@ -187,24 +187,24 @@ class Helper {
     public static function getCheckList() {
         return array(
             'contact_form' => array(
-                'label' => __('Hast Du ein Kontaktformular?', PS_DSGVO_C_SLUG),
-                'description' => __('Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem der Benutzer des Formulars speziell gefragt wird, ob er damit einverstanden ist, dass Du seine persönlichen Daten speicherst und verwendest, um wieder mit ihm in Kontakt zu treten. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche.', PS_DSGVO_C_SLUG),
+                'label' => __('Hast Du ein Kontaktformular?', 'psource-dsgvo'),
+                'description' => __('Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem der Benutzer des Formulars speziell gefragt wird, ob er damit einverstanden ist, dass Du seine persönlichen Daten speicherst und verwendest, um wieder mit ihm in Kontakt zu treten. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche.', 'psource-dsgvo'),
             ),
             'comments' => array(
-                'label' => __('Können Besucher irgendwo auf Deiner Website Kommentare abgeben?', PS_DSGVO_C_SLUG),
-                'description' => __('Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem der Benutzer des Kommentarbereichs speziell gefragt wird, ob er damit einverstanden ist, seine an die E-Mail-Adresse angehängte Nachricht zu speichern, die er zum Kommentieren verwendet hat. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche.', PS_DSGVO_C_SLUG),
+                'label' => __('Können Besucher irgendwo auf Deiner Website Kommentare abgeben?', 'psource-dsgvo'),
+                'description' => __('Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem der Benutzer des Kommentarbereichs speziell gefragt wird, ob er damit einverstanden ist, seine an die E-Mail-Adresse angehängte Nachricht zu speichern, die er zum Kommentieren verwendet hat. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche.', 'psource-dsgvo'),
             ),
             'webshop' => array(
-                'label' => __('Ist auf Deiner Webseite oder in Deinem Webshop ein Bestellformular vorhanden?', PS_DSGVO_C_SLUG),
-                'description' => __('Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem der Benutzer des Formulars speziell gefragt wird, ob er damit einverstanden ist, dass Du seine persönlichen Daten speicherst und zum Versenden der Bestellung verwendest. Dies kann nicht dasselbe Kontrollkästchen sein wie das Kontrollkästchen Datenschutz-Verantwortlichkeiten, das Du bereits eingerichtet haben solltest. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche.', PS_DSGVO_C_SLUG),
+                'label' => __('Ist auf Deiner Webseite oder in Deinem Webshop ein Bestellformular vorhanden?', 'psource-dsgvo'),
+                'description' => __('Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem der Benutzer des Formulars speziell gefragt wird, ob er damit einverstanden ist, dass Du seine persönlichen Daten speicherst und zum Versenden der Bestellung verwendest. Dies kann nicht dasselbe Kontrollkästchen sein wie das Kontrollkästchen Datenschutz-Verantwortlichkeiten, das Du bereits eingerichtet haben solltest. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche.', 'psource-dsgvo'),
             ),
             'forum' => array(
-                'label' => __('Bietest Du ein Forum oder ein Message Board an?', PS_DSGVO_C_SLUG),
-                'description' => __('Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem Forum-/Board-Benutzer speziell gefragt werden, ob sie damit einverstanden sind, dass Du ihre persönlichen Informationen und Nachrichten speicherst und verwendest. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche.', PS_DSGVO_C_SLUG),
+                'label' => __('Bietest Du ein Forum oder ein Message Board an?', 'psource-dsgvo'),
+                'description' => __('Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem Forum-/Board-Benutzer speziell gefragt werden, ob sie damit einverstanden sind, dass Du ihre persönlichen Informationen und Nachrichten speicherst und verwendest. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche.', 'psource-dsgvo'),
             ),
             'chat' => array(
-                'label' => __('Können Besucher direkt mit Deinem Unternehmen chatten?', PS_DSGVO_C_SLUG),
-                'description' => __('Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem Chat-Benutzer speziell gefragt werden, ob sie damit einverstanden sind, dass Du ihre persönlichen Informationen und Nachrichten speicherst und verwendest. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Wir empfehlen außerdem anzugeben, wie lange Du Chat-Nachrichten speicherst oder alle innerhalb von 24 Stunden löschen. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche.', PS_DSGVO_C_SLUG),
+                'label' => __('Können Besucher direkt mit Deinem Unternehmen chatten?', 'psource-dsgvo'),
+                'description' => __('Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem Chat-Benutzer speziell gefragt werden, ob sie damit einverstanden sind, dass Du ihre persönlichen Informationen und Nachrichten speicherst und verwendest. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Wir empfehlen außerdem anzugeben, wie lange Du Chat-Nachrichten speicherst oder alle innerhalb von 24 Stunden löschen. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche.', 'psource-dsgvo'),
             ),
         );
     }
@@ -290,8 +290,8 @@ class Helper {
             }
         }
 
-        // Loop through supported WordPress functionality
-        foreach (Integration::getSupportedWordPressFunctionality() as $wp) {
+        // Loop through supported ClasicPress functionality
+        foreach (Integration::getSupportedClasicPressFunctionality() as $wp) {
             $wp['supported'] = true;
             $output[] = $wp;
         }
@@ -813,7 +813,7 @@ class Helper {
             }
         }
         
-        // Fallback to WordPress privacy policy page
+        // Fallback to ClasicPress privacy policy page
         if (function_exists('get_privacy_policy_url')) {
             $wpPrivacyUrl = get_privacy_policy_url();
             if ($wpPrivacyUrl) {

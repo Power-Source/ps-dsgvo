@@ -24,8 +24,8 @@ class Data {
         if (empty($emailAddress)) {
             wp_die(
                 '<p>' . sprintf(
-                    __('<strong>FEHLER</strong>: %s', PS_DSGVO_C_SLUG),
-                    __('E-Mailadresse wird benötigt.', PS_DSGVO_C_SLUG)
+                    __('<strong>FEHLER</strong>: %s', 'psource-dsgvo'),
+                    __('E-Mailadresse wird benötigt.', 'psource-dsgvo')
                 ) . '</p>'
             );
             exit;
@@ -49,29 +49,29 @@ class Data {
         switch ($type) {
             case 'user' :
                 $output = array(
-                    __('Benutzername', PS_DSGVO_C_SLUG),
-                    __('Anzeigename', PS_DSGVO_C_SLUG),
-                    __('Email-Addresse', PS_DSGVO_C_SLUG),
-                    __('Webseite', PS_DSGVO_C_SLUG),
-                    __('Registriert am', PS_DSGVO_C_SLUG)
+                    __('Benutzername', 'psource-dsgvo'),
+                    __('Anzeigename', 'psource-dsgvo'),
+                    __('Email-Addresse', 'psource-dsgvo'),
+                    __('Webseite', 'psource-dsgvo'),
+                    __('Registriert am', 'psource-dsgvo')
                 );
                 break;
             case 'comment' :
                 $output = array(
-                    __('Autor', PS_DSGVO_C_SLUG),
-                    __('Inhalt', PS_DSGVO_C_SLUG),
-                    __('Email-Addresse', PS_DSGVO_C_SLUG),
-                    __('IP Addresse', PS_DSGVO_C_SLUG)
+                    __('Autor', 'psource-dsgvo'),
+                    __('Inhalt', 'psource-dsgvo'),
+                    __('Email-Addresse', 'psource-dsgvo'),
+                    __('IP Addresse', 'psource-dsgvo')
                 );
                 break;
             case 'woocommerce_order' :
                 $output = array(
-                    __('Bestellung', PS_DSGVO_C_SLUG),
-                    __('Email-Addresse', PS_DSGVO_C_SLUG),
-                    __('Name', PS_DSGVO_C_SLUG),
-                    __('Addresse', PS_DSGVO_C_SLUG),
-                    __('Postleitzahl', PS_DSGVO_C_SLUG),
-                    __('Stadt', PS_DSGVO_C_SLUG)
+                    __('Bestellung', 'psource-dsgvo'),
+                    __('Email-Addresse', 'psource-dsgvo'),
+                    __('Name', 'psource-dsgvo'),
+                    __('Addresse', 'psource-dsgvo'),
+                    __('Postleitzahl', 'psource-dsgvo'),
+                    __('Stadt', 'psource-dsgvo')
                 );
                 break;
         }
@@ -175,7 +175,7 @@ class Data {
             $output .= sprintf(
                 '<p><input type="submit" class="psdsgvo-remove" value="%s" /></p>',
                 sprintf(
-                    __('Anonymisiere ausgewählte %s', PS_DSGVO_C_SLUG),
+                    __('Anonymisiere ausgewählte %s', 'psource-dsgvo'),
                     str_replace('_', ' ', $type)
                 )
             );

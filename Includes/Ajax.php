@@ -23,7 +23,7 @@ class Ajax {
         }
 
         if (!$data) {
-            $output['error'] = __('Fehlende Daten.', PS_DSGVO_C_SLUG);
+            $output['error'] = __('Fehlende Daten.', 'psource-dsgvo');
         }
 
         if (empty($output['error'])) {
@@ -33,19 +33,19 @@ class Ajax {
             $append = (isset($data['append'])) ? filter_var($data['append'], FILTER_VALIDATE_BOOLEAN) : false;
 
             if (!$option) {
-                $output['error'] = __('Fehlender Optionsname.', PS_DSGVO_C_SLUG);
+                $output['error'] = __('Fehlender Optionsname.', 'psource-dsgvo');
             }
 
             if (!current_user_can('manage_options')) {
-                $output['error'] = __('Du darfst keine Einstellungen verwalten.', PS_DSGVO_C_SLUG);
+                $output['error'] = __('Du darfst keine Einstellungen verwalten.', 'psource-dsgvo');
             }
 
             if (!in_array($option, Helper::getAvailableOptions())) {
-                $output['error'] = __('Du darfst diese Einstellung nicht verwalten.', PS_DSGVO_C_SLUG);
+                $output['error'] = __('Du darfst diese Einstellung nicht verwalten.', 'psource-dsgvo');
             }
 
             if (!isset($data['value'])) {
-                $output['error'] = __('Fehlender Wert.', PS_DSGVO_C_SLUG);
+                $output['error'] = __('Fehlender Wert.', 'psource-dsgvo');
             }
 
             // Let's do this!
@@ -92,11 +92,11 @@ class Ajax {
         $type = (isset($data['type']) && is_string($data['type'])) ? esc_html($data['type']) : false;
 
         if (!$data) {
-            $output['error'] = __('Fehlende Daten.', PS_DSGVO_C_SLUG);
+            $output['error'] = __('Fehlende Daten.', 'psource-dsgvo');
         }
 
         if (!$type) {
-            $output['error'] = __('Fehlender Typ.', PS_DSGVO_C_SLUG);
+            $output['error'] = __('Fehlender Typ.', 'psource-dsgvo');
         }
 
         if (empty($output['error'])) {
@@ -107,11 +107,11 @@ class Ajax {
                         $consent = (isset($data['consent'])) ? filter_var($data['consent'], FILTER_VALIDATE_BOOLEAN) : false;
 
                         if (!$emailAddress) {
-                            $output['error'] = __('Fehlende oder falsche E-Mail-Adresse.', PS_DSGVO_C_SLUG);
+                            $output['error'] = __('Fehlende oder falsche E-Mail-Adresse.', 'psource-dsgvo');
                         }
 
                         if (!$consent) {
-                            $output['error'] = __('Du musst das Kontrollkästchen Datenschutz akzeptieren.', PS_DSGVO_C_SLUG);
+                            $output['error'] = __('Du musst das Kontrollkästchen Datenschutz akzeptieren.', 'psource-dsgvo');
                         }
 
                         // Let's do this!
@@ -136,30 +136,30 @@ class Ajax {
                                                 ),
                                                 get_permalink($page)
                                             ),
-                                            __('Seite', PS_DSGVO_C_SLUG)
+                                            __('Seite', 'psource-dsgvo')
                                         );
                                         $siteName = Helper::getSiteData('blogname', $request->getSiteId());
                                         $siteEmail = Helper::getSiteData('admin_email', $request->getSiteId());
                                         $siteUrl = Helper::getSiteData('siteurl', $request->getSiteId());
                                         $subject = apply_filters(
                                             'psdsgvo_access_request_mail_subject',
-                                            sprintf(__('%s - Deine Datenanfrage', PS_DSGVO_C_SLUG), $siteName),
+                                            sprintf(__('%s - Deine Datenanfrage', 'psource-dsgvo'), $siteName),
                                             $request,
                                             $siteName
                                         );
 
                                         $message = sprintf(
-                                                __('Du hast auf %s angefordert, auf Deine Daten zuzugreifen.', PS_DSGVO_C_SLUG),
+                                                __('Du hast auf %s angefordert, auf Deine Daten zuzugreifen.', 'psource-dsgvo'),
                                                 sprintf('<a target="_blank" href="%s">%s</a>', $siteUrl, $siteName)
                                             ) . '<br /><br />';
                                         $message .= sprintf(
-                                                __('Bitte besuche diese %s, um die mit der E-Mail-Adresse %s verknüpften Daten anzuzeigen.', PS_DSGVO_C_SLUG),
+                                                __('Bitte besuche diese %s, um die mit der E-Mail-Adresse %s verknüpften Daten anzuzeigen.', 'psource-dsgvo'),
                                                 $deleteRequestPage,
                                                 $emailAddress
                                             ) . '<br /><br />';
-                                        $message .= __('Diese Seite ist 24 Stunden lang verfügbar und kann nur von demselben Gerät, derselben IP-Adresse und derselben Browsersitzung aus erreicht werden, von denen aus sie angefordert wurde.', PS_DSGVO_C_SLUG) . '<br /><br />';
+                                        $message .= __('Diese Seite ist 24 Stunden lang verfügbar und kann nur von demselben Gerät, derselben IP-Adresse und derselben Browsersitzung aus erreicht werden, von denen aus sie angefordert wurde.', 'psource-dsgvo') . '<br /><br />';
                                         $message .= sprintf(
-                                            __('Wenn Dein Link ungültig ist, kannst Du nach 24 Stunden eine neue Anfrage ausfüllen: %s.', PS_DSGVO_C_SLUG),
+                                            __('Wenn Dein Link ungültig ist, kannst Du nach 24 Stunden eine neue Anfrage ausfüllen: %s.', 'psource-dsgvo'),
                                             sprintf(
                                                 '<a target="_blank" href="%s">%s</a>',
                                                 get_permalink($page),
@@ -173,14 +173,14 @@ class Ajax {
                                         );
                                         $response = wp_mail($emailAddress, $subject, $message, $headers);
                                         if ($response !== false) {
-                                            $output['message'] = __('Erfolg. Du erhältst in Kürze eine E-Mail mit Deinen Daten.', PS_DSGVO_C_SLUG);
+                                            $output['message'] = __('Erfolg. Du erhältst in Kürze eine E-Mail mit Deinen Daten.', 'psource-dsgvo');
                                         }
                                     }
                                 } else {
-                                    $output['error'] = __('Beim Speichern der Anfrage ist ein Fehler aufgetreten. Bitte versuche es erneut.', PS_DSGVO_C_SLUG);
+                                    $output['error'] = __('Beim Speichern der Anfrage ist ein Fehler aufgetreten. Bitte versuche es erneut.', 'psource-dsgvo');
                                 }
                             } else {
-                                $output['error'] = __('Du hast Deine Daten bereits angefordert. Bitte überprüfe Deine Mailbox. Nach 24 Stunden kannst Du eine neue Anfrage stellen.', PS_DSGVO_C_SLUG);
+                                $output['error'] = __('Du hast Deine Daten bereits angefordert. Bitte überprüfe Deine Mailbox. Nach 24 Stunden kannst Du eine neue Anfrage stellen.', 'psource-dsgvo');
                             }
                         }
                     }
@@ -193,15 +193,15 @@ class Ajax {
                         $value = (isset($data['value']) && is_numeric($data['value'])) ? (int)$data['value'] : 0;
 
                         if (empty($token)) {
-                            $output['error'] = __('Fehlender Token.', PS_DSGVO_C_SLUG);
+                            $output['error'] = __('Fehlender Token.', 'psource-dsgvo');
                         }
 
                         if (empty($type)) {
-                            $output['error'] = __('Fehlender oder ungültiger Typ.', PS_DSGVO_C_SLUG);
+                            $output['error'] = __('Fehlender oder ungültiger Typ.', 'psource-dsgvo');
                         }
 
                         if ($value === 0) {
-                            $output['error'] = __('Kein Wert ausgewählt.', PS_DSGVO_C_SLUG);
+                            $output['error'] = __('Kein Wert ausgewählt.', 'psource-dsgvo');
                         }
 
                         // Let's do this!
@@ -221,7 +221,7 @@ class Ajax {
                                     $request->setType($type);
                                     $id = $request->save();
                                     if ($id === false) {
-                                        $output['error'] = __('Beim Speichern dieser Anfrage ist ein Fehler aufgetreten. Bitte versuche es erneut.', PS_DSGVO_C_SLUG);
+                                        $output['error'] = __('Beim Speichern dieser Anfrage ist ein Fehler aufgetreten. Bitte versuche es erneut.', 'psource-dsgvo');
                                     } else {
                                         $siteName = Helper::getSiteData('blogname', $request->getSiteId());
                                         $siteEmail = Helper::getSiteData('admin_email', $request->getSiteId());
@@ -229,20 +229,20 @@ class Ajax {
                                         $adminPage = sprintf(
                                             '<a target="_blank" href="%s">%s</a>',
                                             Helper::getPluginAdminUrl('requests'),
-                                            __('Anfragen', PS_DSGVO_C_SLUG)
+                                            __('Anfragen', 'psource-dsgvo')
                                         );
                                         $subject = apply_filters(
                                             'psdsgvo_delete_request_admin_mail_subject',
-                                            sprintf(__('%s - Neue Anonymisierungsanfrage', PS_DSGVO_C_SLUG), $siteName),
+                                            sprintf(__('%s - Neue Anonymisierungsanfrage', 'psource-dsgvo'), $siteName),
                                             $request,
                                             $siteName
                                         );
                                         $message = sprintf(
-                                                __('Du hast eine neue Anonymisierungsanfrage für %s erhalten.', PS_DSGVO_C_SLUG),
+                                                __('Du hast eine neue Anonymisierungsanfrage für %s erhalten.', 'psource-dsgvo'),
                                                 sprintf('<a target="_blank" href="%s">%s</a>', $siteUrl, $siteName)
                                             ) . '<br /><br />';
                                         $message .= sprintf(
-                                            __('Du kannst diese Anforderung im Admin-Bereich verwalten: %s', PS_DSGVO_C_SLUG),
+                                            __('Du kannst diese Anforderung im Admin-Bereich verwalten: %s', 'psource-dsgvo'),
                                             $adminPage
                                         );
                                         $message = apply_filters('psdsgvo_delete_request_admin_mail_content', $message, $request, $adminPage);
@@ -253,10 +253,10 @@ class Ajax {
                                         wp_mail($siteEmail, $subject, $message, $headers);
                                     }
                                 } else {
-                                    $output['error'] = __('Sitzung stimmt nicht überein.', PS_DSGVO_C_SLUG);
+                                    $output['error'] = __('Sitzung stimmt nicht überein.', 'psource-dsgvo');
                                 }
                             } else {
-                                $output['error'] = __('Keine Sitzung gefunden.', PS_DSGVO_C_SLUG);
+                                $output['error'] = __('Keine Sitzung gefunden.', 'psource-dsgvo');
                             }
                         }
                     }
@@ -278,7 +278,7 @@ class Ajax {
         );
 
         if (!Helper::isEnabled('enable_access_request', 'settings')) {
-            $output['error'] = __('Die Zugriffsanforderungsfunktion ist nicht aktiviert.', PS_DSGVO_C_SLUG);
+            $output['error'] = __('Die Zugriffsanforderungsfunktion ist nicht aktiviert.', 'psource-dsgvo');
         }
 
         $data = (isset($_POST['data']) && (is_array($_POST['data']) || is_string($_POST['data']))) ? $_POST['data'] : false;
@@ -288,11 +288,11 @@ class Ajax {
         $id = (isset($data['id']) && is_numeric($data['id'])) ? absint($data['id']) : 0;
 
         if (!$data) {
-            $output['error'] = __('Fehlende Daten.', PS_DSGVO_C_SLUG);
+            $output['error'] = __('Fehlende Daten.', 'psource-dsgvo');
         }
 
         if ($id === 0 || !DeleteRequest::getInstance()->exists($id)) {
-            $output['error'] = __('Diese Anfrage existiert nicht.', PS_DSGVO_C_SLUG);
+            $output['error'] = __('Diese Anfrage existiert nicht.', 'psource-dsgvo');
         }
 
         // Let's do this!
@@ -314,14 +314,14 @@ class Ajax {
                                 'user_email' => $request->getDataId() . '.' . $date->format('Ymd.His') . '@example.org'
                             ));
                             if (is_wp_error($result)) {
-                                $output['error'] = __('Dieser Benutzer existiert nicht.', PS_DSGVO_C_SLUG);
+                                $output['error'] = __('Dieser Benutzer existiert nicht.', 'psource-dsgvo');
                             } else {
                                 $wpdb->update($wpdb->users, array('user_login' => 'USERNAME_' . $date->format('Ymd.His')), array('ID' => $request->getDataId()));
                                 $request->setProcessed(1);
                                 $request->save();
                             }
                         } else {
-                            $output['error'] = __('Du darfst keine Benutzer bearbeiten.', PS_DSGVO_C_SLUG);
+                            $output['error'] = __('Du darfst keine Benutzer bearbeiten.', 'psource-dsgvo');
                         }
                         break;
                     case 'comment' :
@@ -334,13 +334,13 @@ class Ajax {
                                 'comment_author_IP' => '127.0.0.1'
                             ));
                             if ($result === 0) {
-                                $output['error'] = __('Dieser Kommentar existiert nicht.', PS_DSGVO_C_SLUG);
+                                $output['error'] = __('Dieser Kommentar existiert nicht.', 'psource-dsgvo');
                             } else {
                                 $request->setProcessed(1);
                                 $request->save();
                             }
                         } else {
-                            $output['error'] = __('Du darfst keine Kommentare bearbeiten.', PS_DSGVO_C_SLUG);
+                            $output['error'] = __('Du darfst keine Kommentare bearbeiten.', 'psource-dsgvo');
                         }
                         break;
                     case 'woocommerce_order' :
@@ -384,7 +384,7 @@ class Ajax {
                             $request->setProcessed(1);
                             $request->save();
                         } else {
-                            $output['error'] = __('Du darfst WooCommerce-Bestellungen nicht bearbeiten.', PS_DSGVO_C_SLUG);
+                            $output['error'] = __('Du darfst WooCommerce-Bestellungen nicht bearbeiten.', 'psource-dsgvo');
                         }
                         break;
                 }
@@ -396,15 +396,15 @@ class Ajax {
                     $siteUrl = Helper::getSiteData('siteurl', $request->getSiteId());
                     $subject = apply_filters(
                         'psdsgvo_delete_request_mail_subject',
-                        sprintf(__('%s - Deine Anfrage', PS_DSGVO_C_SLUG), $siteName),
+                        sprintf(__('%s - Deine Anfrage', 'psource-dsgvo'), $siteName),
                         $request,
                         $accessRequest
                     );
                     $message = sprintf(
-                            __('Wir haben Deine Anfrage erfolgreich bearbeitet und Deine Daten wurden auf %s anonymisiert.', PS_DSGVO_C_SLUG),
+                            __('Wir haben Deine Anfrage erfolgreich bearbeitet und Deine Daten wurden auf %s anonymisiert.', 'psource-dsgvo'),
                             sprintf('<a target="_blank" href="%s">%s</a>', $siteUrl, $siteName)
                         ) . '<br /><br />';
-                    $message .= __('Folgendes wurde verarbeitet:', PS_DSGVO_C_SLUG) . '<br />';
+                    $message .= __('Folgendes wurde verarbeitet:', 'psource-dsgvo') . '<br />';
                     $message .= sprintf('%s #%d mit Email-Adresse %s.', $request->getNiceTypeLabel(), $request->getDataId(), $accessRequest->getEmailAddress());
                     $message = apply_filters('psdsgvo_delete_request_mail_content', $message, $request, $accessRequest);
                     $headers = array(
@@ -413,11 +413,11 @@ class Ajax {
                     );
                     $response = wp_mail($accessRequest->getEmailAddress(), $subject, $message, $headers);
                     if ($response !== false) {
-                        $output['message'] = __('Erfolgreich eine Bestätigungsmail an den Benutzer gesendet.', PS_DSGVO_C_SLUG);
+                        $output['message'] = __('Erfolgreich eine Bestätigungsmail an den Benutzer gesendet.', 'psource-dsgvo');
                     }
                 }
             } else {
-                $output['error'] = __('Diese Anfrage wurde bereits bearbeitet.', PS_DSGVO_C_SLUG);
+                $output['error'] = __('Diese Anfrage wurde bereits bearbeitet.', 'psource-dsgvo');
             }
         }
 

@@ -18,7 +18,7 @@ class Cron {
         // Once a month
         $schedules['psdsgvo-monthly'] = array(
             'interval' => 2635200,
-            'display' => __('Einmal pro Monat', PS_DSGVO_C_SLUG),
+            'display' => __('Einmal pro Monat', 'psource-dsgvo'),
         );
         return $schedules;
     }

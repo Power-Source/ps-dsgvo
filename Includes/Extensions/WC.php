@@ -64,9 +64,9 @@ class WC {
      */
     public function displayAcceptedDateInOrderData(\WC_Order $order) {
         $orderId = (method_exists($order, 'get_id')) ? $order->get_id() : $order->id;
-        $label = __('GDPR accepted on:', PS_DSGVO_C_SLUG);
+        $label = __('GDPR accepted on:', 'psource-dsgvo');
         $date = get_post_meta($orderId, '_psdsgvo', true);
-        $value = (!empty($date)) ? Helper::localDateFormat(get_option('date_format') . ' ' . get_option('time_format'), $date) : __('Not accepted.', PS_DSGVO_C_SLUG);
+        $value = (!empty($date)) ? Helper::localDateFormat(get_option('date_format') . ' ' . get_option('time_format'), $date) : __('Not accepted.', 'psource-dsgvo');
         echo apply_filters(
             'psdsgvo_woocommerce_accepted_date_in_order_data',
             sprintf('<p class="form-field form-field-wide psdsgvo-accepted-date"><strong>%s</strong><br />%s</p>', $label, $value),
@@ -81,7 +81,7 @@ class WC {
      * @return array
      */
     public function displayAcceptedDateColumnInOrderOverview($columns = array()) {
-        $columns['psdsgvo-privacy'] = apply_filters('psdsgvo_accepted_date_column_in_woocommerce_order_overview', __('Privacy', PS_DSGVO_C_SLUG));
+        $columns['psdsgvo-privacy'] = apply_filters('psdsgvo_accepted_date_column_in_woocommerce_order_overview', __('Privacy', 'psource-dsgvo'));
         return $columns;
     }
 
@@ -93,7 +93,7 @@ class WC {
     public function displayAcceptedDateInOrderOverview($column = '', $orderId = 0) {
         if ($column === 'psdsgvo-privacy') {
             $date = get_post_meta($orderId, '_psdsgvo', true);
-            $value = (!empty($date)) ? Helper::localDateFormat(get_option('date_format') . ' ' . get_option('time_format'), $date) : __('Not accepted.', PS_DSGVO_C_SLUG);
+            $value = (!empty($date)) ? Helper::localDateFormat(get_option('date_format') . ' ' . get_option('time_format'), $date) : __('Not accepted.', 'psource-dsgvo');
             echo apply_filters('psdsgvo_accepted_date_in_woocommerce_order_overview', $value, $orderId);
         }
         return $column;

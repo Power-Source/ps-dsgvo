@@ -52,7 +52,7 @@ class Consent {
     public static function getModalTitle($insertPrivacyPolicyLink = true) {
         $output = get_option(PS_DSGVO_C_PREFIX . '_settings_consents_modal_title');
         if (empty($output)) {
-            $output = __('Datenschutzeinstellungen', PS_DSGVO_C_SLUG);
+            $output = __('Datenschutzeinstellungen', 'psource-dsgvo');
         }
         $output = ($insertPrivacyPolicyLink === true) ? Integration::insertPrivacyPolicyLink($output) : $output;
         return apply_filters('psdsgvo_consents_modal_title', wp_kses($output, Helper::getAllowedHTMLTags()));
@@ -65,7 +65,7 @@ class Consent {
     public static function getModalExplanationText($insertPrivacyPolicyLink = true) {
         $output = get_option(PS_DSGVO_C_PREFIX . '_settings_consents_modal_explanation_text');
         if (empty($output)) {
-            $output = __('Diese Webseite verwendet funktionale Cookies und externe Skripte, um Deine Erfahrung zu verbessern. Auf der linken Seite wird angegeben, welche Cookies und Skripte verwendet werden und wie sie sich auf Deinen Besuch auswirken. Du kannst Deine Einstellungen jederzeit ändern. Deine Auswahl hat keinen Einfluss auf Deinen Besuch.', PS_DSGVO_C_SLUG);
+            $output = __('Diese Webseite verwendet funktionale Cookies und externe Skripte, um Deine Erfahrung zu verbessern. Auf der linken Seite wird angegeben, welche Cookies und Skripte verwendet werden und wie sie sich auf Deinen Besuch auswirken. Du kannst Deine Einstellungen jederzeit ändern. Deine Auswahl hat keinen Einfluss auf Deinen Besuch.', 'psource-dsgvo');
         }
         $output = ($insertPrivacyPolicyLink === true) ? Integration::insertPrivacyPolicyLink($output) : $output;
         return apply_filters('psdsgvo_consents_modal_explanation_text', wp_kses($output, Helper::getAllowedHTMLTags()));
@@ -78,7 +78,7 @@ class Consent {
     public static function getBarExplanationText($insertPrivacyPolicyLink = true) {
         $output = get_option(PS_DSGVO_C_PREFIX . '_settings_consents_bar_explanation_text');
         if (empty($output)) {
-            $output = __('Diese Webseite verwendet funktionale Cookies und externe Skripte, um Deine Erfahrung zu verbessern.', PS_DSGVO_C_SLUG);
+            $output = __('Diese Webseite verwendet funktionale Cookies und externe Skripte, um Deine Erfahrung zu verbessern.', 'psource-dsgvo');
         }
         $output = ($insertPrivacyPolicyLink === true) ? Integration::insertPrivacyPolicyLink($output) : $output;
         return apply_filters('psdsgvo_consents_bar_explanation_text', wp_kses($output, Helper::getAllowedHTMLTags()));
@@ -91,7 +91,7 @@ class Consent {
         $consentRequiredStatus = Action::checkAllConsentsRequired();
         $output = get_option(PS_DSGVO_C_PREFIX . '_settings_consents_bar_more_information_text');
         if (empty($output)) {
-            $output = ($consentRequiredStatus) ? esc_attr__('Mehr Informationen', PS_DSGVO_C_SLUG) : esc_attr__('Meine Einstellungen', PS_DSGVO_C_SLUG);
+            $output = ($consentRequiredStatus) ? esc_attr__('Mehr Informationen', 'psource-dsgvo') : esc_attr__('Meine Einstellungen', 'psource-dsgvo');
         }
         return apply_filters('psdsgvo_consents_bar_more_information_text', wp_kses($output, Helper::getAllowedHTMLTags()));
     }
@@ -102,7 +102,7 @@ class Consent {
     public static function getBarButtonText() {
         $output = get_option(PS_DSGVO_C_PREFIX . '_settings_consents_bar_button_text');
         if (empty($output)) {
-            $output = __('Akzeptieren', PS_DSGVO_C_SLUG);
+            $output = __('Akzeptieren', 'psource-dsgvo');
         }
         return apply_filters('psdsgvo_consents_bar_more_information_text', wp_kses($output, Helper::getAllowedHTMLTags()));
     }
@@ -316,8 +316,8 @@ class Consent {
      */
     public static function getPossibleCodeWraps() {
         return array(
-            '1' => esc_html__('Umschließe mein Code-Snippet mit <script> Tags', PS_DSGVO_C_SLUG),
-            '0' => __('Wickel mein Code-Snippet nicht ein', PS_DSGVO_C_SLUG)
+            '1' => esc_html__('Umschließe mein Code-Snippet mit <script> Tags', 'psource-dsgvo'),
+            '0' => __('Wickel mein Code-Snippet nicht ein', 'psource-dsgvo')
         );
     }
 
@@ -326,9 +326,9 @@ class Consent {
      */
     public static function getPossiblePlacements() {
         return array(
-            'head' => __('Header', PS_DSGVO_C_SLUG),
-            'body' => __('Body', PS_DSGVO_C_SLUG),
-            'footer' => __('Footer', PS_DSGVO_C_SLUG)
+            'head' => __('Header', 'psource-dsgvo'),
+            'body' => __('Body', 'psource-dsgvo'),
+            'footer' => __('Footer', 'psource-dsgvo')
         );
     }
 

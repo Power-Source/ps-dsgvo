@@ -4,7 +4,7 @@
  Plugin Name: PSOURCE DSGVO 
  Plugin URI:  https://power-source.github.io/ps-dsgvo/
  Description: Dieses Plugin unterstützt Website- und Webshop-Besitzer bei der Einhaltung der europäischen Datenschutzbestimmungen, die als DSGVO bekannt sind. 
- Version:     1.0.0
+ Version:     1.0.1
  Author:      DerN3rd
  Author URI:  https://github.com/Power-Source
  License:     GPL2
@@ -53,13 +53,13 @@ add_action( 'admin_notices', function() {
                     'activate-plugin_' . $plugin_file
                 );
                 echo sprintf(
-                    __( 'Aktiviere den <a href="%s">PS Update Manager</a> für automatische Updates von GitHub.', 'psource-chat' ),
+                    __( 'Aktiviere den <a href="%s">PS Update Manager</a> für automatische Updates von GitHub.', 'psource-dsgvo' ),
                     esc_url( $activate_url )
                 );
             } else {
                 // Nicht installiert - Download-Link
                 echo sprintf(
-                    __( 'Installiere den <a href="%s" target="_blank">PS Update Manager</a> für automatische Updates aller PSource Plugins & Themes.', 'psource-chat' ),
+                    __( 'Installiere den <a href="%s" target="_blank">PS Update Manager</a> für automatische Updates aller PSource Plugins & Themes.', 'psource-dsgvo' ),
                     'https://github.com/Power-Source/ps-update-manager/releases/latest'
                 );
             }
@@ -116,7 +116,7 @@ add_filter('widget_text', function($content) {
     return \PSDSGVO\Includes\Extensions\ContentEmbeds::getInstance()->filterContent($content);
 }, 999);
 
-add_action('plugins_loaded', array(PSDSGVO::getInstance(), 'init'));
+add_action('init', array(PSDSGVO::getInstance(), 'init'), 0);
 add_action('wp', array(PSDSGVO::getInstance(), 'checkSession'));
 add_action('save_post', array(PSDSGVO::getInstance(), 'checkIfAccessRequestPage'), 10, 3);
 
@@ -133,6 +133,7 @@ class PSDSGVO {
     private static $instance = null;
 
     public function init() {
+        load_plugin_textdomain('psource-dsgvo', false, dirname(PS_DSGVO_C_BASENAME) . '/languages');
         self::handleDatabaseTables();
         self::addConsentVersion();
         self::removeOldConsentCookies();
@@ -157,9 +158,6 @@ class PSDSGVO {
         }
         $action = (isset($_REQUEST['psdsgvo-action'])) ? esc_html($_REQUEST['psdsgvo-action']) : false;
         Helper::doAction($action);
-        add_action('plugins_loaded', function () {
-            load_plugin_textdomain(PS_DSGVO_C_SLUG, false, basename(dirname(__FILE__)) . '/languages/');
-        });
         add_filter('plugin_action_links_' . plugin_basename(__FILE__), array($this, 'addActionLinksToPluginPage'));
         if (is_admin()) {
             add_action('admin_init', array(Page::getInstance(), 'registerSettings'));
@@ -432,7 +430,7 @@ class PSDSGVO {
      */
     public function addActionLinksToPluginPage($links = array()) {
         $actionLinks = array(
-            'settings' => '<a href="' . add_query_arg(array('page' => str_replace('-', '_', PS_DSGVO_C_SLUG)), admin_url('tools.php')) . '" aria-label="' . esc_attr__('View PSOURCE DSGVO settings', PS_DSGVO_C_SLUG) . '">' . esc_html__('Settings', PS_DSGVO_C_SLUG) . '</a>',
+            'settings' => '<a href="' . add_query_arg(array('page' => str_replace('-', '_', PS_DSGVO_C_SLUG)), admin_url('tools.php')) . '" aria-label="' . esc_attr__('View PSOURCE DSGVO settings', 'psource-dsgvo') . '">' . esc_html__('Settings', 'psource-dsgvo') . '</a>',
         );
         return array_merge($actionLinks, $links);
     }
@@ -442,8 +440,8 @@ class PSDSGVO {
         wp_register_script('psdsgvo.postscribe.js', PS_DSGVO_C_URI_VENDOR . '/postscribe/postscribe.min.js', array(), filemtime(PS_DSGVO_C_DIR_VENDOR . '/postscribe/postscribe.min.js'));
         wp_enqueue_style('psdsgvo.css', PS_DSGVO_C_URI_CSS . '/front.min.css', array(), filemtime(PS_DSGVO_C_DIR_CSS . '/front.min.css'));
         wp_add_inline_style('psdsgvo.css', "
-            div.psdsgvo .psdsgvo-switch .psdsgvo-switch-inner:before { content: '" . __('Ja', PS_DSGVO_C_SLUG) . "'; }
-            div.psdsgvo .psdsgvo-switch .psdsgvo-switch-inner:after { content: '" . __('Nein', PS_DSGVO_C_SLUG) . "'; }
+            div.psdsgvo .psdsgvo-switch .psdsgvo-switch-inner:before { content: '" . __('Ja', 'psource-dsgvo') . "'; }
+            div.psdsgvo .psdsgvo-switch .psdsgvo-switch-inner:after { content: '" . __('Nein', 'psource-dsgvo') . "'; }
         ");
         $dependencies = array();
         $isMultisite = is_multisite();
@@ -468,7 +466,7 @@ class PSDSGVO {
             $data['blogId'] = get_current_blog_id();
         }
         if (!empty($_REQUEST['psdsgvo'])) {
-            $data['token'] = esc_html($_REQUEST['psdsgvo']);  // WordPress dekodiert automatisch
+            $data['token'] = esc_html($_REQUEST['psdsgvo']);  // ClasicPress dekodiert automatisch
         }
         wp_enqueue_script('psdsgvo.js', PS_DSGVO_C_URI_JS . '/front.min.js', $dependencies, filemtime(PS_DSGVO_C_DIR_JS . '/front.min.js'), true);
         wp_localize_script('psdsgvo.js', 'psdsgvoData', $data);
@@ -478,8 +476,8 @@ class PSDSGVO {
         wp_register_style('psdsgvo.admin.codemirror.css', PS_DSGVO_C_URI_VENDOR . '/codemirror/codemirror.css', array(), filemtime(PS_DSGVO_C_DIR_VENDOR . '/codemirror/codemirror.css'));
         wp_enqueue_style('psdsgvo.admin.css', PS_DSGVO_C_URI_CSS . '/admin.min.css', array(), filemtime(PS_DSGVO_C_DIR_CSS . '/admin.min.css'));
         wp_add_inline_style('psdsgvo.admin.css', "
-            div.psdsgvo .psdsgvo-switch .psdsgvo-switch-inner:before { content: '" . __('Ja', PS_DSGVO_C_SLUG) . "'; }
-            div.psdsgvo .psdsgvo-switch .psdsgvo-switch-inner:after { content: '" . __('Nein', PS_DSGVO_C_SLUG) . "'; }
+            div.psdsgvo .psdsgvo-switch .psdsgvo-switch-inner:before { content: '" . __('Ja', 'psource-dsgvo') . "'; }
+            div.psdsgvo .psdsgvo-switch .psdsgvo-switch-inner:after { content: '" . __('Nein', 'psource-dsgvo') . "'; }
         ");
         wp_register_script('psdsgvo.admin.codemirror.js', PS_DSGVO_C_URI_VENDOR . '/codemirror/codemirror.js', array(), filemtime(PS_DSGVO_C_DIR_VENDOR . '/codemirror/codemirror.js'));
         wp_register_script('psdsgvo.admin.codemirror.additional.js', PS_DSGVO_C_URI_VENDOR . '/codemirror/codemirror.additional.js', array('psdsgvo.admin.codemirror.js'), filemtime(PS_DSGVO_C_DIR_VENDOR . '/codemirror/codemirror.additional.js'), true);
@@ -512,4 +510,3 @@ function autoload($class = '') {
     $result = str_replace('\\', '/', $result);
     require $result . '.php';
 }
-

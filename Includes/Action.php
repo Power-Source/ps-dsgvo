@@ -65,7 +65,7 @@ class Action {
     }
 
     /**
-     * Stop WordPress from sending anything but essential data during the update check
+     * Stop ClasicPress from sending anything but essential data during the update check
      * @param array $query
      * @return array
      */
@@ -90,7 +90,7 @@ class Action {
                 $result = wp_insert_post(array(
                     'post_type' => 'page',
                     'post_status' => 'private',
-                    'post_title' => __('Datenzugriffsanforderung', PS_DSGVO_C_SLUG),
+                    'post_title' => __('Datenzugriffsanforderung', 'psource-dsgvo'),
                     'post_content' => '[psdsgvo_access_request_form]',
                     'meta_input' => array(
                         '_psdsgvo_access_request' => 1,
@@ -126,11 +126,11 @@ class Action {
                     '<div class="%s"><p><strong>%s:</strong> %s %s</p></div>',
                     'notice notice-error',
                     $pluginData['Name'],
-                    __('Die erforderlichen Datenbanktabellen konnten nicht erstellt werden.', PS_DSGVO_C_SLUG),
+                    __('Die erforderlichen Datenbanktabellen konnten nicht erstellt werden.', 'psource-dsgvo'),
                     sprintf(
                         '<a class="button" href="%s">%s</a>',
                         Helper::getPluginAdminUrl('', array('psdsgvo-action' => 'create_request_tables')),
-                        __('Wiederholen', PS_DSGVO_C_SLUG)
+                        __('Wiederholen', 'psource-dsgvo')
                     )
                 );
             }
@@ -211,7 +211,7 @@ class Action {
         $consents = Consent::getInstance()->getList(array(
             'active' => array('value' => 1)
         ));
-	    $text = ($consentRequiredStatus) ? Consent::getBarButtonText() : __('Speicher meine Einstellungen', PS_DSGVO_C_SLUG);
+	    $text = ($consentRequiredStatus) ? Consent::getBarButtonText() : __('Speicher meine Einstellungen', 'psource-dsgvo');
         $output = '<div class="psdsgvo psdsgvo-consent-modal" id="psdsgvo-consent-modal" aria-hidden="true">';
         $output .= '<div class="psdsgvo-consent-modal__overlay" tabindex="-1" data-micromodal-close>';
         $output .= '<div class="psdsgvo-consent-modal__container" role="dialog" aria-modal="true">';
@@ -227,7 +227,7 @@ class Action {
                 $output .= sprintf(
                     '<a class="psdsgvo-button" href="javascript:void(0);" data-target="%d">%s</a>',
                     $consent->getId(),
-                    ((!empty($title)) ? $title : __('(kein Titel)', PS_DSGVO_C_SLUG))
+                    ((!empty($title)) ? $title : __('(kein Titel)', 'psource-dsgvo'))
                 );
             }
             $output .= '</nav>'; // .psdsgvo-consent-modal__navigation
@@ -240,8 +240,8 @@ class Action {
             $output .= apply_filters('psdsgvo_the_content', Consent::getModalExplanationText());
             $output .= apply_filters('psdsgvo_the_content', sprintf(
                 '<strong>%s:</strong> %s',
-                strtoupper(__('Hinweis', PS_DSGVO_C_SLUG)),
-                __('Diese Einstellungen gelten nur für den Browser und das Gerät, die Du gerade verwendest.', PS_DSGVO_C_SLUG)
+                strtoupper(__('Hinweis', 'psource-dsgvo')),
+                __('Diese Einstellungen gelten nur für den Browser und das Gerät, die Du gerade verwendest.', 'psource-dsgvo')
             ));
             $output .= '</div>'; // .psdsgvo-consent-modal__description
             /** @var Consent $consent */
@@ -266,7 +266,7 @@ class Action {
                     $output .= '<span class="psdsgvo-switch-switch"></span>';
                     $output .= '</span>';
                     $output .= '</span>';
-                    $output .= __('Enable', PS_DSGVO_C_SLUG);
+                    $output .= __('Enable', 'psource-dsgvo');
                     $output .= '</label>';
                     $output .= '</div>';
                 }
@@ -291,7 +291,7 @@ class Action {
         }
         $output .= sprintf(
             '<button class="psdsgvo-consent-modal__close" aria-label="%s" data-micromodal-close>&#x2715;</button>',
-            esc_attr__('Modal schließen', PS_DSGVO_C_SLUG)
+            esc_attr__('Modal schließen', 'psource-dsgvo')
         );
         $output .= '</div>'; // .psdsgvo-consent-modal__container
         $output .= '</div>'; // .psdsgvo-consent-modal__overlay
@@ -375,9 +375,9 @@ class Action {
         
         // Erstelle neuen Consent
         $consent = new Consent();
-        $consent->setTitle($config['label'] . ' Embeds');
+        $consent->setTitle(sprintf(__('%s Embeds', 'psource-dsgvo'), $config['label']));
         $consent->setDescription(sprintf(
-            'Externe %s-Inhalte werden von externen Servern geladen und können Daten über Sie sammeln. Bitte akzeptieren Sie, um die Inhalte zu sehen.',
+            __('Externe %s-Inhalte werden von externen Servern geladen und können Daten über Sie sammeln. Bitte akzeptieren Sie, um die Inhalte zu sehen.', 'psource-dsgvo'),
             $config['label']
         ) . ' ' . $config['cookie_info']);
         $consent->setActive(1);

@@ -1,0 +1,1118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PSOURCE DSGVO 1.0.1\n"
+"Report-Msgid-Bugs-To: https://github.com/Power-Source/ps-dsgvo/issues\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: psource-dsgvo\n"
+
+#. Plugin Name of the plugin
+#: ps-dsgvo.php
+msgid "PSOURCE DSGVO"
+msgstr "PSOURCE DSGVO"
+
+#. Plugin URI of the plugin
+#: ps-dsgvo.php
+msgid "https://power-source.github.io/ps-dsgvo/"
+msgstr "https://power-source.github.io/ps-dsgvo/"
+
+#. Description of the plugin
+#: ps-dsgvo.php
+msgid "Dieses Plugin unterstützt Website- und Webshop-Besitzer bei der Einhaltung der europäischen Datenschutzbestimmungen, die als DSGVO bekannt sind."
+msgstr "This plugin helps website and webshop owners comply with the European privacy regulations known as GDPR."
+
+#. Author of the plugin
+#: ps-dsgvo.php
+msgid "DerN3rd"
+msgstr "DerN3rd"
+
+#. Author URI of the plugin
+#: ps-dsgvo.php
+msgid "https://github.com/Power-Source"
+msgstr "https://github.com/Power-Source"
+
+#: Includes/Action.php:93
+msgid "Datenzugriffsanforderung"
+msgstr "Data access request"
+
+#: Includes/Action.php:129
+msgid "Die erforderlichen Datenbanktabellen konnten nicht erstellt werden."
+msgstr "The required database tables could not be created."
+
+#: Includes/Action.php:133
+msgid "Wiederholen"
+msgstr "Retry"
+
+#: Includes/Action.php:214
+msgid "Speicher meine Einstellungen"
+msgstr "Save my settings"
+
+#: Includes/Action.php:230 Includes/Page.php:773
+msgid "(kein Titel)"
+msgstr "(no title)"
+
+#: Includes/Action.php:243 Includes/Helper.php:116 Includes/Helper.php:174
+#: Includes/Page.php:256 Includes/Page.php:355 Includes/Page.php:370
+#: Includes/Page.php:431 Includes/Page.php:487 Includes/Page.php:859
+#: Includes/Page.php:965 Includes/Page.php:1052 Includes/Shortcode.php:164
+msgid "Hinweis"
+msgstr "Note"
+
+#: Includes/Action.php:244
+msgid "Diese Einstellungen gelten nur für den Browser und das Gerät, die Du gerade verwendest."
+msgstr "These settings only apply to the browser and device you are currently using."
+
+#: Includes/Action.php:269
+msgid "Enable"
+msgstr "Enable"
+
+#: Includes/Action.php:294
+msgid "Modal schließen"
+msgstr "Close modal"
+
+#: Includes/Action.php:378
+#, php-format
+msgid "%s Embeds"
+msgstr "%s embeds"
+
+#: Includes/Action.php:380
+#, php-format
+msgid "Externe %s-Inhalte werden von externen Servern geladen und können Daten über Sie sammeln. Bitte akzeptieren Sie, um die Inhalte zu sehen."
+msgstr "External %s content is loaded from external servers and may collect data about you. Please accept to view the content."
+
+#: Includes/Ajax.php:26 Includes/Ajax.php:95 Includes/Ajax.php:291
+msgid "Fehlende Daten."
+msgstr "Missing data."
+
+#: Includes/Ajax.php:36
+msgid "Fehlender Optionsname."
+msgstr "Missing option name."
+
+#: Includes/Ajax.php:40
+msgid "Du darfst keine Einstellungen verwalten."
+msgstr "You are not allowed to manage settings."
+
+#: Includes/Ajax.php:44
+msgid "Du darfst diese Einstellung nicht verwalten."
+msgstr "You are not allowed to manage this setting."
+
+#: Includes/Ajax.php:48
+msgid "Fehlender Wert."
+msgstr "Missing value."
+
+#: Includes/Ajax.php:99
+msgid "Fehlender Typ."
+msgstr "Missing type."
+
+#: Includes/Ajax.php:110
+msgid "Fehlende oder falsche E-Mail-Adresse."
+msgstr "Missing or invalid email address."
+
+#: Includes/Ajax.php:114
+msgid "Du musst das Kontrollkästchen Datenschutz akzeptieren."
+msgstr "You must accept the privacy checkbox."
+
+#: Includes/Ajax.php:139 Includes/Page.php:444
+msgid "Seite"
+msgstr "page"
+
+#: Includes/Ajax.php:146
+#, php-format
+msgid "%s - Deine Datenanfrage"
+msgstr "%s - Your data request"
+
+#: Includes/Ajax.php:152
+#, php-format
+msgid "Du hast auf %s angefordert, auf Deine Daten zuzugreifen."
+msgstr "You requested access to your data on %s."
+
+#: Includes/Ajax.php:156
+#, php-format
+msgid "Bitte besuche diese %s, um die mit der E-Mail-Adresse %s verknüpften Daten anzuzeigen."
+msgstr "Please visit this %s to view the data associated with the email address %s."
+
+#: Includes/Ajax.php:160
+msgid "Diese Seite ist 24 Stunden lang verfügbar und kann nur von demselben Gerät, derselben IP-Adresse und derselben Browsersitzung aus erreicht werden, von denen aus sie angefordert wurde."
+msgstr "This page is available for 24 hours and can only be accessed from the same device, IP address and browser session used to make the request."
+
+#: Includes/Ajax.php:162
+#, php-format
+msgid "Wenn Dein Link ungültig ist, kannst Du nach 24 Stunden eine neue Anfrage ausfüllen: %s."
+msgstr "If your link is invalid, you can submit a new request after 24 hours: %s."
+
+#: Includes/Ajax.php:176
+msgid "Erfolg. Du erhältst in Kürze eine E-Mail mit Deinen Daten."
+msgstr "Success. You will receive an email with your data shortly."
+
+#: Includes/Ajax.php:180
+msgid "Beim Speichern der Anfrage ist ein Fehler aufgetreten. Bitte versuche es erneut."
+msgstr "An error occurred while saving the request. Please try again."
+
+#: Includes/Ajax.php:183
+msgid "Du hast Deine Daten bereits angefordert. Bitte überprüfe Deine Mailbox. Nach 24 Stunden kannst Du eine neue Anfrage stellen."
+msgstr "You have already requested your data. Please check your inbox. You can submit a new request after 24 hours."
+
+#: Includes/Ajax.php:196
+msgid "Fehlender Token."
+msgstr "Missing token."
+
+#: Includes/Ajax.php:200
+msgid "Fehlender oder ungültiger Typ."
+msgstr "Missing or invalid type."
+
+#: Includes/Ajax.php:204
+msgid "Kein Wert ausgewählt."
+msgstr "No value selected."
+
+#: Includes/Ajax.php:224
+msgid "Beim Speichern dieser Anfrage ist ein Fehler aufgetreten. Bitte versuche es erneut."
+msgstr "An error occurred while saving this request. Please try again."
+
+#: Includes/Ajax.php:232 Includes/Page.php:95
+msgid "Anfragen"
+msgstr "Requests"
+
+#: Includes/Ajax.php:236
+#, php-format
+msgid "%s - Neue Anonymisierungsanfrage"
+msgstr "%s - New anonymization request"
+
+#: Includes/Ajax.php:241
+#, php-format
+msgid "Du hast eine neue Anonymisierungsanfrage für %s erhalten."
+msgstr "You have received a new anonymization request for %s."
+
+#: Includes/Ajax.php:245
+#, php-format
+msgid "Du kannst diese Anforderung im Admin-Bereich verwalten: %s"
+msgstr "You can manage this request in the admin area: %s"
+
+#: Includes/Ajax.php:256
+msgid "Sitzung stimmt nicht überein."
+msgstr "Session mismatch."
+
+#: Includes/Ajax.php:259
+msgid "Keine Sitzung gefunden."
+msgstr "No session found."
+
+#: Includes/Ajax.php:281
+msgid "Die Zugriffsanforderungsfunktion ist nicht aktiviert."
+msgstr "The data access request feature is not enabled."
+
+#: Includes/Ajax.php:295
+msgid "Diese Anfrage existiert nicht."
+msgstr "This request does not exist."
+
+#: Includes/Ajax.php:317
+msgid "Dieser Benutzer existiert nicht."
+msgstr "This user does not exist."
+
+#: Includes/Ajax.php:324
+msgid "Du darfst keine Benutzer bearbeiten."
+msgstr "You are not allowed to edit users."
+
+#: Includes/Ajax.php:337
+msgid "Dieser Kommentar existiert nicht."
+msgstr "This comment does not exist."
+
+#: Includes/Ajax.php:343
+msgid "Du darfst keine Kommentare bearbeiten."
+msgstr "You are not allowed to edit comments."
+
+#: Includes/Ajax.php:387
+msgid "Du darfst WooCommerce-Bestellungen nicht bearbeiten."
+msgstr "You are not allowed to edit WooCommerce orders."
+
+#: Includes/Ajax.php:399
+#, php-format
+msgid "%s - Deine Anfrage"
+msgstr "%s - Your request"
+
+#: Includes/Ajax.php:404
+#, php-format
+msgid "Wir haben Deine Anfrage erfolgreich bearbeitet und Deine Daten wurden auf %s anonymisiert."
+msgstr "We have successfully processed your request and your data has been anonymized on %s."
+
+#: Includes/Ajax.php:407
+msgid "Folgendes wurde verarbeitet:"
+msgstr "The following has been processed:"
+
+#: Includes/Ajax.php:416
+msgid "Erfolgreich eine Bestätigungsmail an den Benutzer gesendet."
+msgstr "A confirmation email was successfully sent to the user."
+
+#: Includes/Ajax.php:420
+msgid "Diese Anfrage wurde bereits bearbeitet."
+msgstr "This request has already been processed."
+
+#: Includes/Consent.php:55
+msgid "Datenschutzeinstellungen"
+msgstr "Privacy settings"
+
+#: Includes/Consent.php:68
+msgid "Diese Webseite verwendet funktionale Cookies und externe Skripte, um Deine Erfahrung zu verbessern. Auf der linken Seite wird angegeben, welche Cookies und Skripte verwendet werden und wie sie sich auf Deinen Besuch auswirken. Du kannst Deine Einstellungen jederzeit ändern. Deine Auswahl hat keinen Einfluss auf Deinen Besuch."
+msgstr "This website uses functional cookies and external scripts to improve your experience. The cookies and scripts used and how they affect your visit are listed on the left. You can change your settings at any time. Your choices will not affect your visit."
+
+#: Includes/Consent.php:81
+msgid "Diese Webseite verwendet funktionale Cookies und externe Skripte, um Deine Erfahrung zu verbessern."
+msgstr "This website uses functional cookies and external scripts to improve your experience."
+
+#: Includes/Consent.php:94
+msgid "Mehr Informationen"
+msgstr "More information"
+
+#: Includes/Consent.php:94 Includes/Page.php:492 Includes/Shortcode.php:169
+msgid "Meine Einstellungen"
+msgstr "My settings"
+
+#: Includes/Consent.php:105
+msgid "Akzeptieren"
+msgstr "Accept"
+
+#: Includes/Consent.php:319
+msgid "Umschließe mein Code-Snippet mit <script> Tags"
+msgstr "Wrap my code snippet in <script> tags"
+
+#: Includes/Consent.php:320
+msgid "Wickel mein Code-Snippet nicht ein"
+msgstr "Do not wrap my code snippet"
+
+#: Includes/Consent.php:329 Includes/Page.php:687
+msgid "Header"
+msgstr "Header"
+
+#: Includes/Consent.php:330 Includes/Page.php:692
+msgid "Body"
+msgstr "Body"
+
+#: Includes/Consent.php:331 Includes/Page.php:697
+msgid "Footer"
+msgstr "Footer"
+
+#: Includes/Cron.php:21
+msgid "Einmal pro Monat"
+msgstr "Once a month"
+
+#: Includes/Data.php:27 Includes/Shortcode.php:85 Includes/Shortcode.php:105
+#, php-format
+msgid "<strong>FEHLER</strong>: %s"
+msgstr "<strong>ERROR</strong>: %s"
+
+#: Includes/Data.php:28
+msgid "E-Mailadresse wird benötigt."
+msgstr "Email address is required."
+
+#: Includes/Data.php:52
+msgid "Benutzername"
+msgstr "Username"
+
+#: Includes/Data.php:53
+msgid "Anzeigename"
+msgstr "Display name"
+
+#: Includes/Data.php:54 Includes/Data.php:63 Includes/Data.php:70
+msgid "Email-Addresse"
+msgstr "Email address"
+
+#: Includes/Data.php:55
+msgid "Webseite"
+msgstr "Website"
+
+#: Includes/Data.php:56
+msgid "Registriert am"
+msgstr "Registered on"
+
+#: Includes/Data.php:61
+msgid "Autor"
+msgstr "Author"
+
+#: Includes/Data.php:62
+msgid "Inhalt"
+msgstr "Content"
+
+#: Includes/Data.php:64 Includes/Page.php:872 Includes/Page.php:976
+msgid "IP Addresse"
+msgstr "IP address"
+
+#: Includes/Data.php:69
+msgid "Bestellung"
+msgstr "Order"
+
+#: Includes/Data.php:71
+msgid "Name"
+msgstr "Name"
+
+#: Includes/Data.php:72
+msgid "Addresse"
+msgstr "Address"
+
+#: Includes/Data.php:73
+msgid "Postleitzahl"
+msgstr "Postal code"
+
+#: Includes/Data.php:74
+msgid "Stadt"
+msgstr "City"
+
+#: Includes/Data.php:178
+#, php-format
+msgid "Anonymisiere ausgewählte %s"
+msgstr "Anonymize selected %s"
+
+#: Includes/DeleteRequest.php:234
+msgid "Unbekannt"
+msgstr "Unknown"
+
+#: Includes/DeleteRequest.php:237 Includes/Shortcode.php:35
+msgid "Benutzer"
+msgstr "User"
+
+#: Includes/DeleteRequest.php:240
+msgid "Kommentar"
+msgstr "Comment"
+
+#: Includes/DeleteRequest.php:243
+msgid "WooCommerce Bestellung"
+msgstr "WooCommerce order"
+
+#: Includes/Extensions/CF7.php:184 Includes/Extensions/GForms.php:113
+#: Includes/Extensions/GForms.php:129 Includes/Extensions/GForms.php:161
+#: Includes/Extensions/WC.php:69 Includes/Extensions/WC.php:96
+#: Includes/Extensions/WP.php:79
+msgid "Not accepted."
+msgstr "Not accepted."
+
+#: Includes/Extensions/CF7.php:188 Includes/Extensions/WC.php:67
+msgid "GDPR accepted on:"
+msgstr "GDPR accepted on:"
+
+#: Includes/Extensions/ContentEmbeds.php:29
+msgid "YouTube Videos"
+msgstr "YouTube videos"
+
+#: Includes/Extensions/ContentEmbeds.php:35
+msgid "YouTube verwendet Cookies um Nutzerverhalten zu tracken."
+msgstr "YouTube uses cookies to track user behavior."
+
+#: Includes/Extensions/ContentEmbeds.php:39
+msgid "Vimeo Videos"
+msgstr "Vimeo videos"
+
+#: Includes/Extensions/ContentEmbeds.php:44
+msgid "Vimeo verwendet Cookies um Nutzerverhalten zu tracken."
+msgstr "Vimeo uses cookies to track user behavior."
+
+#: Includes/Extensions/ContentEmbeds.php:48
+msgid "Google Maps Karten"
+msgstr "Google Maps"
+
+#: Includes/Extensions/ContentEmbeds.php:54
+msgid "Google Maps verwendet Cookies und sammelt Standortdaten."
+msgstr "Google Maps uses cookies and collects location data."
+
+#: Includes/Extensions/ContentEmbeds.php:58
+msgid "Twitter/X Embeds"
+msgstr "Twitter/X embeds"
+
+#: Includes/Extensions/ContentEmbeds.php:64
+msgid "Twitter verwendet Cookies um Nutzerverhalten zu tracken."
+msgstr "Twitter uses cookies to track user behavior."
+
+#: Includes/Extensions/ContentEmbeds.php:68
+msgid "Instagram Posts"
+msgstr "Instagram posts"
+
+#: Includes/Extensions/ContentEmbeds.php:72
+msgid "Instagram (Facebook) verwendet Cookies um Nutzerverhalten zu tracken."
+msgstr "Instagram (Facebook) uses cookies to track user behavior."
+
+#: Includes/Extensions/ContentEmbeds.php:76
+msgid "Facebook Embeds"
+msgstr "Facebook embeds"
+
+#: Includes/Extensions/ContentEmbeds.php:81
+msgid "Facebook verwendet Cookies um Nutzerverhalten zu tracken."
+msgstr "Facebook uses cookies to track user behavior."
+
+#: Includes/Extensions/ContentEmbeds.php:85
+msgid "Spotify Player"
+msgstr "Spotify player"
+
+#: Includes/Extensions/ContentEmbeds.php:90
+msgid "Spotify verwendet Cookies um Nutzerverhalten zu tracken."
+msgstr "Spotify uses cookies to track user behavior."
+
+#: Includes/Extensions/ContentEmbeds.php:115
+#, php-format
+msgid "Dieser Inhalt wird von %s geladen. Um diesen Inhalt zu sehen, müssen Sie der Verwendung von Cookies zustimmen."
+msgstr "This content is loaded from %s. To view this content, you must consent to the use of cookies."
+
+#: Includes/Extensions/ContentEmbeds.php:231
+msgid "Inhalt laden"
+msgstr "Load content"
+
+#: Includes/Extensions/ContentEmbeds.php:236
+msgid "Datenschutzerklärung"
+msgstr "Privacy policy"
+
+#: Includes/Extensions/GForms.php:58 Includes/Extensions/GForms.php:97
+#: Includes/Extensions/WC.php:84
+msgid "Privacy"
+msgstr "Privacy"
+
+#: Includes/Extensions/GForms.php:159
+#, php-format
+msgid "Accepted on %s."
+msgstr "Accepted on %s."
+
+#: Includes/Extensions/WP.php:33
+msgid "This checkbox is checked because you are an admin"
+msgstr "This checkbox is checked because you are an admin"
+
+#: Includes/Extensions/WP.php:34
+msgid "required"
+msgstr "required"
+
+#: Includes/Extensions/WP.php:44
+#, php-format
+msgid "<strong>ERROR</strong>: %s"
+msgstr "<strong>ERROR</strong>: %s"
+
+#: Includes/Extensions/WP.php:67
+msgid "GDPR Accepted On"
+msgstr "GDPR Accepted On"
+
+#: Includes/Extensions/WPRegistration.php:102
+msgid "user has given consent when registering"
+msgstr "user has given consent when registering"
+
+#: Includes/Helper.php:110
+#, php-format
+msgid "Du kannst verwenden: %s"
+msgstr "You can use: %s"
+
+#: Includes/Helper.php:117
+msgid "Aufgrund von Plugin-Einschränkungen ist kein HTML zulässig."
+msgstr "HTML is not allowed due to plugin limitations."
+
+#: Includes/Helper.php:134
+msgid "Die Zustimmung wurde erfolgreich aktualisiert."
+msgstr "The consent was successfully updated."
+
+#: Includes/Helper.php:137
+msgid "Die Zustimmung wurde erfolgreich hinzugefügt."
+msgstr "The consent was successfully added."
+
+#: Includes/Helper.php:140
+msgid "Die Zustimmung wurde erfolgreich entfernt."
+msgstr "The consent was successfully removed."
+
+#: Includes/Helper.php:144
+msgid "Diese Zustimmung konnte nicht gefunden werden."
+msgstr "This consent could not be found."
+
+#: Includes/Helper.php:147
+msgid "Die Zustimmungsleiste wurde zurückgesetzt."
+msgstr "The consent bar has been reset."
+
+#: Includes/Helper.php:175
+msgid "Bitte deaktiviere das benutzerdefinierte Kommentarformular in Jetpack, um Deine GDPR-Konformität mit ClasicPress-Kommentaren zu gewährleisten."
+msgstr "Please disable the custom comment form in Jetpack to ensure GDPR compliance for ClasicPress comments."
+
+#: Includes/Helper.php:190
+msgid "Hast Du ein Kontaktformular?"
+msgstr "Do you have a contact form?"
+
+#: Includes/Helper.php:191
+msgid "Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem der Benutzer des Formulars speziell gefragt wird, ob er damit einverstanden ist, dass Du seine persönlichen Daten speicherst und verwendest, um wieder mit ihm in Kontakt zu treten. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche."
+msgstr "Make sure you add a checkbox that specifically asks form users whether they consent to you storing and using their personal data to contact them. The checkbox must be unchecked by default. Also mention whether you send or share the data with third parties and identify them."
+
+#: Includes/Helper.php:194
+msgid "Können Besucher irgendwo auf Deiner Website Kommentare abgeben?"
+msgstr "Can visitors leave comments anywhere on your website?"
+
+#: Includes/Helper.php:195
+msgid "Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem der Benutzer des Kommentarbereichs speziell gefragt wird, ob er damit einverstanden ist, seine an die E-Mail-Adresse angehängte Nachricht zu speichern, die er zum Kommentieren verwendet hat. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche."
+msgstr "Make sure you add a checkbox that specifically asks commenters whether they consent to storing their message together with the email address they used to comment. The checkbox must be unchecked by default. Also mention whether you send or share the data with third parties and identify them."
+
+#: Includes/Helper.php:198
+msgid "Ist auf Deiner Webseite oder in Deinem Webshop ein Bestellformular vorhanden?"
+msgstr "Does your website or webshop have an order form?"
+
+#: Includes/Helper.php:199
+msgid "Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem der Benutzer des Formulars speziell gefragt wird, ob er damit einverstanden ist, dass Du seine persönlichen Daten speicherst und zum Versenden der Bestellung verwendest. Dies kann nicht dasselbe Kontrollkästchen sein wie das Kontrollkästchen Datenschutz-Verantwortlichkeiten, das Du bereits eingerichtet haben solltest. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche."
+msgstr "Make sure you add a checkbox that specifically asks form users whether they consent to you storing and using their personal data to ship their order. This cannot be the same checkbox as the privacy responsibilities checkbox you should already have in place. The checkbox must be unchecked by default. Also mention whether you send or share the data with third parties and identify them."
+
+#: Includes/Helper.php:202
+msgid "Bietest Du ein Forum oder ein Message Board an?"
+msgstr "Do you offer a forum or message board?"
+
+#: Includes/Helper.php:203
+msgid "Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem Forum-/Board-Benutzer speziell gefragt werden, ob sie damit einverstanden sind, dass Du ihre persönlichen Informationen und Nachrichten speicherst und verwendest. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche."
+msgstr "Make sure you add a checkbox that specifically asks forum or board users whether they consent to you storing and using their personal information and messages. The checkbox must be unchecked by default. Also mention whether you send or share the data with third parties and identify them."
+
+#: Includes/Helper.php:206
+msgid "Können Besucher direkt mit Deinem Unternehmen chatten?"
+msgstr "Can visitors chat directly with your company?"
+
+#: Includes/Helper.php:207
+msgid "Stelle sicher, dass Du ein Kontrollkästchen hinzufügst, in dem Chat-Benutzer speziell gefragt werden, ob sie damit einverstanden sind, dass Du ihre persönlichen Informationen und Nachrichten speicherst und verwendest. Das Kontrollkästchen muss standardmäßig deaktiviert sein. Wir empfehlen außerdem anzugeben, wie lange Du Chat-Nachrichten speicherst oder alle innerhalb von 24 Stunden löschen. Erwähne auch, ob Du die Daten an Dritte sendest oder weitergibst und welche."
+msgstr "Make sure you add a checkbox that specifically asks chat users whether they consent to you storing and using their personal information and messages. The checkbox must be unchecked by default. We also recommend stating how long you store chat messages or deleting them all within 24 hours. Also mention whether you send or share the data with third parties and identify them."
+
+#: Includes/Integration.php:137 Includes/Integration.php:181
+#, php-format
+msgid "Formular: %s"
+msgstr "Form: %s"
+
+#: Includes/Integration.php:138
+msgid "Für dieses Formular aktivieren:"
+msgstr "Enable for this form:"
+
+#: Includes/Integration.php:141
+msgid "Checkboxtext"
+msgstr "Checkbox text"
+
+#: Includes/Integration.php:147 Includes/Integration.php:191
+#: Includes/Integration.php:226
+msgid "Fehlermeldung"
+msgstr "Error message"
+
+#: Includes/Integration.php:157 Includes/Integration.php:207
+msgid "Keine Formulare gefunden."
+msgstr "No forms found."
+
+#: Includes/Integration.php:182
+msgid "Aktiviere für dieses Formular:"
+msgstr "Enable for this form:"
+
+#: Includes/Integration.php:185 Includes/Integration.php:220
+#: Includes/Page.php:462
+msgid "Kontrollkästchentext"
+msgstr "Checkbox text"
+
+#: Includes/Integration.php:197 Includes/Integration.php:232
+msgid "Erforderlich Nachricht"
+msgstr "Required message"
+
+#: Includes/Integration.php:258 Includes/Integration.php:322
+msgid "Durch die Verwendung dieses Formulars stimmst Du der Speicherung und Verarbeitung Deiner Daten durch diese Webseite zu."
+msgstr "By using this form, you consent to this website storing and processing your data."
+
+#: Includes/Integration.php:275
+msgid "Bitte akzeptiere das Kontrollkästchen Datenschutz."
+msgstr "Please accept the privacy checkbox."
+
+#: Includes/Integration.php:291
+msgid "Du musst dieses Kontrollkästchen akzeptieren."
+msgstr "You must accept this checkbox."
+
+#: Includes/Integration.php:302 Includes/Page.php:342 Includes/Page.php:394
+msgid "Datenschutz-Bestimmungen"
+msgstr "Privacy Policy"
+
+#: Includes/Integration.php:310
+msgid "http://www.example.com"
+msgstr "http://www.example.com"
+
+#: Includes/Integration.php:336
+#, php-format
+msgid "Nachfolgend zeigen wir Dir alle Daten, die von %s auf %s gespeichert wurden. Wähle die Daten aus, die der Webseitenbesitzer anonymisieren soll, damit sie nicht mehr mit Deiner Email-Adresse verknüpft werden können. Es liegt in der Verantwortung des Eigentümers der Webseite, auf Deine Anfrage zu reagieren. Wenn Deine Daten anonymisiert sind, erhältst Du eine E-Mail-Bestätigung."
+msgstr "Below you will find all data stored by %s on %s. Select the data you would like the website owner to anonymize so it can no longer be linked to your email address. It is the website owner's responsibility to respond to your request. You will receive an email confirmation when your data has been anonymized."
+
+#: Includes/Integration.php:379 Includes/Page.php:852
+msgid "ClasicPress Kommentare"
+msgstr "ClasicPress comments"
+
+#: Includes/Integration.php:380
+msgid "Bei Aktivierung wird das Kontrollkästchen DSGVO automatisch direkt über der Schaltfläche \"Senden\" hinzugefügt."
+msgstr "When enabled, the GDPR checkbox is automatically added directly above the submit button."
+
+#: Includes/Integration.php:384
+msgid "Wordpress Registrierung"
+msgstr "ClasicPress registration"
+
+#: Includes/Integration.php:385
+msgid "Bei Aktivierung wird das Kontrollkästchen DSGVO automatisch direkt über der Registrierungsschaltfläche hinzugefügt."
+msgstr "When enabled, the GDPR checkbox is automatically added directly above the registration button."
+
+#: Includes/Integration.php:399
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: Includes/Integration.php:400 Includes/Integration.php:407
+msgid "Ein DSGVO-Formular-Tag wird automatisch zu jedem von Dir aktivierten Formular hinzugefügt."
+msgstr "A GDPR form tag is automatically added to each form you enable."
+
+#: Includes/Integration.php:406
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: Includes/Integration.php:413 Includes/Page.php:854
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: Includes/Integration.php:414
+msgid "Das Kontrollkästchen DSGVO wird am Ende Deiner Checkout-Seite automatisch hinzugefügt."
+msgstr "The GDPR checkbox is automatically added at the end of your checkout page."
+
+#: Includes/Page.php:78
+msgid "Integrationen"
+msgstr "Integrations"
+
+#: Includes/Page.php:80
+msgid "Einwilligungen"
+msgstr "Consents"
+
+#: Includes/Page.php:106
+msgid "Externe Inhalte"
+msgstr "External content"
+
+#: Includes/Page.php:108
+msgid "Checkliste"
+msgstr "Checklist"
+
+#: Includes/Page.php:110
+msgid "Einstellungen"
+msgstr "Settings"
+
+#: Includes/Page.php:153
+msgid "Dieses Plugin unterstützt Webseiten- und Webshop-Besitzer bei der Einhaltung der europäischen Datenschutzbestimmungen, die als DSGVO bekannt sind. Ab dem 25. Mai 2018 muss Deine Webseite oder Dein Geschäft den Anforderungen entsprechen."
+msgstr "This plugin helps website and webshop owners comply with the European privacy regulations known as GDPR. Since May 25, 2018, your website or business must comply with these requirements."
+
+#: Includes/Page.php:156
+#, php-format
+msgid "%s unterstützt derzeit %s. Bitte besuche %s für häufig gestellte Fragen und unsere Entwicklungs-Roadmap."
+msgstr "%s currently supports %s. Please visit %s for frequently asked questions and our development roadmap."
+
+#: Includes/Page.php:162
+msgid "Haftungsausschluss: Die Ersteller dieses Plugins haben keinen rechtlichen Hintergrund. Bitte wende Dich an eine Anwaltskanzlei, um eine solide Rechtsberatung zu erhalten."
+msgstr "Disclaimer: The creators of this plugin do not have a legal background. Please consult a law firm for sound legal advice."
+
+#: Includes/Page.php:196 Includes/Page.php:1076
+msgid "Aktivieren:"
+msgstr "Enable:"
+
+#: Includes/Page.php:223
+#, php-format
+msgid "Dieses Plugin ist veraltet. %s unterstützt Version %s und höher."
+msgstr "This plugin is outdated. %s supports version %s and above."
+
+#: Includes/Page.php:232
+msgid "Es wurden keine unterstützten Plugins gefunden."
+msgstr "No supported plugins found."
+
+#: Includes/Page.php:233
+msgid "Folgende Plugins werden ab sofort unterstützt:"
+msgstr "The following plugins are currently supported:"
+
+#: Includes/Page.php:239
+msgid "Weitere Plugins werden in Zukunft hinzugefügt."
+msgstr "More plugins will be added in the future."
+
+#: Includes/Page.php:257
+msgid "Wir glauben, dass Du möglicherweise ein Mail-Plugin installiert hast."
+msgstr "We think you may have an email plugin installed."
+
+#: Includes/Page.php:260
+msgid "Weißt DU, woher Du Deine E-Mail-Datenbank hast? Hast Du alle Personen in Deinen Newslettern gefragt, ob sie dem Erhalt zustimmen? GDPR erfordert, dass alle Personen in Deiner E-Mail-Software Dir die ausdrückliche Erlaubnis erteilt haben, sie zu versenden."
+msgstr "Do you know where your email database came from? Have you asked everyone on your newsletter lists whether they consent to receiving them? GDPR requires everyone in your email software to have given you explicit permission to send them emails."
+
+#: Includes/Page.php:263
+msgid "Im Folgenden fragen wir Dich, welche privaten Daten Du derzeit sammelst, und geben Dir Tipps zur Einhaltung."
+msgstr "Below we ask which personal data you currently collect and provide tips on compliance."
+
+#: Includes/Page.php:344 Includes/Page.php:420
+msgid "Aktivieren"
+msgstr "Enable"
+
+#: Includes/Page.php:348
+msgid "Aktiviere externe Links"
+msgstr "Enable external links"
+
+#: Includes/Page.php:357
+msgid "Wenn Du dies aktivierst, kannst Du externe Datenschutzrichtlinieninstanzen verwenden"
+msgstr "Enabling this allows you to use an external privacy policy"
+
+#: Includes/Page.php:372
+msgid "Derzeit ist keine Seite mit Datenschutzrichtlinien ausgewählt"
+msgstr "No privacy policy page is currently selected"
+
+#: Includes/Page.php:384
+msgid "Link zur externen Datenschutzrichtlinie"
+msgstr "External privacy policy link"
+
+#: Includes/Page.php:399 Includes/Page.php:449
+msgid "Wähle eine Option"
+msgstr "Select an option"
+
+#: Includes/Page.php:408
+msgid "Link Text"
+msgstr "Link text"
+
+#: Includes/Page.php:415
+msgid "Benutzerdaten anfordern"
+msgstr "Request user data"
+
+#: Includes/Page.php:417
+msgid "Ermögliche den Besuchern Deiner Webseite, ihre in der ClasicPress-Datenbank gespeicherten Daten anzufordern (Kommentare, WooCommerce-Bestellungen usw.). Die gefundenen Daten werden an ihre E-Mail-Adresse gesendet und ermöglichen es ihnen, eine zusätzliche Anfrage zur Anonymisierung der Daten zu stellen."
+msgstr "Allow your website visitors to request their data stored in the ClasicPress database (comments, WooCommerce orders, etc.). The data found will be sent to their email address and allow them to submit an additional request to anonymize it."
+
+#: Includes/Page.php:424
+msgid "Seite aktivieren"
+msgstr "Enable page"
+
+#: Includes/Page.php:433
+#, php-format
+msgid "Wenn Du dies aktivierst, wird eine private Seite erstellt, die den erforderlichen Shortcode enthält: %s. Du kannst selbst bestimmen, wann und wie diese Seite veröffentlicht werden soll."
+msgstr "Enabling this creates a private page containing the required shortcode: %s. You can decide when and how to publish this page."
+
+#: Includes/Page.php:456
+msgid "Klicke hier, um diese Seite zu bearbeiten"
+msgstr "Click here to edit this page"
+
+#: Includes/Page.php:471
+msgid "Erklärung der Anonymisierungsanfrage"
+msgstr "Anonymization request explanation"
+
+#: Includes/Page.php:480 Includes/Page.php:752
+msgid "Zustimmung"
+msgstr "Consent"
+
+#: Includes/Page.php:482
+msgid "Deine Besucher können über eine Zustimmungsleiste am unteren Bildschirmrand allen erstellten Zustimmungen (Skripten) die Berechtigung erteilen. Dort können sie auch auf ihre persönlichen Einstellungen zugreifen, um einzelnen Zustimmungen die Erlaubnis zu erteilen oder zu verweigern. Sobald ihre Einstellungen gespeichert sind, verschwindet die Leiste für 365 Tage."
+msgstr "Your visitors can grant permission for all configured consents (scripts) using a consent bar at the bottom of the screen. They can also access their personal settings there to allow or deny individual consents. Once their settings are saved, the bar disappears for 365 days."
+
+#: Includes/Page.php:489
+#, php-format
+msgid "Lasse Deine Besucher erneut auf ihre Einstellungen zugreifen, indem Du einen Link zum Modal mit dem Shortcode %s platzierst oder die Klasse \"%s\" zu einem Menüelement hinzufügst."
+msgstr "Let your visitors access their settings again by adding a link to the modal using the shortcode %s or by adding the class \"%s\" to a menu item."
+
+#: Includes/Page.php:501
+msgid "Leiste: Erläuterung"
+msgstr "Bar: Explanation"
+
+#: Includes/Page.php:509
+msgid "Leiste: Weitere Informationen Text"
+msgstr "Bar: More information text"
+
+#: Includes/Page.php:518
+msgid "Leiste: Schaltflächentext akzeptieren"
+msgstr "Bar: Accept button text"
+
+#: Includes/Page.php:527
+msgid "Leiste Farbe"
+msgstr "Bar background color"
+
+#: Includes/Page.php:534
+msgid "Leiste Textfarbe"
+msgstr "Bar text color"
+
+#: Includes/Page.php:541
+msgid "Button Background Color"
+msgstr "Button Background Color"
+
+#: Includes/Page.php:549
+msgid "Button Text Color"
+msgstr "Button Text Color"
+
+#: Includes/Page.php:557
+msgid "Modal: Title"
+msgstr "Modal: Title"
+
+#: Includes/Page.php:566
+msgid "Modal: Erklärung"
+msgstr "Modal: Explanation"
+
+#: Includes/Page.php:610
+msgid "Neue Zustimmung hinzufügen"
+msgstr "Add new consent"
+
+#: Includes/Page.php:612 Includes/Page.php:758 Includes/Page.php:1005
+msgid "Aktiv"
+msgstr "Active"
+
+#: Includes/Page.php:615 Includes/Page.php:708 Includes/Page.php:777
+#: Includes/Page.php:797 ps-dsgvo.php:443 ps-dsgvo.php:479
+msgid "Ja"
+msgstr "Yes"
+
+#: Includes/Page.php:620 Includes/Page.php:753
+msgid "Titel"
+msgstr "Title"
+
+#: Includes/Page.php:625
+msgid "z.B. \"Google Analytics\" oder \"Werbung\"\""
+msgstr "e.g. \"Google Analytics\" or \"Advertising\""
+
+#: Includes/Page.php:630
+msgid "Beschreibung"
+msgstr "Description"
+
+#: Includes/Page.php:636
+msgid "Beschreibe Dein Einwilligungsskript so gründlich wie möglich. %privacy_policy% funktioniert nicht."
+msgstr "Describe your consent script as thoroughly as possible. %privacy_policy% does not work here."
+
+#: Includes/Page.php:641
+msgid "Code-Auszug"
+msgstr "Code snippet"
+
+#: Includes/Page.php:647
+msgid "Codefragmente für Google Analytics, Facebook Pixel usw.."
+msgstr "Code snippets for Google Analytics, Facebook Pixel, etc."
+
+#: Includes/Page.php:652
+msgid "Code Wrapper"
+msgstr "Code Wrapper"
+
+#: Includes/Page.php:669
+msgid "Platzierung"
+msgstr "Placement"
+
+#: Includes/Page.php:688
+msgid "Das Snippet wird am Ende des HEAD-Tags hinzugefügt."
+msgstr "The snippet is added at the end of the HEAD tag."
+
+#: Includes/Page.php:693
+msgid "Das Snippet wird direkt nach dem BODY-Tag hinzugefügt."
+msgstr "The snippet is added directly after the opening BODY tag."
+
+#: Includes/Page.php:698
+msgid "Das Snippet wird am Ende des BODY-Tags hinzugefügt."
+msgstr "The snippet is added at the end of the BODY tag."
+
+#: Includes/Page.php:705 Includes/Page.php:754
+msgid "Erforderlich"
+msgstr "Required"
+
+#: Includes/Page.php:711
+msgid "Wenn Du dieses Kontrollkästchen aktivierst, wird diese Zustimmung immer ausgelöst, sodass Benutzer sich nicht anmelden oder abmelden können."
+msgstr "Enabling this checkbox always activates this consent, so users cannot opt in or out."
+
+#: Includes/Page.php:716
+msgid "Aktualisieren"
+msgstr "Update"
+
+#: Includes/Page.php:716
+msgid "Hinzufügen"
+msgstr "Add"
+
+#: Includes/Page.php:718
+msgid "Zurück zur Übersicht"
+msgstr "Back to overview"
+
+#: Includes/Page.php:737
+msgid "Bitte Deine Besucher um Erlaubnis, bestimmte Skripte für Tracking- oder Werbezwecke zu aktivieren. Füge für jeden Skripttyp, für den Du eine Berechtigung anforderst, eine Zustimmung hinzu. Skripte werden nur aktiviert, wenn die Erlaubnis erteilt wurde."
+msgstr "Ask your visitors for permission to enable specific scripts for tracking or advertising. Add a consent for each type of script for which you request permission. Scripts are only enabled once permission has been granted."
+
+#: Includes/Page.php:739
+msgctxt "consent"
+msgid "Neue hinzufügen"
+msgstr "Add new"
+
+#: Includes/Page.php:743
+msgid "Klicke auf diese Schaltfläche, wenn Du die Zustimmungsleiste zurücksetzen möchtest. Dies bedeutet, dass die Zustimmungsleiste für alle Benutzer erneut angezeigt wird."
+msgstr "Click this button to reset the consent bar. This will display the consent bar again for all users."
+
+#: Includes/Page.php:745
+msgid "Zustimmungsleiste zurücksetzen"
+msgstr "Reset consent bar"
+
+#: Includes/Page.php:755
+msgid "Geändert am"
+msgstr "Modified on"
+
+#: Includes/Page.php:756
+msgid "Erstellt am"
+msgstr "Created on"
+
+#: Includes/Page.php:757 Includes/Page.php:875
+msgid "Aktion"
+msgstr "Action"
+
+#: Includes/Page.php:777 Includes/Page.php:797 ps-dsgvo.php:444
+#: ps-dsgvo.php:480
+msgid "Nein"
+msgstr "No"
+
+#: Includes/Page.php:787
+msgid "Bearbeiten"
+msgstr "Edit"
+
+#: Includes/Page.php:792
+msgid "Entfernen"
+msgstr "Remove"
+
+#: Includes/Page.php:820 Includes/Page.php:936 Includes/Page.php:1028
+#, php-format
+msgid "%d von %d Ergebnisse gefunden"
+msgstr "%d of %d results found"
+
+#: Includes/Page.php:824
+msgid "Keine Einwilligungen gefunden."
+msgstr "No consents found."
+
+#: Includes/Page.php:848
+msgid "Anonymisiere eine Anfrage, indem Du das Kontrollkästchen aktivierst und unten auf die grüne Schaltfläche zum Anonymisieren klickst."
+msgstr "Anonymize a request by selecting its checkbox and clicking the green anonymize button below."
+
+#: Includes/Page.php:850
+msgid "ClasicPress Benutzer"
+msgstr "ClasicPress users"
+
+#: Includes/Page.php:850
+msgid "Anonymisiert Vor- und Nachnamen, Anzeigenamen, Spitznamen und E-Mail-Adresse."
+msgstr "Anonymizes first and last names, display names, nicknames and email addresses."
+
+#: Includes/Page.php:852
+msgid "Anonymisiert Autorennamen, E-Mail-Adresse und IP-Adresse."
+msgstr "Anonymizes author names, email addresses and IP addresses."
+
+#: Includes/Page.php:854
+msgid "Anonymisiert Rechnungs- und Versanddetails pro Bestellung."
+msgstr "Anonymizes billing and shipping details for each order."
+
+#: Includes/Page.php:860 Includes/Page.php:966
+#, php-format
+msgid "Anfragen werden nach %d Tagen automatisch anonymisiert."
+msgstr "Requests are automatically anonymized after %d days."
+
+#: Includes/Page.php:870
+msgid "Anfrage"
+msgstr "Request"
+
+#: Includes/Page.php:871
+msgid "Typ"
+msgstr "Type"
+
+#: Includes/Page.php:873 Includes/Page.php:977
+msgid "Datum"
+msgstr "Date"
+
+#: Includes/Page.php:874
+msgid "Verarbeitet"
+msgstr "Processed"
+
+#: Includes/Page.php:896
+msgid "Ansicht"
+msgstr "View"
+
+#: Includes/Page.php:898
+msgid "N/A"
+msgstr "N/A"
+
+#: Includes/Page.php:917
+msgid "Ausgewählte Anfrage(n) anonymisieren"
+msgstr "Anonymize selected request(s)"
+
+#: Includes/Page.php:942 Includes/Page.php:1034
+msgid "Keine Anfragen gefunden."
+msgstr "No requests found."
+
+#: Includes/Page.php:973
+msgid "ID"
+msgstr "ID"
+
+#: Includes/Page.php:974
+msgid "Anfragen zu bearbeiten"
+msgstr "Requests to process"
+
+#: Includes/Page.php:975
+msgid "Email Addresse"
+msgstr "Email address"
+
+#: Includes/Page.php:978
+msgid "Status"
+msgstr "Status"
+
+#: Includes/Page.php:997
+msgid "Verwalten"
+msgstr "Manage"
+
+#: Includes/Page.php:1005
+msgid "Abgelaufen"
+msgstr "Expired"
+
+#: Includes/Page.php:1046
+msgid "Verwalte externe Inhalte wie YouTube-Videos, Vimeo, Google Maps und andere Embeds. Wenn aktiviert, werden diese Inhalte durch Platzhalter ersetzt, bis der Benutzer seine Zustimmung gibt."
+msgstr "Manage external content such as YouTube videos, Vimeo, Google Maps and other embeds. When enabled, this content is replaced with placeholders until the user gives consent."
+
+#: Includes/Page.php:1053
+msgid "Externe Inhalte werden standardmäßig blockiert und erst nach Zustimmung des Besuchers geladen. Dies hilft, die DSGVO-Konformität Ihrer Website zu verbessern."
+msgstr "External content is blocked by default and only loaded after the visitor gives consent. This helps improve your website's GDPR compliance."
+
+#: Includes/Page.php:1092
+msgid "Platzhalter-Nachricht"
+msgstr "Placeholder message"
+
+#: Includes/Page.php:1098
+msgid "Diese Nachricht wird angezeigt, wenn der Inhalt blockiert ist."
+msgstr "This message is displayed when the content is blocked."
+
+#: Includes/Shortcode.php:42
+#, php-format
+msgid "Keine Benutzer mit E-Mail-Adresse %s gefunden."
+msgstr "No users found with the email address %s."
+
+#: Includes/Shortcode.php:49
+msgid "Kommentare"
+msgstr "Comments"
+
+#: Includes/Shortcode.php:56
+#, php-format
+msgid "Keine Kommentare mit E-Mail-Adresse %s gefunden."
+msgstr "No comments found with the email address %s."
+
+#: Includes/Shortcode.php:65
+msgid "WooCommerce Bestellungen"
+msgstr "WooCommerce orders"
+
+#: Includes/Shortcode.php:72
+#, php-format
+msgid "Es wurden keine WooCommerce-Bestellungen mit der E-Mail-Adresse %s gefunden."
+msgstr "No WooCommerce orders found with the email address %s."
+
+#: Includes/Shortcode.php:88
+msgid "Du kannst Deine Daten nur anzeigen, wenn Du diese Seite auf demselben Gerät mit derselben IP-Adresse und in derselben Browsersitzung wie bei der Ausführung Deiner Anforderung besuchst. Dies ist eine zusätzliche Sicherheitsmaßnahme, um Deine Daten zu schützen."
+msgstr "You can only view your data by visiting this page on the same device, with the same IP address and in the same browser session used to make your request. This is an additional security measure to protect your data."
+
+#: Includes/Shortcode.php:90
+#, php-format
+msgid "Bei Bedarf kannst Du hier nach 24 Stunden eine neue Anfrage stellen: %s."
+msgstr "If needed, you can submit a new request here after 24 hours: %s."
+
+#: Includes/Shortcode.php:106
+msgid "Diese Anfrage ist abgelaufen oder existiert nicht."
+msgstr "This request has expired or does not exist."
+
+#: Includes/Shortcode.php:126
+msgid "Deine Emailadresse"
+msgstr "Your email address"
+
+#: Includes/Shortcode.php:140
+msgid "Abfragen"
+msgstr "Submit request"
+
+#: Includes/Shortcode.php:165
+msgid "Du musst sicherstellen, dass Du mindestens eine (1)aktive Einwilligung hinzugefügt hast."
+msgstr "Make sure you have added at least one (1) active consent."
+
+#: ps-dsgvo.php:56
+#, php-format
+msgid "Aktiviere den <a href=\"%s\">PS Update Manager</a> für automatische Updates von GitHub."
+msgstr "Activate the <a href=\"%s\">PS Update Manager</a> for automatic updates from GitHub."
+
+#: ps-dsgvo.php:62
+#, php-format
+msgid "Installiere den <a href=\"%s\" target=\"_blank\">PS Update Manager</a> für automatische Updates aller PSource Plugins & Themes."
+msgstr "Install the <a href=\"%s\" target=\"_blank\">PS Update Manager</a> for automatic updates for all PSource plugins & themes."
+
+#: ps-dsgvo.php:433
+msgid "View PSOURCE DSGVO settings"
+msgstr "View PSOURCE DSGVO settings"
+
+#: ps-dsgvo.php:433
+msgid "Settings"
+msgstr "Settings"

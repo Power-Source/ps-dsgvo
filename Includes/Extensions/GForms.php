@@ -55,7 +55,7 @@ class GForms {
             $args = array(
                 'id' => $id,
                 'type' => 'checkbox',
-                'label' => __('Privacy', PS_DSGVO_C_SLUG),
+                'label' => __('Privacy', 'psource-dsgvo'),
                 'labelPlacement' => 'hidden_label',
                 'isRequired' => true,
                 'enableChoiceValue' => true,
@@ -94,7 +94,7 @@ class GForms {
     public function displayAcceptedDateColumnInEntryOverview($columns = array(), $formId = 0) {
         $key = array_search(self::getCheckboxText($formId), $columns);
         if (!empty($key) && isset($columns[$key])) {
-            $columns[$key] = apply_filters('psdsgvo_gforms_accepted_date_column_in_entry_overview', __('Privacy', PS_DSGVO_C_SLUG), $columns[$key], $formId);
+            $columns[$key] = apply_filters('psdsgvo_gforms_accepted_date_column_in_entry_overview', __('Privacy', 'psource-dsgvo'), $columns[$key], $formId);
         }
         return $columns;
     }
@@ -110,7 +110,7 @@ class GForms {
         if (empty($value)) {
             $id = self::getFieldIdByFormId($formId);
             if (!empty($id) && $fieldId === $id) {
-                $value = (!empty($entry[$fieldId])) ? $entry[$fieldId] : __('Not accepted.', PS_DSGVO_C_SLUG);
+                $value = (!empty($entry[$fieldId])) ? $entry[$fieldId] : __('Not accepted.', 'psource-dsgvo');
                 $value = apply_filters('psdsgvo_gforms_accepted_date_in_entry_overview', $value, $fieldId, $formId, $entry);
             }
         }
@@ -126,7 +126,7 @@ class GForms {
         $fieldId = self::getFieldIdByFormId($entry['form_id']);
         if (!empty($fieldId) && isset($value[$fieldId])) {
             if (empty($value[$fieldId])) {
-                $value = __('Not accepted.', PS_DSGVO_C_SLUG);
+                $value = __('Not accepted.', 'psource-dsgvo');
             }
             $value = apply_filters('psdsgvo_gforms_accepted_date_in_entry', $value, $fieldId, $entry);
         }
@@ -156,9 +156,9 @@ class GForms {
             if (isset($field['psdsgvo']) && $field['psdsgvo'] === true) {
                 if (!empty($value)) {
                     $date = Helper::localDateFormat(get_option('date_format') . ' ' . get_option('time_format'), time());
-                    $value = sprintf(__('Accepted on %s.', PS_DSGVO_C_SLUG), $date);
+                    $value = sprintf(__('Accepted on %s.', 'psource-dsgvo'), $date);
                 } else {
-                    $value = __('Not accepted.', PS_DSGVO_C_SLUG);
+                    $value = __('Not accepted.', 'psource-dsgvo');
                 }
 
                 $value = apply_filters('psdsgvo_gforms_accepted_date_to_entry', $value, $field, $lead);
