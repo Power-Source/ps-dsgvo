@@ -139,23 +139,17 @@ class ContentEmbeds {
         
         // Prüfe ob Consents existieren und aktiv sind
         if (!Consent::databaseTableExists() || !Consent::isActive()) {
-            error_log('PSDSGVO: Consents not active. DB exists: ' . (Consent::databaseTableExists() ? 'yes' : 'no') . ', Is active: ' . (Consent::isActive() ? 'yes' : 'no'));
             return $content; // Keine Consents aktiv, keine Blockierung
         }
         
         // Blockiere YouTube-Videos wenn ein Consent existiert
         // (Consent wurde automatisch beim ersten Laden erstellt)
         $consents = Consent::getInstance()->getList();
-        error_log('PSDSGVO: Found ' . count($consents) . ' consents');
         
         if (!empty($consents)) {
             // Blockiere alle Embed-Typen
             foreach ($this->getEmbedTypes() as $type => $config) {
-                $oldContent = $content;
                 $content = $this->replaceEmbeds($content, $type);
-                if ($oldContent !== $content) {
-                    error_log('PSDSGVO: Replaced content for type: ' . $type);
-                }
             }
         }
         
@@ -178,7 +172,6 @@ class ContentEmbeds {
         
         // Prüfe ob User bereits Consent gegeben hat
         if ($this->hasUserConsent($type)) {
-            error_log('PSDSGVO: User has consent for ' . $type . ', skipping replacement');
             return $content;
         }
 
@@ -186,22 +179,17 @@ class ContentEmbeds {
         // und prüfe jedes iframe, ob es eine der konfigurierten URLs enthält
         $pattern = '/<iframe[^>]*src=["\']([^"\']+)["\'][^>]*>.*?<\/iframe>/i';
         
-        error_log('PSDSGVO: Searching for iframes of type ' . $type);
-        
         $content = preg_replace_callback($pattern, function($matches) use ($type, $config) {
             $src = $matches[1];
-            error_log('PSDSGVO: Found iframe with src: ' . substr($src, 0, 100));
             
             // Prüfe ob diese URL zu diesem Typ passt
             foreach ($config['patterns'] as $pattern) {
                 if (stripos($src, $pattern) !== false) {
-                    error_log('PSDSGVO: Matched pattern ' . $pattern . ', replacing with placeholder');
                     // URL passt zu diesem Typ - ersetze mit Platzhalter
                     return $this->createPlaceholder($type, $src, $config);
                 }
             }
             
-            error_log('PSDSGVO: No pattern matched for src: ' . $src);
             // URL passt nicht zu diesem Typ - Original zurückgeben
             return $matches[0];
         }, $content);

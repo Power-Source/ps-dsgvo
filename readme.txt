@@ -45,6 +45,9 @@ Bei einer anderen Verzeichnisstruktur kann `WP_TEST_ROOT` gesetzt werden.
 
 == Changelog ==
 
+= 1.0.2 =
+* Überflüssige Debug-Ausgaben bei der Verarbeitung externer Content-Embeds entfernt.
+
 = 1.0.1 =
 * Englische Übersetzungen für en_US und en_GB ergänzt; deutsche Quelltexte beibehalten.
 * Text-Domain und Laden der Übersetzungen vereinheitlicht; Embed-Texte übersetzbar gemacht.
